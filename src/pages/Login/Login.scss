@@ -1,0 +1,43 @@
+.login {
+    font-family: 'Suisse Regular', sans-serif;
+    color: #333333;
+    font-weight: 300;
+    display: block;
+    width: 500px;
+    background-color: #fffef2;
+    border: 1px solid black;
+    .loginBox {
+        width: 500px;
+        padding: 50px;
+        h1 {
+            padding-bottom: 50px;
+        }
+        input {
+            border-bottom: 1px solid gray;
+            padding: 10px;
+            font-size: 24px;
+            width: 100%;
+        }
+        .resetPassword {
+            font-size: 14px;
+        }
+        .buttonLogin {
+            padding: 20px 100px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            width: 100%;
+            color: white;
+            background-color: #333333;
+        }
+        .checkAccount {
+            span {
+                font-weight: 400;
+            }
+            .buttonSignup {
+                padding: 20px 100px;
+                width: 100%;
+                border: 1px solid gray;
+            }
+        }
+    }
+}
