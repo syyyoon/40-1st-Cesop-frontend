@@ -8,7 +8,6 @@ import Main from './pages/Main/Main';
 import Payment from './pages/Payment/Payment';
 import SignUp from './pages/SignUp/SignUp';
 
-// const Router = () => {
 function Router() {
     return (
         <BrowserRouter>
