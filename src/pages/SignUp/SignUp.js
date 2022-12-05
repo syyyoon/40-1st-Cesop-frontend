@@ -1,6 +1,8 @@
 import React from 'react';
 import './SignUp.scss';
 
-export const SignUp = () => {
+const SignUp = () => {
     return <div>SignUp</div>;
 };
+
+export default SignUp;
