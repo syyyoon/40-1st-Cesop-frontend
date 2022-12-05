@@ -1,0 +1,46 @@
+.signup {
+    font-family: 'Suisse Regular', sans-serif;
+    font-weight: 400;
+    width: 600px;
+    padding: 50px;
+    color: rgb(77, 76, 76);
+    background-color: #fffef2;
+    border: 1px solid gray;
+    .signupTitle {
+        margin-bottom: 50px;
+        h1 {
+            margin-bottom: 20px;
+        }
+    }
+    .wrappingInputName {
+        display: flex;
+
+        input {
+            font-size: 24px;
+            margin-right: 10px;
+            border-bottom: 1px solid gray;
+        }
+    }
+    .wrappingInput {
+        input {
+            width: 100%;
+            margin-top: 70px;
+            margin-bottom: 30px;
+            font-size: 24px;
+            border-bottom: 1px solid gray;
+        }
+    }
+}
+
+.checkList {
+    padding: 30px;
+    input {
+        margin-bottom: 20px;
+    }
+    .scrollableContent {
+        overflow: scroll;
+        border: solid 1px gray;
+        width: 100%;
+        height: 200px;
+    }
+}
