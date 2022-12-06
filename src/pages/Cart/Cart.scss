@@ -1,0 +1,227 @@
+.cartWrapper {
+    position: fixed;
+    max-height: 100vh;
+    overflow-y: scroll;
+    background-color: #252525;
+    color: #fffef2;
+}
+
+.cartInner {
+    width: 100vw;
+}
+
+.cartList {
+    padding: 40px 40px 0px;
+    text-align: left;
+}
+
+.orderHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 15px;
+    border-bottom: 2.5px solid rgba(255, 254, 242, 0.1);
+}
+
+.cartHeader {
+    flex-basis: auto;
+    width: 42%;
+    color: #bcbbb4;
+    font-family: 'Suisse' Medium, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.sizeHeader {
+    flex-basis: auto;
+    width: 23%;
+    color: #bcbbb4;
+    font-family: 'Suisse' Medium, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+.quantityHeader {
+    // flex-grow: 1;
+    width: 7%;
+    color: #bcbbb4;
+    font-family: 'Suisse' Medium, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.deleteHeader {
+    flex-grow: 1;
+}
+
+button {
+    // border: none;
+    // border-radius: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.closeButtonHeader {
+    width: 18px;
+    height: 18px;
+    padding: 0 2px;
+    fill: #999;
+}
+
+.closeButtonIcon {
+    width: 18px;
+    height: 18px;
+    filter: invert(75%);
+}
+
+.cartProduct:hover {
+    .deleteQuantity {
+        opacity: 1;
+    }
+}
+
+.productList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.productItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1.5px solid rgba(255, 254, 242, 0.1);
+}
+
+.productName {
+    flex-basis: auto;
+    width: 42%;
+    padding-right: 20px;
+    font-family: 'Suisse' Medium, sans-serif;
+    font-size: 1.2rem;
+}
+
+.productSize {
+    width: 23%;
+    padding-right: 20px;
+    font-family: 'Suisse' Medium, sans-serif;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.QuantityButtonWrapper {
+    width: 7%;
+}
+
+.productQuantity {
+    position: relative;
+    width: 95px;
+    height: 50px;
+    margin: 0;
+    margin-right: 30px;
+    // 호보 시간 지정하기
+    // transition-delay: 1s;
+    // padding: ;
+    border: 1.5px solid rgba(255, 254, 242, 0.1);
+    color: #fff;
+    font-family: Suisse Regular, sans-serif;
+    font-size: 1.4rem;
+}
+
+.productQuantity:hover {
+    border-color: rgba(255, 254, 242, 0.8);
+}
+
+.quantityButtonContent {
+    display: flex;
+    align-items: center;
+}
+
+.quantityNumber {
+    margin-left: 20px;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.quantityIcon {
+    width: 14px;
+    height: 8px;
+    margin-left: 20px;
+    filter: invert(100%);
+}
+
+// 버튼 수량 선택
+// .productQuantityList {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 70px;
+//     height: 190px;
+//     margin: 0;
+//     padding: 0;
+//     overflow-x: hidden;
+//     overflow-y: scroll;
+//     background: #fff;
+//     list-style: none;
+// }
+
+.deleteQuantity {
+    flex-grow: 1;
+    margin: 10px 0;
+    opacity: 0;
+    color: #b7b7ae;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.deleteQuantity:hover {
+    color: #fffef2;
+}
+
+.totalAmount {
+    color: #fffef2;
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.cartOrganize {
+    display: block;
+}
+
+.cartOrganizeWrapper {
+    padding: 30px 40px 40px;
+}
+
+.cartOrganizeInner {
+    flex-basis: auto;
+    // width: 65%;
+    margin-left: 65%;
+}
+
+.cartOrganizeNoticeTop {
+    padding-top: 28px;
+}
+
+.cartOfferMessage {
+    margin-bottom: 20px;
+    color: #bcbbb4;
+    font-size: 1.2rem;
+}
+
+.totalComment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.OrganizeTotalAmount {
+    font-size: 2.5rem;
+}
+
+.cartPayButton {
+    width: 100%;
+    height: 75px;
+    background-color: #bcbbb4;
+}
