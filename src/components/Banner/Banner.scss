@@ -1,0 +1,67 @@
+.AlertBanner {
+    position: relative;
+    z-index: 500;
+    height: 43px;
+
+    .AlertList {
+        margin: 0;
+        list-style-type: none;
+        background-color: #a6672b;
+        color: #fffef2;
+        font-size: 14px;
+
+        .AlertBody {
+            z-index: 2;
+            // top: 0;
+            width: 100%;
+            height: auto;
+            margin-left: 10px;
+            padding: 11px 20px;
+            clear: both;
+            overflow: visible;
+            line-height: 1.5;
+            text-align: center;
+
+            .AlertLink {
+                // margin-left: 10px;
+                // line-height: 1.5;
+                // text-align: center;
+            }
+        }
+    }
+}
+
+.ShippingBanner {
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    height: auto;
+    padding: 12px 20px 8px;
+    clear: both;
+    overflow: visible;
+    background-color: #252525;
+
+    .ShippingContent {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .ShippingButton {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            // border: 0;
+            // border-radius: 0;
+            background: transparent;
+
+            p {
+                flex-grow: 2;
+                color: #fffef2;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+        }
+    }
+}
