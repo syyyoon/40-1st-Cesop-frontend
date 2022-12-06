@@ -4,6 +4,11 @@ import './SignUp.scss';
 const SignUp = () => {
     return (
         <div className="signup">
+            <div className="topIconWrapper">
+                <button className="arrowLeft"></button>
+                <button className="closeButton"></button>
+            </div>
+
             <div className="signupTitle">
                 <h1>회원가입</h1>
                 <span>

@@ -1,14 +1,25 @@
+$fontSize24: 24px;
+$fontSize14: 14px;
+$borderGray: 1px solid #ccc;
+$bgColor: #fffef2;
+
 .signup {
+    .topIconWrapper {
+        .arrowLeft {
+            background: url('');
+        }
+    }
     font-family: 'Suisse Regular', sans-serif;
-    font-weight: 400;
+    font-weight: 350;
     width: 600px;
     padding: 50px;
     color: rgb(77, 76, 76);
     background-color: #fffef2;
-    border: 1px solid gray;
+    border: $borderGray;
     .signupTitle {
         margin-bottom: 50px;
         h1 {
+            font-weight: 350;
             margin-bottom: 20px;
         }
     }
@@ -16,9 +27,9 @@
         display: flex;
 
         input {
-            font-size: 24px;
+            font-size: $fontSize24;
             margin-right: 10px;
-            border-bottom: 1px solid gray;
+            border-bottom: $borderGray;
         }
     }
     .wrappingInput {
