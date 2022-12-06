@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
 import Cart from './pages/Cart/Cart';
 import DetailList from './pages/DetailList/DetailList';
 import DetailProducts from './pages/DetailProducts/DetailProducts';
@@ -19,6 +20,7 @@ function Router() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/payment" element={<Payment />} />
             </Routes>
+            <Footer />
         </BrowserRouter>
     );
 }
