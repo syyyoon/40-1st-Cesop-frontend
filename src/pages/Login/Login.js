@@ -5,8 +5,10 @@ const Login = () => {
     return (
         <div className="login">
             <div className="loginBox">
-                {/* 로그인 (이메일주소/비밀번호) */}
-                {/* <button> X </button> */}
+                <div className="wrapButton">
+                    <button className="closeButton"></button>
+                </div>
+
                 <h1>로그인</h1>
                 <div>
                     <input
@@ -22,10 +24,9 @@ const Login = () => {
                         type="text"
                         placeholder="비밀번호"
                     />
-                    <div className="hidden"></div>
+                    <button>보기</button>
+                    <span className="resetPassword">비밀번호 재설정하기</span>
                 </div>
-
-                <span className="resetPassword">비밀번호 재설정하기</span>
 
                 <button className="buttonLogin">로그인</button>
                 {/* 회원이 아니신가요? */}

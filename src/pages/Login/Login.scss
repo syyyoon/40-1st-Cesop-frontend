@@ -1,25 +1,35 @@
+$fontSize24: 24px;
+$fontSize14: 14px;
+$borderGray: 1px solid #ccc;
+$bgColor: #fffef2;
+
 .login {
     font-family: 'Suisse Regular', sans-serif;
     color: #333333;
     font-weight: 300;
     display: block;
-    width: 500px;
+    width: 600px;
     background-color: #fffef2;
-    border: 1px solid black;
+    border: 1px solid #ccc;
+
     .loginBox {
-        width: 500px;
+        width: 100%;
         padding: 50px;
+
         h1 {
+            font-weight: 350;
             padding-bottom: 50px;
         }
         input {
-            border-bottom: 1px solid gray;
+            border-bottom: $borderGray;
+            margin-bottom: 50px;
             padding: 10px;
-            font-size: 24px;
+            font-weight: 300;
+            font-size: $fontSize24;
             width: 100%;
         }
         .resetPassword {
-            font-size: 14px;
+            font-size: $fontSize14;
         }
         .buttonLogin {
             padding: 20px 100px;
@@ -32,12 +42,24 @@
         .checkAccount {
             span {
                 font-weight: 400;
+                font-size: $fontSize24;
             }
             .buttonSignup {
+                margin-top: 20px;
                 padding: 20px 100px;
                 width: 100%;
-                border: 1px solid gray;
+                border: $borderGray;
             }
         }
+    }
+}
+
+.wrapButton {
+    display: flex;
+    justify-content: end;
+    .closeButton {
+        width: 30px;
+        height: 30px;
+        background: url('../../assets/images/close.png') no-repeat;
     }
 }
