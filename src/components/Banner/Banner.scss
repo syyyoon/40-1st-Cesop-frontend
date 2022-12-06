@@ -1,16 +1,16 @@
-.AlertBanner {
+.alertBanner {
     position: relative;
     z-index: 500;
     height: 43px;
 
-    .AlertList {
+    .alertList {
         margin: 0;
         list-style-type: none;
         background-color: #a6672b;
         color: #fffef2;
         font-size: 14px;
 
-        .AlertBody {
+        .alertBody {
             z-index: 2;
             // top: 0;
             width: 100%;
@@ -22,7 +22,7 @@
             line-height: 1.5;
             text-align: center;
 
-            .AlertLink {
+            .alertLink {
                 // margin-left: 10px;
                 // line-height: 1.5;
                 // text-align: center;
@@ -31,7 +31,7 @@
     }
 }
 
-.ShippingBanner {
+.shippingBanner {
     z-index: 2;
     top: 0;
     width: 100%;
@@ -41,13 +41,13 @@
     overflow: visible;
     background-color: #252525;
 
-    .ShippingContent {
+    .shippingContent {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
 
-        .ShippingButton {
+        .shippingButton {
             display: flex;
             align-items: center;
             margin: 0;
