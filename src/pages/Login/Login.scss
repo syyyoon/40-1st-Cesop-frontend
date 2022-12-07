@@ -1,15 +1,17 @@
-@import '../../styles/mixin.scss';
-@import '../../styles/variables.scss';
+@import '../../styles/mixin';
+@import '../../styles/variables';
 
 .login {
     @include flex(center, center);
     .loginContiner {
+        position: absolute;
+        z-index: 1;
+        top: 20%;
         width: 600px;
         padding: 50px;
-        margin: 0 auto;
-        color: $blackColor;
-        background-color: $bgColor;
         border: $borderGray;
+        background-color: $bgColor;
+        color: $blackColor;
         font-family: 'Suisse Regular', sans-serif;
         font-weight: 300;
 
@@ -35,14 +37,15 @@
             position: relative;
             margin-top: 50px;
 
-            input {
+            .userIdInput,
+            .userPwdInput {
                 width: 100%;
                 border-bottom: $borderGray;
-                font-weight: 300;
                 font-size: $fontSize24;
+                font-weight: 300;
             }
 
-            button {
+            .buttonSeeHiddenPassword {
                 position: absolute;
                 top: 5px;
                 right: 10px;
@@ -68,11 +71,10 @@
             background-color: $blackColor;
             color: white;
         }
-
         .joinUs {
-            span {
-                font-weight: 400;
+            .checkAccount {
                 font-size: $fontSize24;
+                font-weight: 400;
             }
             .buttonSignup {
                 width: 100%;
