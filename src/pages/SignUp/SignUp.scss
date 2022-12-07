@@ -1,14 +1,12 @@
-$fontSize24: 24px;
-$fontSize14: 14px;
-$borderGray: 1px solid #ccc;
-$bgColor: #fffef2;
+@import '/src/styles/variables.scss';
+@import '/src/styles/mixin.scss';
 
 .topSignUp {
-    background-repeat: no-repeat;
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 30px;
+    background-repeat: no-repeat;
 
     .arrowLeft {
         width: 20px;
@@ -24,37 +22,39 @@ $bgColor: #fffef2;
     }
 }
 
-.signup {
-    font-family: 'Suisse Regular', sans-serif;
-    font-weight: 350;
+.signUpContainer {
     width: 600px;
     padding: 42px;
     color: rgb(77, 76, 76);
     background-color: #fffef2;
     border: $borderGray;
+    font-family: 'Suisse Regular', sans-serif;
+    font-weight: 350;
 
     .signupTitle {
         margin-bottom: 50px;
-        h1 {
-            font-weight: 350;
+        .title {
             margin-bottom: 20px;
+            font-weight: 350;
         }
     }
+
     .wrappingInputName {
         display: flex;
         input {
-            font-size: $fontSize24;
             margin-right: 10px;
             border-bottom: $borderGray;
+            font-size: $fontSize24;
         }
     }
+
     .wrappingInput {
         input {
             width: 100%;
             margin-top: 70px;
             margin-bottom: 30px;
-            font-size: 24px;
             border-bottom: $borderGray;
+            font-size: 24px;
         }
     }
 }
@@ -76,9 +76,9 @@ $bgColor: #fffef2;
         height: 50px;
     }
     a {
-        font-size: $fontSize14;
-        padding-top: 20px;
         display: block;
+        padding-top: 20px;
+        font-size: $fontSize14;
         text-align: center;
     }
 }
