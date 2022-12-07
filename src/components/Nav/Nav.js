@@ -1,16 +1,35 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Modal from './Modal';
+import { CATEGORY_LIST } from './CategoryList';
 import './Nav.scss';
 
-const Nav = () => {
+const Navigation = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [listId, setListId] = useState();
+
+    const openModal = () => {
+        setIsOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsOpen(false);
+    };
+
+    const listCheck = id => {
+        setListId(id);
+    };
     return (
         <div className="nav">
             <div className="navWrapper">
                 <div className="navCategory">
-                    <ul>
+                    <ul className="navUl" onClick={openModal}>
                         {CATEGORY_LIST.map(list => {
                             return (
-                                <li key={list.id}>
+                                <li
+                                    key={list.id}
+                                    onClick={() => listCheck(list.id)}
+                                >
                                     <Link>{list.text}</Link>
                                 </li>
                             );
@@ -26,21 +45,17 @@ const Nav = () => {
                         </li>
                     </ul>
                 </div>
+                {isOpen && (
+                    <Modal
+                        isOpen={isOpen}
+                        listId={listId}
+                        closeModal={closeModal}
+                        listCheck={listCheck}
+                    />
+                )}
             </div>
         </div>
     );
 };
 
-export default Nav;
-
-const CATEGORY_LIST = [
-    { id: 1, text: '스킨 케어' },
-    { id: 2, text: '바디 & 핸드' },
-    { id: 3, text: '헤어' },
-    { id: 4, text: '향수' },
-    { id: 5, text: '홈' },
-    { id: 6, text: '키트 & 여행 제품' },
-    { id: 7, text: '기프트 가이드' },
-    { id: 8, text: '읽기' },
-    { id: 9, text: '스토어' },
-];
+export default Navigation;

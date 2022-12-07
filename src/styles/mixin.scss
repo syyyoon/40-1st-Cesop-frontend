@@ -1,5 +1,19 @@
 @mixin flex($justify, $align) {
     display: flex;
-    justify-content: $justify;
     align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin flexDirection($direction, $align) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+}
+@mixin navCategoryBody() {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    left: -35px;
+    overflow: hidden;
 }
