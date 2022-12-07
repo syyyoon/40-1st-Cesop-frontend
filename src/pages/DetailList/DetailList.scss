@@ -1,0 +1,42 @@
+@import '/src/styles/mixin';
+@import '/src/styles/variables';
+
+.listSection {
+    .categoryTitleHolder {
+        padding-right: 20px;
+        padding-left: 40px;
+
+        .categoryTitle {
+            margin-top: 120px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .categoryBar {
+        @include flex(space-between, flex-start);
+        height: 110px;
+        background-color: #ebeade;
+
+        .categoryList {
+            @include flex(flex-start, center);
+            padding-top: 45px;
+
+            .categoryTitles {
+                height: 30px;
+                padding-right: 1.5rem;
+                padding-left: 40px;
+            }
+        }
+    }
+    .productList {
+        @include flex(flex-start, center);
+        flex-wrap: wrap;
+        background-color: #f6f5e8;
+
+        .descriptionOfList {
+            width: 33.333%;
+            height: 700px;
+            padding: 80px 40px;
+        }
+    }
+}

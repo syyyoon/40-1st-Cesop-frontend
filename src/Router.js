@@ -2,11 +2,13 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './pages/Cart/Cart';
 import DetailList from './pages/DetailList/DetailList';
+import SeeAll from './pages/DetailList/SeeAll';
 import DetailProducts from './pages/DetailProducts/DetailProducts';
 import Login from './pages/Login/Login';
 import Main from './pages/Main/Main';
 import Payment from './pages/Payment/Payment';
 import SignUp from './pages/SignUp/SignUp';
+
 function Router() {
     return (
         <BrowserRouter>
@@ -15,6 +17,7 @@ function Router() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/detail-list" element={<DetailList />} />
+                <Route path="/see-all" element={<SeeAll />} />
                 <Route path="/detail-products" element={<DetailProducts />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/payment" element={<Payment />} />
