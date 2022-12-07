@@ -1,0 +1,131 @@
+$fontSize24: 24px;
+$fontSize14: 14px;
+$fontSize30: 30px;
+$borderGray: 1px solid #ccc;
+$bgColor: #fffef2;
+$fontColor_DarkGray: #333;
+$fontColor_lightGray: #666;
+
+@mixin flex($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.detailProduct {
+    margin-top: 150px;
+    background-color: $bgColor;
+    padding-bottom: 120px;
+    padding-left: 0;
+    .productDetailHeader {
+        @include flex(end, center);
+        background-color: $bgColor;
+        padding-top: 150px;
+        padding-right: 150px;
+        padding-bottom: 150px;
+        color: $fontColor_DarkGray;
+    }
+}
+
+.productContent {
+    nav {
+        margin: 16px 0;
+    }
+    .productInfo {
+        h1 {
+            color: $fontColor_DarkGray;
+            font-weight: 400;
+        }
+        p {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            border-bottom: 2px solid #333;
+            margin-bottom: 10px;
+        }
+    }
+
+    .buttonAddToCart {
+        color: white;
+        background-color: #333;
+        width: 100%;
+        height: 50px;
+    }
+}
+
+.productDetailList {
+    border-bottom: $borderGray;
+}
+
+.packageMessageWrapper {
+    padding: 0 0 100px;
+    .packageMessage {
+        @include flex(center, center);
+        height: 130px;
+        .packageMessageLeft {
+            padding: 0 20px;
+            color: $fontColor_lightGray;
+            font-size: $fontSize14;
+            margin: 77px 0;
+            text-align: center;
+            align-items: center;
+            width: 50%;
+            p {
+                padding-top: 8px;
+            }
+        }
+        .packageMessageRight {
+            padding: 0 20px;
+            color: $fontColor_lightGray;
+            font-size: $fontSize14;
+            margin: 77px 0;
+            text-align: center;
+            align-items: center;
+            width: 50%;
+            border-left: 1px solid rgba(51, 51, 51, 0.2);
+            p {
+                padding-top: 8px;
+            }
+        }
+    }
+}
+
+.howToUse {
+    display: flex;
+    height: 900px;
+    .howToUseImage {
+        width: 50%;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .howToUseContent {
+        padding: 150px;
+        background-color: #f6f5e8;
+        width: 50%;
+        color: $fontColor_DarkGray;
+        p {
+            font-size: $fontSize14;
+        }
+        h2 {
+            font-weight: 300;
+            font-size: $fontSize30;
+            border-bottom: 2px solid #333;
+            padding-top: 10px;
+            padding-bottom: 25px;
+        }
+    }
+}
+
+.productDetailList {
+    .productTerm {
+        padding-bottom: 5px;
+    }
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: $fontSize14;
+    p {
+        color: $fontColor_lightGray;
+        margin-bottom: 10px;
+    }
+}
