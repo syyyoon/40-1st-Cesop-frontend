@@ -1,0 +1,86 @@
+.main {
+    min-height: 100vh;
+}
+
+.mainSection {
+    background-color: #f1e2cf;
+
+    .contentTitle {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        padding-top: 110px;
+        padding-bottom: 180px;
+    }
+
+    .mainWrapper {
+        display: flex;
+
+        .mainContent {
+            display: flex;
+            flex-basis: auto;
+            flex-direction: row;
+            width: 27%;
+            margin-right: auto;
+            margin-left: 17%;
+
+            .logoImage {
+                position: absolute;
+                left: 40px;
+                width: 120px;
+                height: 40px;
+                margin-top: 110px;
+            }
+        }
+
+        .mainBanner {
+            display: flex;
+            width: 50%;
+
+            .bannerImage {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        padding-top: 180px;
+        background-color: #fffef2;
+
+        .banner {
+            padding-right: 10%;
+
+            .leftImage {
+                width: 730px;
+                height: 100%;
+            }
+        }
+
+        .leftContent {
+            display: flex;
+            flex-basis: auto;
+            flex-direction: row;
+            width: 27%;
+            margin-right: auto;
+        }
+
+        .incenseContent {
+            display: flex;
+            flex-basis: auto;
+            flex-direction: row;
+            width: 27%;
+            margin-right: 11%;
+            margin-left: 8%;
+        }
+        .mainBanner {
+            width: 55%;
+
+            .bannerImage {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
