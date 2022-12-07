@@ -12,7 +12,6 @@
 
         .alertBody {
             z-index: 2;
-            // top: 0;
             width: 100%;
             height: auto;
             margin-left: 10px;
@@ -21,12 +20,6 @@
             overflow: visible;
             line-height: 1.5;
             text-align: center;
-
-            .alertLink {
-                // margin-left: 10px;
-                // line-height: 1.5;
-                // text-align: center;
-            }
         }
     }
 }
@@ -52,8 +45,6 @@
             align-items: center;
             margin: 0;
             padding: 0;
-            // border: 0;
-            // border-radius: 0;
             background: transparent;
 
             p {
