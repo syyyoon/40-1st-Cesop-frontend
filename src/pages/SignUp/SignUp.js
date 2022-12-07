@@ -37,19 +37,30 @@ const SignUp = () => {
                 <div className="checkBox">
                     <div className="checkList">
                         <div>
-                            <input type="checkbox" name="" value="" />
+                            <input
+                                className="checkBox"
+                                type="checkbox"
+                                name=""
+                                value=""
+                            />
                             &nbsp;본인은 14세 이상입니다 (필수)
                         </div>
                         <div>
-                            <input type="checkbox" name="" value="" />
+                            <input
+                                className="checkBox"
+                                type="checkbox"
+                                name=""
+                                value=""
+                            />
                             &nbsp;본인은 로봇이 아닙니다 (필수)
                         </div>
                     </div>
                 </div>
                 <div className="signUpBottom">
                     <button>회원가입</button>
-
-                    <a href="#">이미 이솝 계정을 가지고 계십니까?</a>
+                    <a className="checkUserAccount" href="#">
+                        이미 이솝 계정을 가지고 계십니까?
+                    </a>
                 </div>
             </div>
         </div>

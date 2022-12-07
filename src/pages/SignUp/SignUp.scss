@@ -22,6 +22,9 @@
     }
 }
 
+.signup {
+    @include flex(center, center);
+}
 .signUpContainer {
     width: 600px;
     padding: 42px;
@@ -62,7 +65,7 @@
 .checkBox {
     padding: 30px;
     .checkList {
-        input {
+        .checkBox {
             margin-bottom: 20px;
         }
     }
@@ -75,7 +78,7 @@
         width: 100%;
         height: 50px;
     }
-    a {
+    .checkUserAccount {
         display: block;
         padding-top: 20px;
         font-size: $fontSize14;
