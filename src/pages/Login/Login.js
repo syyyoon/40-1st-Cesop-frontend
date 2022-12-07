@@ -8,7 +8,7 @@ const Login = () => {
                 <div className="buttonWrapper">
                     <button className="closeButton"></button>
                 </div>
-                <h1>로그인</h1>
+                <h1 className="title">로그인</h1>
                 <div className="loginInput">
                     <input type="text" placeholder="이메일 주소" />
                     <span className="errorMessage"></span>
