@@ -19,6 +19,18 @@ const Login = ({ setModalOpen }) => {
         setUserPwd(e.target.value);
     };
 
+    const loginClick = () => {
+        fetch('http://10.58.52.128:8000/user/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json;charset=utf-8' },
+            body: JSON.stringify({ email: userId, password: userPwd }),
+        })
+            .then(response => response.json())
+            .then(result => {
+                console.log(result);
+            });
+    };
+
     return (
         <div className="login">
             <div className="loginContiner">
@@ -57,6 +69,7 @@ const Login = ({ setModalOpen }) => {
                 </div>
 
                 <button
+                    onClick={loginClick}
                     disabled={isValid ? false : true}
                     className="buttonLogin"
                     style={isValid ? { opacity: '1' } : { opacity: '0.6' }}
