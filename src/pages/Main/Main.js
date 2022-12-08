@@ -28,7 +28,9 @@ const Main = () => {
                                         </p>
                                     </div>
                                     <div className="contentBottom">
-                                        <a>기프트 가이드 보기</a>
+                                        <div className="bottomButton">
+                                            기프트 가이드 보기
+                                        </div>
                                     </div>
                                 </div>
                             </section>
@@ -43,7 +45,6 @@ const Main = () => {
                     </div>
                 </div>
                 {CARD_DATA_TOP.map(cards => {
-                    console.log(cards);
                     return (
                         <ContentCard
                             key={cards.id}
@@ -83,15 +84,40 @@ const Main = () => {
                 >
                     캐러셀 컴포넌트 추가 예정
                 </h1>
-                <h1
-                    style={{
-                        textAlign: 'center',
-                        padding: '5px',
-                        marginTop: '5px',
-                    }}
+                <div
+                    className="mainWrapper"
+                    style={{ backgroundColor: '#fffef2' }}
                 >
-                    사진 캐러셀 컴포넌트 추가 예정
-                </h1>
+                    <div className="storeContent">
+                        <div className="storeTitle">
+                            <section className="contentCard">
+                                <h1 className="title">스토어 로케이터</h1>
+                                <div className="content">
+                                    <div className="contentTop">
+                                        <p>
+                                            매장에서는 이솝 컨설턴트가 고객
+                                            여러분을 따뜻하게 맞이하고 기프트
+                                            구매를 위한 맞춤형 컨설팅을
+                                            제공해드립니다.
+                                        </p>
+                                    </div>
+                                    <div className="contentBottom">
+                                        <div className="bottomButton">
+                                            가까운 스토어 찾기
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div className="mainBanner">
+                        <img
+                            className="bannerImage"
+                            src="../../images/main1.png"
+                            alt="main1"
+                        />
+                    </div>
+                </div>
             </section>
         </div>
     );
