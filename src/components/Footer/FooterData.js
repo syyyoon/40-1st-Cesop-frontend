@@ -1,4 +1,4 @@
-export const FOOTER_DATA_TOP = [
+export const FOOTER_DATA_1 = [
     {
         id: 1,
         title: '주문 및 지원',
@@ -31,7 +31,7 @@ export const FOOTER_DATA_TOP = [
     },
 ];
 
-export const FOOTER_DATE_BOTTOM = [
+export const FOOTER_DATE_2 = [
     {
         id: 1,
         title: '소개',

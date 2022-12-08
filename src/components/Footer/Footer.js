@@ -1,5 +1,5 @@
 import React from 'react';
-import { FOOTER_DATA_TOP, FOOTER_DATE_BOTTOM } from './FooterData';
+import { FOOTER_DATA_1, FOOTER_DATE_2 } from './FooterData';
 import FooterSection from './FooterSection';
 import './Footer.scss';
 
@@ -17,7 +17,7 @@ const Footer = () => {
                             구독하세요.
                         </div>
                     </section>
-                    {FOOTER_DATA_TOP.map(data => (
+                    {FOOTER_DATA_1.map(data => (
                         <FooterSection
                             key={data.id}
                             title={data.title}
@@ -32,7 +32,7 @@ const Footer = () => {
                             비건 인증을 받은 브랜드입니다.
                         </div>
                     </section>
-                    {FOOTER_DATE_BOTTOM.map(data => (
+                    {FOOTER_DATE_2.map(data => (
                         <FooterSection
                             key={data.id}
                             title={data.title}
