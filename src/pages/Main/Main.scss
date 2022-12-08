@@ -1,85 +1,76 @@
 .main {
     min-height: 100vh;
-}
 
-.mainSection {
-    background-color: #f1e2cf;
+    .mainSection {
+        background-color: #f1e2cf;
 
-    .contentTitle {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        padding-top: 110px;
-        padding-bottom: 180px;
-    }
-
-    .mainWrapper {
-        display: flex;
-
-        .mainContent {
+        .mainWrapper {
             display: flex;
-            flex-basis: auto;
-            flex-direction: row;
-            width: 27%;
-            margin-right: auto;
-            margin-left: 17%;
 
-            .logoImage {
-                position: absolute;
-                left: 40px;
-                width: 120px;
-                height: 40px;
-                margin-top: 110px;
+            .mainContent {
+                display: flex;
+                flex-basis: auto;
+                flex-direction: row;
+                width: 27%;
+                margin-right: auto;
+                margin-left: 17%;
+
+                .logoImage {
+                    position: absolute;
+                    left: 40px;
+                    width: 120px;
+                    height: 38px;
+                    margin-top: 110px;
+                }
+            }
+
+            .mainBanner {
+                display: flex;
+                width: 50%;
+
+                .bannerImage {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
 
-        .mainBanner {
+        .contentTitle {
             display: flex;
-            width: 50%;
+            position: relative;
+            flex-direction: column;
+            padding-top: 110px;
+            padding-bottom: 180px;
 
-            .bannerImage {
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
+            .contentCard {
+                .title {
+                    margin-bottom: 15px;
+                    font-size: 30px;
+                    font-weight: 400;
+                    line-height: 1.33;
+                }
 
-    .wrapper {
-        display: flex;
-        padding-top: 180px;
-        background-color: #fffef2;
+                .contentTop {
+                    margin-bottom: 30px;
+                    font-size: 16px;
+                    line-height: 1.7;
+                }
 
-        .banner {
-            padding-right: 10%;
+                .contentBottom {
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid rgba(51, 51, 51, 0.2);
 
-            .leftImage {
-                width: 730px;
-                height: 100%;
-            }
-        }
-
-        .leftContent {
-            display: flex;
-            flex-basis: auto;
-            flex-direction: row;
-            width: 27%;
-            margin-right: auto;
-        }
-
-        .incenseContent {
-            display: flex;
-            flex-basis: auto;
-            flex-direction: row;
-            width: 27%;
-            margin-right: 11%;
-            margin-left: 8%;
-        }
-        .mainBanner {
-            width: 55%;
-
-            .bannerImage {
-                width: 100%;
-                height: 100%;
+                    a {
+                        display: flex;
+                        position: relative;
+                        align-items: center;
+                        min-width: 210px;
+                        max-width: 300px;
+                        height: 60px;
+                        padding: 19px 23px;
+                    }
+                }
             }
         }
     }
