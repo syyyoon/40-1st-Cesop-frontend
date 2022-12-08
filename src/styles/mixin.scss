@@ -3,3 +3,9 @@
     justify-content: $justify;
     align-items: $align;
 }
+
+@mixin absolute($top, $right) {
+    position: absolute;
+    top: $top;
+    right: $right;
+}

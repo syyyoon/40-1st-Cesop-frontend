@@ -3,19 +3,17 @@
 
 .signup {
     @include flex(center, center);
-    position: absolute;
+    @include absolute(10%, 30%);
     z-index: 1;
-    top: 10%;
-    right: 30%;
     width: 600px;
-    padding: 50px;
-    border: $borderGray;
+    padding: 45px;
+    border: 1px solid #ccc;
     background-color: #fffef2;
-    color: rgb(77, 76, 76);
+    color: #333;
     font-family: 'Suisse Regular', sans-serif;
     .signUpContainer {
-        .topSignUp {
-            @include flex(space-between, none);
+        .buttonWrapper {
+            @include flex(space-between, normal);
             width: 100%;
             margin-bottom: 30px;
 
@@ -33,63 +31,34 @@
             }
         }
         .signupTitle {
-            margin-bottom: 50px;
             .title {
                 margin-bottom: 20px;
                 font-weight: 400;
             }
         }
-    }
-}
-
-.wrappingTwoInput {
-    display: flex;
-    .inputLastName,
-    .inputFirstName {
-        margin-right: 10px;
-        border-bottom: $borderGray;
-        font-size: 24px;
-    }
-}
-.wrappingOneInput {
-    position: relative;
-    .userInfo {
-        width: 100%;
-        margin-top: 70px;
-        margin-bottom: 30px;
-        border-bottom: $borderGray;
-        font-size: 24px;
-    }
-    .splitPasswordHide {
-        position: absolute;
-        top: 77px;
-        right: 5px;
-        color: #666;
-        font-size: 16px;
-    }
-}
-
-.userCheckBox {
-    padding: 30px;
-    .checkList {
-        .checkBox {
-            margin-bottom: 20px;
-            cursor: pointer;
+        .userCheckBox {
+            padding-top: 40px;
+            padding-bottom: 30px;
+            .checkList {
+                .checkBox {
+                    margin-bottom: 20px;
+                    cursor: pointer;
+                }
+            }
         }
-    }
-}
-
-.signUpBottom {
-    button {
-        width: 100%;
-        height: 50px;
-        background-color: #333;
-        color: white;
-    }
-    .checkUserAccount {
-        display: block;
-        padding-top: 20px;
-        font-size: $fontSize14;
-        text-align: center;
+        .signUpWrapper {
+            .signUpButton {
+                width: 100%;
+                height: 50px;
+                background-color: #333;
+                color: white;
+            }
+            .checkUserAccount {
+                display: block;
+                padding-top: 20px;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
     }
 }

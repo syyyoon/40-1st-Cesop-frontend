@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SignUp.scss';
-import { SIGNUP_TWO_INPUT_LIST, SIGNUP_ONE_INPUT_LIST } from './SignupData';
+import Input from '../../components/Input';
 
 const SignUp = () => {
+    const [lastName, setLastName] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleLastName = e => {
+        setLastName(e.target.value);
+        console.log(e.target.value);
+    };
+    const handleFirstName = e => {
+        setFirstName(e.target.value);
+        console.log(e.target.value);
+    };
+    const handleEmail = e => {
+        setEmail(e.target.value);
+    };
+    const handlePwd = e => {
+        setPassword(e.target.value);
+    };
+
     return (
         <div className="signup">
             <div className="signUpContainer">
-                <div className="topSignUp">
+                <div className="buttonWrapper">
                     <button className="arrowLeft" />
                     <button className="closeButton" />
                 </div>
@@ -19,37 +39,28 @@ const SignUp = () => {
                     </span>
                 </div>
 
-                {SIGNUP_TWO_INPUT_LIST.map(list => {
-                    return (
-                        <div className={list.wrapper}>
-                            <input
-                                className={list.userInfo.input1_className}
-                                type={list.userInfo.type1}
-                                placeholder={list.userInfo.value1}
-                            />
-                            <input
-                                className={list.userInfo.input2_className}
-                                type={list.userInfo.type2}
-                                placeholder={list.userInfo.value2}
-                            />
-                        </div>
-                    );
-                })}
-
-                {SIGNUP_ONE_INPUT_LIST.map(list => {
-                    return (
-                        <div className={list.wrapper}>
-                            <input
-                                className={list.className}
-                                type={list.type}
-                                placeholder={list.value}
-                            />
-                            <button className="splitPasswordHide">
-                                {list.showButton}
-                            </button>
-                        </div>
-                    );
-                })}
+                <div style={{ display: 'flex' }}>
+                    <Input
+                        onChange={handleLastName}
+                        placeholder="성"
+                        type="textName"
+                    />
+                    <Input
+                        onChange={handleFirstName}
+                        placeholder="이름"
+                        type="textName"
+                    />
+                </div>
+                <Input
+                    onChange={handleEmail}
+                    placeholder="이메일 주소"
+                    type="text"
+                />
+                <Input
+                    onChange={handlePwd}
+                    placeholder="비밀번호"
+                    type="password"
+                />
 
                 <div className="userCheckBox">
                     <div className="checkList">
@@ -60,7 +71,6 @@ const SignUp = () => {
                                 name=""
                                 value=""
                             />
-                            <img src="" alt="" />
                             &nbsp;본인은 14세 이상입니다 (필수)
                         </div>
                         <div>
@@ -74,8 +84,8 @@ const SignUp = () => {
                         </div>
                     </div>
                 </div>
-                <div className="signUpBottom">
-                    <button>회원가입</button>
+                <div className="signUpWrapper">
+                    <button className="signUpButton">회원가입</button>
                     <a className="checkUserAccount" href="#">
                         이미 이솝 계정을 가지고 계십니까?
                     </a>
