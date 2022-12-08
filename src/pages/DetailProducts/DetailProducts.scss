@@ -1,86 +1,62 @@
-@import '/src/styles/mixin.scss';
-@import '/src/styles/variables.scss';
+@import '/src/styles/mixin';
+@import '/src/styles/variables';
 
 .detailProduct {
     margin-top: 150px;
-    padding-bottom: 120px;
-    padding-left: 0;
-    background-color: $bgColor;
+    background-color: #fffef2;
     .productDetailHeader {
         @include flex(end, center);
-        padding-top: 150px;
-        padding-right: 150px;
-        padding-bottom: 150px;
-        background-color: $bgColor;
-        color: $fontColor_DarkGray;
-        .productImage {
+        margin-right: 160px;
+        padding: 150px 0;
+        background-color: #fffef2;
+        color: #333;
+        .cesopLogo {
+            position: absolute;
+            top: 270px;
+            left: 40px;
+            width: 120px;
+            height: 40px;
+        }
+        .imageWrapper {
+            @include flex(normal, center);
+            flex-direction: column;
             width: 30%;
-            margin: 50px;
-            img {
+            margin-right: 100px;
+            text-align: center;
+            .productImage {
                 width: 100%;
-                height: 550px;
+                height: 560px;
+            }
+            .messageOfEcoFrendly {
+                display: block;
+                width: 80%;
+                margin-top: 20px;
+                color: #666;
+                font-size: 13px;
             }
         }
-    }
-}
-
-.productContent {
-    nav {
-        margin: 16px 0;
-    }
-    .productInfo {
-        h1 {
-            color: $fontColor_DarkGray;
-            font-weight: 400;
-        }
-        p {
-            padding-top: 50px;
-            padding-bottom: 50px;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #333;
-        }
-    }
-
-    .buttonAddToCart {
-        width: 100%;
-        height: 50px;
-        color: white;
-        background-color: #333;
-    }
-}
-
-.productDetailList {
-    border-bottom: $borderGray;
-}
-
-.packageMessageWrapper {
-    padding: 0 0 100px;
-    .packageMessage {
-        @include flex(center, center);
-        height: 130px;
-        .packageMessageLeft {
-            text-align: center;
-            align-items: center;
-            width: 50%;
-            margin: 77px 0;
-            padding: 0 20px;
-            color: $fontColor_lightGray;
-            font-size: $fontSize14;
-            p {
-                padding-top: 8px;
+        .productContent {
+            width: 30%;
+            .productCategory {
+                margin-bottom: 15px;
             }
-        }
-        .packageMessageRight {
-            text-align: center;
-            align-items: center;
-            padding: 0 20px;
-            margin: 77px 0;
-            width: 50%;
-            color: $fontColor_lightGray;
-            font-size: $fontSize14;
-            border-left: 1px solid rgba(51, 51, 51, 0.2);
-            p {
-                padding-top: 8px;
+            .productInfo {
+                .productName {
+                    color: #333;
+                    font-weight: 400;
+                }
+                .productDescription {
+                    margin-bottom: 10px;
+                    padding: 30px 0;
+                    border-bottom: 2px solid #333;
+                }
+            }
+
+            .buttonAddToCart {
+                width: 100%;
+                height: 60px;
+                background-color: #333;
+                color: white;
             }
         }
     }
@@ -88,41 +64,75 @@
 
 .howToUse {
     display: flex;
-    height: 900px;
-    .howToUseImage {
+    height: 750px;
+    .imageWrapper {
         width: 50%;
-        img {
+        .textureImage {
             width: 100%;
             height: 100%;
         }
     }
+
     .howToUseContent {
         width: 50%;
         padding: 150px;
         background-color: #f6f5e8;
-        color: $fontColor_DarkGray;
-        p {
-            font-size: $fontSize14;
+        color: #333;
+        .usageTitle {
+            font-size: 14px;
         }
-        h2 {
+        .usage {
             padding-top: 10px;
             padding-bottom: 25px;
             border-bottom: 2px solid #333;
+            font-size: 30px;
             font-weight: 300;
-            font-size: $fontSize30;
+        }
+    }
+}
+
+.messageToCustomer {
+    padding: 0 0 100px;
+    .message {
+        @include flex(center, center);
+        height: 130px;
+        .freeService {
+            align-items: center;
+            width: 50%;
+            margin: 77px 0;
+            padding: 0 20px;
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+            .serviceDescription {
+                padding-top: 8px;
+            }
+        }
+        .giftSample {
+            align-items: center;
+            width: 50%;
+            margin: 77px 0;
+            padding: 0 20px;
+            border-left: 1px solid #ccc;
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+            .giftDescription {
+                padding-top: 8px;
+            }
         }
     }
 }
 
 .productDetailList {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
     .productTerm {
         padding-bottom: 5px;
     }
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-size: $fontSize14;
-    p {
-        color: $fontColor_lightGray;
+    .text {
         margin-bottom: 10px;
+        color: #666;
     }
 }
