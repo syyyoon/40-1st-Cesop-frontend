@@ -1,0 +1,303 @@
+.payment {
+    .main {
+    }
+}
+.main {
+    padding-top: 220px;
+    background-color: #f6f5e8;
+}
+
+.mainLeftCenter {
+    background-color: #f6f5e8;
+}
+
+.mainLeft {
+}
+
+.logo {
+    position: fixed;
+    top: 220px;
+    left: 40px;
+}
+
+.cesopLogo {
+    width: 115px;
+    height: 37px;
+}
+
+.mainCenter {
+    width: 100%;
+}
+
+.customerInfo {
+    margin: 0 35% 0 140px;
+    padding-right: 70px;
+    padding-bottom: 150px;
+    padding-left: 70px;
+}
+
+.infoHeading {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+
+.customer {
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 30px 0 0;
+    color: #666;
+    font-family: 'Suisse Regular', sans-serif;
+}
+
+.customerName {
+    font-size: 1.7rem;
+}
+
+.customerEmail {
+    margin-top: 5px;
+    font-size: 1.7rem;
+}
+
+.shippingInfo {
+    margin: 0 35% 0 140px;
+    padding: 150px 70px 150px 70px;
+}
+
+.shippingText {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+
+.userInput {
+    margin: 0 0 30px;
+    padding: 30px 0 0;
+}
+
+.userName {
+    display: flex;
+    width: 100%;
+    margin-bottom: 35px;
+    padding-top: 35px;
+}
+
+.lastNameContent {
+    width: 100%;
+}
+
+.lastNameLabel {
+    position: relative;
+    width: 50%;
+}
+
+.lastName {
+    position: absolute;
+    // margin-left: -100px;
+    transform: translateY(-40px);
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.75;
+}
+
+.lastNameInput {
+    width: 100%;
+    height: 40px;
+    padding: 8px 0;
+    border-bottom: 1.5px solid #cfcec4;
+    font-size: 1.9rem;
+    line-height: 1;
+}
+
+.lastNameInput:focus {
+    border-bottom: 1.5px solid #666;
+}
+
+.firstNameContent {
+    width: 100%;
+    margin-left: 30px;
+}
+
+.firstNameLabel {
+    position: relative;
+    width: 50%;
+}
+
+.firstName {
+    position: absolute;
+    // margin-left: -100px;
+    transform: translateY(-40px);
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.75;
+}
+
+.firstNameInput {
+    width: 100%;
+    height: 40px;
+    padding: 8px 0;
+    border-bottom: 1.5px solid #cfcec4;
+    font-size: 1.9rem;
+    line-height: 1;
+}
+
+.firstNameInput:focus {
+    border-bottom: 1.5px solid #666;
+}
+
+.userCode {
+    display: flex;
+    width: 100%;
+    margin-bottom: 35px;
+    padding-top: 35px;
+}
+
+.national {
+    width: 40%;
+}
+
+.nationalLabel {
+    position: relative;
+}
+
+#selectNational {
+    padding-right: 200px;
+    border-bottom: 1.5px solid #cfcec4;
+    font-size: 1.9rem;
+    line-height: 1.75;
+    cursor: pointer;
+}
+
+option {
+    display: block;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.nationalCode {
+    // position: absolute;
+    // transform: translate(-285px, -40px);
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.75;
+}
+
+.number {
+    width: 60%;
+    margin-top: auto;
+}
+
+.numberLabel {
+    position: relative;
+}
+
+.phoneNumber {
+    position: absolute;
+    transform: translateY(-40px);
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.75;
+}
+
+.phoneNumberInput {
+    width: 100%;
+    height: 40px;
+    // padding: 8px 0;
+    border-bottom: 1.5px solid #cfcec4;
+    font-size: 1.9rem;
+    line-height: 1;
+}
+
+.phoneNumberInput:focus {
+    border-bottom: 1.5px solid #666;
+}
+
+.country {
+    width: 100%;
+    margin-bottom: 35px;
+    padding-top: 35px;
+}
+
+.countryLabel {
+    position: relative;
+}
+
+.countryName {
+    position: absolute;
+    transform: translateY(-40px);
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.75;
+}
+
+#selectcountry {
+    width: 100%;
+    padding-right: 200px;
+    border-bottom: 1.5px solid #cfcec4;
+    font-size: 1.9rem;
+    line-height: 1.75;
+    cursor: pointer;
+}
+
+.userAddress {
+    display: flex;
+    width: 100%;
+    margin-bottom: 35px;
+    padding-top: 35px;
+}
+
+.addressLabel {
+    position: relative;
+    width: 100%;
+}
+
+// .address {
+//     position: absolute;
+//     // margin-left: -100px;
+//     transform: translateY(-40px);
+//     color: #666;
+//     font-size: 1.2rem;
+//     line-height: 1.75;
+// }
+
+.addressInput {
+    width: 100%;
+    height: 40px;
+    // padding: 8px 0;
+    border-bottom: 1.5px solid #cfcec4;
+    font-size: 1.9rem;
+    line-height: 1;
+}
+
+.addressInput:focus {
+    border-bottom: 1.5px solid #666;
+}
+
+.userDetailAddress {
+    display: flex;
+    width: 100%;
+    margin-bottom: 35px;
+    padding-top: 35px;
+}
+
+.DetailAddressLabel {
+    position: relative;
+    width: 100%;
+}
+
+.detailAddressInput {
+    width: 100%;
+    height: 40px;
+    // padding: 8px 0;
+    border-bottom: 1.5px solid #cfcec4;
+    font-size: 1.9rem;
+    line-height: 1;
+}
+
+.detailAddressInput:focus {
+    border-bottom: 1.5px solid #666;
+}
