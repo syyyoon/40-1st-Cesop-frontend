@@ -6,7 +6,7 @@ import './Nav.scss';
 
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [listId, setListId] = useState();
+    const [listId, setListId] = useState(1);
 
     const openModal = () => {
         setIsOpen(true);

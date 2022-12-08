@@ -1,29 +1,22 @@
 import { React } from 'react';
 import { Link } from 'react-router-dom';
-import Bodyhand from './CategoryPage/Bodyhand';
-import Skincare from './CategoryPage/Skincare';
-import Hair from './CategoryPage/Hair';
-import { MODAL_LIST } from './CategoryList';
+import { BODY_AND_HAND, CATEGORY_LIST, HAIR, SKIN_CARE } from './CategoryList';
+import Category from './CategoryPage/Category';
 import './NavModal.scss';
 
 const Modal = ({ closeModal, listCheck, listId }) => {
-    const listCategory = () => {
-        if (listId === 1) {
-            return <Skincare listId={listId} />;
-        } else if (listId === 2) {
-            return <Bodyhand />;
-        } else if (listId === 3) {
-            return <Hair />;
-        } else {
-            return <>s</>;
-        }
+    const MENU = {
+        1: SKIN_CARE,
+        2: BODY_AND_HAND,
+        3: HAIR,
     };
+
     return (
         <div className="modal">
             <div className="modalWrapper">
                 <div className="modalCategory">
                     <ul>
-                        {MODAL_LIST.map(list => {
+                        {CATEGORY_LIST.map(list => {
                             return (
                                 <li
                                     key={list.id}
@@ -52,7 +45,13 @@ const Modal = ({ closeModal, listCheck, listId }) => {
                     </ul>
                 </div>
             </div>
-            <div className="modalBody">{listCategory()}</div>
+            <div className="modalBody">
+                {MENU[listId] ? (
+                    <Category list={MENU[listId]} key={listId} />
+                ) : (
+                    <></>
+                )}
+            </div>
         </div>
     );
 };

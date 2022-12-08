@@ -1,0 +1,61 @@
+.categoryBody {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    .bodyWrapper {
+        display: flex;
+        height: 100%;
+        font-size: 14px;
+
+        .logoImage {
+            position: absolute;
+            left: 50px;
+            width: 130px;
+            height: 40px;
+            margin-top: 80px;
+        }
+
+        .rightImage {
+            position: absolute;
+            right: 0;
+            width: 575px;
+
+            .skinImage {
+                width: 100%;
+            }
+        }
+
+        .categoryWrapper {
+            margin-top: 90px;
+            margin-bottom: 40px;
+            margin-left: 20%;
+            line-height: 1.7;
+            ul {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .categoryList {
+                .categoryTitle {
+                    margin-bottom: 12px;
+                }
+                .category {
+                    font-size: 14px;
+
+                    &:not(:last-child) {
+                        margin-bottom: 12px;
+                    }
+                }
+
+                &:not(:first-child) {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
