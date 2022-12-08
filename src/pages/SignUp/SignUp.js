@@ -7,8 +7,8 @@ const SignUp = () => {
         <div className="signup">
             <div className="signUpContainer">
                 <div className="topSignUp">
-                    <button className="arrowLeft"></button>
-                    <button className="closeButton"></button>
+                    <button className="arrowLeft" />
+                    <button className="closeButton" />
                 </div>
 
                 <div className="signupTitle">
