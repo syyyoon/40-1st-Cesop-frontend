@@ -1,3 +1,5 @@
+@import '../../styles/mixin';
+
 .main {
     min-height: 100vh;
 
@@ -8,9 +10,8 @@
             display: flex;
 
             .mainContent {
-                display: flex;
+                @include flex(row, null, null);
                 flex-basis: auto;
-                flex-direction: row;
                 width: 27%;
                 margin-right: auto;
                 margin-left: 17%;
@@ -36,9 +37,8 @@
         }
 
         .contentTitle {
-            display: flex;
+            @include flex(column, null, null);
             position: relative;
-            flex-direction: column;
             padding-top: 110px;
             padding-bottom: 180px;
 
@@ -50,21 +50,19 @@
                     line-height: 1.33;
                 }
 
-                .contentTop {
+                .contentText {
                     margin-bottom: 30px;
                     font-size: 16px;
                     line-height: 1.7;
                 }
 
-                .contentBottom {
-                    display: flex;
-                    align-items: center;
+                .contentButton {
+                    @include flex(null, center, null);
                     border: 1px solid rgba(51, 51, 51, 0.2);
 
-                    .bottomButton {
-                        display: flex;
+                    .contentMore {
+                        @include flex(null, center, null);
                         position: relative;
-                        align-items: center;
                         min-width: 210px;
                         max-width: 300px;
                         height: 60px;
@@ -80,17 +78,15 @@
         }
 
         .storeContent {
-            display: flex;
+            @include flex(row, null, null);
             flex-basis: auto;
-            flex-direction: row;
             width: 27%;
             margin-right: auto;
             margin-left: 10%;
 
             .storeTitle {
-                display: flex;
+                @include flex(column, null, null);
                 position: relative;
-                flex-direction: column;
                 padding-top: 110px;
                 padding-bottom: 180px;
 
@@ -102,21 +98,19 @@
                         line-height: 1.33;
                     }
 
-                    .contentTop {
+                    .contentText {
                         margin-bottom: 30px;
                         font-size: 16px;
                         line-height: 1.7;
                     }
 
-                    .contentBottom {
-                        display: flex;
-                        align-items: center;
+                    .contentButton {
+                        @include flex(null, center, null);
                         border: 1px solid rgba(51, 51, 51, 0.2);
 
-                        .bottomButton {
-                            display: flex;
+                        .contentMore {
+                            @include flex(null, center, null);
                             position: relative;
-                            align-items: center;
                             min-width: 210px;
                             max-width: 300px;
                             height: 60px;

@@ -3,7 +3,7 @@ import incenseImage from '../../assets/images/main3.png';
 import perfumeImage from '../../assets/images/main4.png';
 import serviceImage from '../../assets/images/main5.jpg';
 
-export const CARD_DATA_TOP = [
+export const CARD_DATA = [
     {
         id: 1,
         img: image,
@@ -36,7 +36,7 @@ export const CARD_DATA_TOP = [
     },
 ];
 
-export const CARD_DATA_BOTTOM = [
+export const CARD_DATA_SERVICE = [
     {
         id: 1,
         img: serviceImage,

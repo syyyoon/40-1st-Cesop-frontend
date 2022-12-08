@@ -1,7 +1,8 @@
 import React from 'react';
 import ContentCard from './ContentCard';
+import { CARD_DATA, CARD_DATA_SERVICE } from './CardData';
 import './Main.scss';
-import { CARD_DATA_BOTTOM, CARD_DATA_TOP } from './CardData';
+import '../../styles/mixin.scss';
 
 const Main = () => {
     return (
@@ -20,15 +21,15 @@ const Main = () => {
                                     선물을 받는 모든 분들을 위해
                                 </h1>
                                 <div className="content">
-                                    <div className="contentTop">
+                                    <div className="contentText">
                                         <p>
                                             엄선된 다양한 기프트 중, 받으시는
                                             분의 유형과 성향에 어울리는 선물을
                                             찾아보세요.
                                         </p>
                                     </div>
-                                    <div className="contentBottom">
-                                        <div className="bottomButton">
+                                    <div className="contentButton">
+                                        <div className="contentMore">
                                             기프트 가이드 보기
                                         </div>
                                     </div>
@@ -44,7 +45,7 @@ const Main = () => {
                         />
                     </div>
                 </div>
-                {CARD_DATA_TOP.map(cards => {
+                {CARD_DATA.map(cards => {
                     return (
                         <ContentCard
                             key={cards.id}
@@ -54,17 +55,8 @@ const Main = () => {
                         />
                     );
                 })}
-
-                <h1
-                    style={{
-                        textAlign: 'center',
-                        padding: '5px',
-                        marginTop: '5px',
-                    }}
-                >
-                    캐러셀 컴포넌트 추가 예정
-                </h1>
-                {CARD_DATA_BOTTOM.map(cards => {
+                {/* TODO : 캐러셀 컴포넌트 추가 예정 */}
+                {CARD_DATA_SERVICE.map(cards => {
                     return (
                         <ContentCard
                             key={cards.id}
@@ -74,16 +66,7 @@ const Main = () => {
                         />
                     );
                 })}
-
-                <h1
-                    style={{
-                        textAlign: 'center',
-                        padding: '5px',
-                        marginTop: '5px',
-                    }}
-                >
-                    캐러셀 컴포넌트 추가 예정
-                </h1>
+                {/* TODO:캐러셀 컴포넌트 추가 예정 */}
                 <div
                     className="mainWrapper"
                     style={{ backgroundColor: '#fffef2' }}
@@ -93,7 +76,7 @@ const Main = () => {
                             <section className="contentCard">
                                 <h1 className="title">스토어 로케이터</h1>
                                 <div className="content">
-                                    <div className="contentTop">
+                                    <div className="contentText">
                                         <p>
                                             매장에서는 이솝 컨설턴트가 고객
                                             여러분을 따뜻하게 맞이하고 기프트
@@ -101,8 +84,8 @@ const Main = () => {
                                             제공해드립니다.
                                         </p>
                                     </div>
-                                    <div className="contentBottom">
-                                        <div className="bottomButton">
+                                    <div className="contentButton">
+                                        <div className="contentMore">
                                             가까운 스토어 찾기
                                         </div>
                                     </div>

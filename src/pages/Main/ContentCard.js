@@ -1,5 +1,6 @@
 import React from 'react';
 import './ContentCard.scss';
+import '../../styles/mixin.scss';
 
 const ContentCard = props => {
     const { img, title, contents } = props;
@@ -8,15 +9,15 @@ const ContentCard = props => {
             <div className="banner">
                 <img className="leftImage" src={img} alt="cardImg" />
             </div>
-            <div className="leftContent">
+            <div className="contentWrapper">
                 <div className="contentTitle">
                     <section className="contentCard">
                         <h1 className="title">{title}</h1>
                         <div className="content">
-                            <div className="contentTop">
+                            <div className="contentText">
                                 <p>{contents.text}</p>
                             </div>
-                            <div className="contentBottom">
+                            <div className="contentButton">
                                 <a className="contentMore">{contents.more}</a>
                             </div>
                         </div>
