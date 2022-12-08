@@ -3,8 +3,8 @@ import './FilterButton.scss';
 
 function FilterButton() {
     return (
-        <div className="categoryFilter">
-            <button className="filterButton">
+        <div className="filterButton">
+            <button className="buttonLayout">
                 <div className="buttonContent">
                     <span>필터</span>
                     <img

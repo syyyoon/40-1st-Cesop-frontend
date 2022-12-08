@@ -1,12 +1,12 @@
 @import '/src/styles/mixin';
 @import '/src/styles/variables';
 
-.categoryFilter {
+.filterButton {
     @include flex(flex-end, center);
     height: 100%;
     padding: 0 34px;
 
-    .filterButton {
+    .buttonLayout {
         height: 60px;
         padding: 21px 23px;
         border: 1px solid rgba(51, 51, 51, 0.2);

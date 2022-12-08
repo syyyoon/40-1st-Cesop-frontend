@@ -1,0 +1,41 @@
+@import '/src/styles/mixin';
+@import '/src/styles/variables';
+
+.allProducts {
+    .categoryTitleHolder {
+        padding-right: 20px;
+        padding-left: 40px;
+
+        .categoryTitle {
+            margin-top: 120px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .categoryBar {
+        @include flex(space-between, flex-start);
+        height: 110px;
+        background-color: #ebeade;
+
+        .categoryList {
+            @include flex(flex-start, center);
+            padding-top: 45px;
+
+            .categoryTitles {
+                height: 30px;
+                padding-right: 1.5rem;
+                padding-left: 40px;
+            }
+        }
+    }
+
+    .carouselSection {
+        section:nth-child(odd) {
+            background-color: rgb(246, 245, 232);
+        }
+
+        section:nth-child(even) {
+            background-color: rgb(235, 234, 222);
+        }
+    }
+}

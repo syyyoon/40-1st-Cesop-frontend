@@ -1,19 +1,19 @@
 @import '/src/styles/mixin';
 @import '/src/styles/variables';
 
-.carouselSection {
+.carousel {
     position: relative;
     padding: 50px 0;
     color: #333;
 
     .showBox {
         display: flex;
-        width: 100%;
-        margin: 40px 0 30px 80px;
+
         overflow: hidden;
 
         .carouselBox {
             display: flex;
+            margin: 40px 0 30px 80px;
 
             &::-webkit-scrollbar {
                 display: none;
@@ -21,6 +21,7 @@
 
             .descriptionOfList {
                 flex: 1 1 0;
+
                 .productCategory {
                     margin-bottom: 20px;
                 }
@@ -36,12 +37,13 @@
             }
             .productCell {
                 flex: 1 1 0;
-                @include flex(center, center);
-                flex-direction: column;
-                width: 400px;
+                @include flex(center, center, column);
+                width: calc(100vw / 4);
+                height: 432px;
 
                 .allProductImage {
-                    height: 326px;
+                    width: auto;
+                    height: 80%;
                 }
 
                 .productName {
@@ -53,17 +55,16 @@
             }
         }
     }
-    .totalUnderBar {
+    .totalIndicator {
         display: flex;
         position: relative;
         height: 1px;
         margin: 0 80px 40px 80px;
         background-color: rgba(0, 0, 0, 0.2);
 
-        .selectedUnderBar {
+        .selectedIndicator {
             position: absolute;
             top: -50%;
-            width: 10%;
             height: 2px;
             background-color: rgba(0, 0, 0, 0.6);
         }

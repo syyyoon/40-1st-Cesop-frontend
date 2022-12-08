@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './pages/Cart/Cart';
-import DetailList from './pages/DetailList/DetailList';
-import SeeAll from './pages/DetailList/SeeAll';
+import ProductList from './pages/DetailList/ProductList/ProductList';
+import AllProducts from './pages/DetailList/AllProducts/AllProducts';
 import DetailProducts from './pages/DetailProducts/DetailProducts';
 import Login from './pages/Login/Login';
 import Main from './pages/Main/Main';
@@ -16,8 +16,8 @@ function Router() {
                 <Route path="/" element={<Main />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
-                <Route path="/detail-list" element={<DetailList />} />
-                <Route path="/see-all" element={<SeeAll />} />
+                <Route path="/product-list" element={<ProductList />} />
+                <Route path="/all-products" element={<AllProducts />} />
                 <Route path="/detail-products" element={<DetailProducts />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/payment" element={<Payment />} />
