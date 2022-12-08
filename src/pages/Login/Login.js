@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Login.scss';
+import Input from '../../components/Input';
 
 const Login = ({ setModalOpen }) => {
     const closeModal = () => {
@@ -33,41 +34,25 @@ const Login = ({ setModalOpen }) => {
 
     return (
         <div className="login">
-            <div className="loginContiner">
+            <div className="loginContainer">
                 <div className="buttonWrapper">
-                    <button
-                        className="closeButton"
-                        onClick={closeModal}
-                    ></button>
+                    <button className="closeButton" onClick={closeModal} />
                 </div>
                 <h1 className="title">로그인</h1>
-                <div className="loginInput">
-                    <input
-                        className="userIdInput"
-                        value={userId}
-                        onChange={saveUserId}
-                        type="text"
-                        placeholder="이메일 주소"
-                    />
-                    <span className="errorMessage"></span>
-                </div>
-                <div className="passwordInput">
-                    <input
-                        className="userPwdInput"
-                        value={userPwd}
-                        onChange={saveUserPwd}
-                        type="text"
-                        placeholder="비밀번호"
-                    />
-                    <button className="buttonSeeHiddenPassword">보기</button>
-                    <span className="errorMessage"></span>
-                </div>
-                <div className="buttonWrapper">
-                    <button className="buttonResetPassword">
-                        비밀번호 재설정하기
-                    </button>
-                </div>
+                <Input
+                    value={userId}
+                    onChange={saveUserId}
+                    placeholder="이메일 주소"
+                    type="text"
+                />
+                <Input
+                    value={userPwd}
+                    onChange={saveUserPwd}
+                    placeholder="비밀번호"
+                    type="password"
+                />
 
+                <div className="buttonWrapper"></div>
                 <button
                     onClick={loginClick}
                     disabled={isValid ? false : true}

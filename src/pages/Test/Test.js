@@ -15,7 +15,7 @@ const Test = () => {
             <button className="buttonLogin" onClick={showModal}>
                 로그인
             </button>
-            {modalOpen && <Login setModalOpen={setModalOpen} />}
+            {modalOpen ? <Login setModalOpen={setModalOpen} /> : null}
         </div>
     );
 };
