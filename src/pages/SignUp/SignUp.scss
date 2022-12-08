@@ -1,82 +1,90 @@
-@import '/src/styles/variables.scss';
-@import '/src/styles/mixin.scss';
-
-.topSignUp {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 30px;
-    background-repeat: no-repeat;
-
-    .arrowLeft {
-        width: 20px;
-        height: 20px;
-        background: url('../../assets/images/arrow_left.png') no-repeat;
-        background-size: cover;
-    }
-    .closeButton {
-        width: 20px;
-        height: 20px;
-        background: url('../../assets/images/close.png') no-repeat;
-        background-size: cover;
-    }
-}
+@import '/src/styles/variables';
+@import '/src/styles/mixin';
 
 .signup {
     @include flex(center, center);
-}
-.signUpContainer {
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    right: 30%;
     width: 600px;
-    padding: 42px;
-    color: rgb(77, 76, 76);
-    background-color: #fffef2;
+    padding: 50px;
     border: $borderGray;
+    background-color: #fffef2;
+    color: rgb(77, 76, 76);
     font-family: 'Suisse Regular', sans-serif;
-    font-weight: 350;
-
-    .signupTitle {
-        margin-bottom: 50px;
-        .title {
-            margin-bottom: 20px;
-            font-weight: 350;
-        }
-    }
-
-    .wrappingInputName {
-        display: flex;
-        input {
-            margin-right: 10px;
-            border-bottom: $borderGray;
-            font-size: $fontSize24;
-        }
-    }
-
-    .wrappingInput {
-        input {
+    .signUpContainer {
+        .topSignUp {
+            @include flex(space-between, none);
             width: 100%;
-            margin-top: 70px;
             margin-bottom: 30px;
-            border-bottom: $borderGray;
-            font-size: 24px;
+
+            .arrowLeft {
+                width: 20px;
+                height: 20px;
+                background: url('../../assets/images/arrow_left.png') no-repeat;
+                background-size: cover;
+            }
+            .closeButton {
+                width: 20px;
+                height: 20px;
+                background: url('../../assets/images/close.png') no-repeat;
+                background-size: cover;
+            }
+        }
+        .signupTitle {
+            margin-bottom: 50px;
+            .title {
+                margin-bottom: 20px;
+                font-weight: 400;
+            }
         }
     }
 }
 
-.checkBox {
+.wrappingTwoInput {
+    display: flex;
+    .inputLastName,
+    .inputFirstName {
+        margin-right: 10px;
+        border-bottom: $borderGray;
+        font-size: 24px;
+    }
+}
+.wrappingOneInput {
+    position: relative;
+    .userInfo {
+        width: 100%;
+        margin-top: 70px;
+        margin-bottom: 30px;
+        border-bottom: $borderGray;
+        font-size: 24px;
+    }
+    .splitPasswordHide {
+        position: absolute;
+        top: 77px;
+        right: 5px;
+        color: #666;
+        font-size: 16px;
+    }
+}
+
+.userCheckBox {
     padding: 30px;
     .checkList {
         .checkBox {
             margin-bottom: 20px;
+            cursor: pointer;
         }
     }
 }
 
 .signUpBottom {
     button {
-        background-color: #333333;
-        color: white;
         width: 100%;
         height: 50px;
+        background-color: #333;
+        color: white;
     }
     .checkUserAccount {
         display: block;
