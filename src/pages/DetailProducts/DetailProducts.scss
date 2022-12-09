@@ -27,7 +27,7 @@
                 width: 100%;
                 height: 560px;
             }
-            .messageOfEcoFrendly {
+            .messageOfEcoFreindly {
                 display: block;
                 width: 80%;
                 margin-top: 20px;
@@ -51,7 +51,16 @@
                     border-bottom: 2px solid #333;
                 }
             }
-
+            .productDetailBody {
+                .productDetailList {
+                    padding: 10px 0;
+                    border-bottom: 1px solid #ccc;
+                    font-size: 14px;
+                    .productTerm {
+                        padding-bottom: 5px;
+                    }
+                }
+            }
             .buttonAddToCart {
                 width: 100%;
                 height: 60px;
@@ -60,79 +69,72 @@
             }
         }
     }
-}
-
-.howToUse {
-    display: flex;
-    height: 750px;
-    .imageWrapper {
-        width: 50%;
-        .textureImage {
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    .howToUseContent {
-        width: 50%;
-        padding: 150px;
-        background-color: #f6f5e8;
-        color: #333;
-        .usageTitle {
-            font-size: 14px;
-        }
-        .usage {
-            padding-top: 10px;
-            padding-bottom: 25px;
-            border-bottom: 2px solid #333;
-            font-size: 30px;
-            font-weight: 300;
-        }
-    }
-}
-
-.messageToCustomer {
-    padding: 0 0 100px;
-    .message {
-        @include flex(center, center);
-        height: 130px;
-        .freeService {
-            align-items: center;
-            width: 50%;
-            margin: 77px 0;
-            padding: 0 20px;
-            color: #666;
-            font-size: 14px;
-            text-align: center;
-            .serviceDescription {
-                padding-top: 8px;
+    .messageToCustomer {
+        padding: 0 0 100px;
+        .message {
+            @include flex(center, center);
+            height: 130px;
+            .freeService {
+                align-items: center;
+                width: 50%;
+                margin: 77px 0;
+                padding: 0 20px;
+                color: #666;
+                font-size: 14px;
+                text-align: center;
+                .serviceDescription {
+                    padding-top: 8px;
+                }
             }
-        }
-        .giftSample {
-            align-items: center;
-            width: 50%;
-            margin: 77px 0;
-            padding: 0 20px;
-            border-left: 1px solid #ccc;
-            color: #666;
-            font-size: 14px;
-            text-align: center;
-            .giftDescription {
-                padding-top: 8px;
+            .giftSample {
+                align-items: center;
+                width: 50%;
+                margin: 77px 0;
+                padding: 0 20px;
+                border-left: 1px solid #ccc;
+                color: #666;
+                font-size: 14px;
+                text-align: center;
+                .giftDescription {
+                    padding-top: 8px;
+                }
             }
         }
     }
-}
+    .howToUse {
+        display: flex;
+        height: 750px;
+        .imageWrapper {
+            width: 50%;
+            .textureImage {
+                width: 100%;
+                height: 100%;
+            }
+        }
 
-.productDetailList {
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
-    font-size: 14px;
-    .productTerm {
-        padding-bottom: 5px;
-    }
-    .text {
-        margin-bottom: 10px;
-        color: #666;
+        .howToUseContent {
+            width: 50%;
+            padding: 150px;
+            background-color: #f6f5e8;
+            color: #333;
+            .usageTitle {
+                font-size: 14px;
+            }
+            .usage {
+                padding-top: 10px;
+                padding-bottom: 25px;
+                border-bottom: 2px solid #333;
+                font-size: 30px;
+                font-weight: 300;
+            }
+            .productDetailList {
+                padding: 10px 0;
+                border-bottom: 1px solid #ccc;
+                font-size: 14px;
+                .productTerm {
+                    padding-bottom: 5px;
+                }
+            }
+        }
     }
 }

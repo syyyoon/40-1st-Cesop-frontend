@@ -1,4 +1,5 @@
 import React from 'react';
+import Description from '../../components/Description';
 import './DetailProducts.scss';
 
 const DetailProducts = () => {
@@ -16,7 +17,7 @@ const DetailProducts = () => {
                         src="./images/product_image2.jpg"
                         alt="product_image"
                     />
-                    <span className="messageOfEcoFrendly">
+                    <span className="messageOfEcoFreindly">
                         펌프를 장착하지 않은 리필용 제품으로 구매하시면 플라스틱
                         사용을 12g 줄여 환경 영향을 최소화합니다.
                     </span>
@@ -33,6 +34,19 @@ const DetailProducts = () => {
                         </p>
                     </div>
                     <div className="productDetailBody">
+                        <Description
+                            term="사용감"
+                            description="부드러운,유분기없는"
+                        />
+                        <Description
+                            term="향"
+                            description="우드, 흙내음, 스모키"
+                        />
+                        <Description
+                            term="주요 성분"
+                            description="베르가모트오일, 베티버뿌리오일, 비터오렌지잎/잔가지오일"
+                        />
+                        {/* 
                         <div className="productDetailList">
                             <div className="productTerm">
                                 <strong>사용감</strong>
@@ -67,7 +81,7 @@ const DetailProducts = () => {
                             <div className="productDescription">
                                 <p>75 mL</p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <button className="buttonAddToCart">
                         카트에 추가하기 - ₩31,000원
@@ -108,7 +122,10 @@ const DetailProducts = () => {
                     <h2 className="usage">
                         필요할 때마다 깨끗한 손에 바릅니다.
                     </h2>
-                    <div className="productDetailList">
+                    <Description term="사용량" description="반 티스푼" />
+                    <Description term="텍스처" description="크림 제형" />
+
+                    {/* <div className="productDetailList">
                         <div className="productTerm">
                             <strong>사용량</strong>
                         </div>
@@ -123,7 +140,7 @@ const DetailProducts = () => {
                         <div className="productDescription">
                             <p className="text">크림 제형</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </div>
