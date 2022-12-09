@@ -1,6 +1,16 @@
-export const FOOTER_DATA_1 = [
+export const FOOTER_DATA = [
     {
         id: 1,
+        title: '이솝 커뮤니케이션',
+        content: [
+            {
+                id: 1,
+                text: '제품, 서비스, 스토어, 이벤트, 문화적 관심사 등 다양한 소식을 받아보실 수 있도록 이솝 이메일을 구독하세요.',
+            },
+        ],
+    },
+    {
+        id: 2,
         title: '주문 및 지원',
         content: [
             { id: 1, text: '문의하기' },
@@ -10,7 +20,7 @@ export const FOOTER_DATA_1 = [
         ],
     },
     {
-        id: 2,
+        id: 3,
         title: '서비스',
         content: [
             { id: 1, text: '기업체 구매' },
@@ -19,7 +29,7 @@ export const FOOTER_DATA_1 = [
         ],
     },
     {
-        id: 3,
+        id: 4,
         title: '위치 기본 설정',
         content: [
             { id: 1, text: '배송:' },
@@ -29,11 +39,18 @@ export const FOOTER_DATA_1 = [
             { id: 5, text: '한국어' },
         ],
     },
-];
-
-export const FOOTER_DATE_2 = [
     {
-        id: 1,
+        id: 5,
+        title: '지속 가능성',
+        content: [
+            {
+                id: 1,
+                text: '이솝은 비콥 인증을 획득한 브랜드이며, PETA로부터 비건 인증을 받은 브랜드입니다.',
+            },
+        ],
+    },
+    {
+        id: 6,
         title: '소개',
         content: [
             { id: 1, text: 'Cesop' },
@@ -46,8 +63,18 @@ export const FOOTER_DATE_2 = [
         ],
     },
     {
-        id: 2,
+        id: 7,
         title: '소셜',
         content: [{ id: 1, text: 'GIT' }],
+    },
+    {
+        id: 8,
+        title: '주의',
+        content: [
+            {
+                id: 1,
+                text: '상호 : 씨솝코리아 | 주소 : 서울시 강남구 테헤란로 427 위워크 타워(위워크 선릉 2호점) | 대표자 : Cesop',
+            },
+        ],
     },
 ];

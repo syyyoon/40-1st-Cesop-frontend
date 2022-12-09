@@ -1,3 +1,5 @@
+@import '../../styles/mixin';
+
 .footer {
     position: relative;
     background-color: #252525;
@@ -7,7 +9,7 @@
         display: grid;
         grid-column-gap: 40px;
         grid-row-gap: 40px;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: 40% 1fr 1fr 1fr;
         grid-template-rows: auto 1fr;
         padding: 50px 40px;
         border-bottom: 3px solid #d6d5cb;
@@ -45,8 +47,7 @@
     }
 
     .footerBanner {
-        display: flex;
-        align-items: center;
+        @include flex(null, center, null);
         height: 72px;
         padding-right: 40px;
         padding-left: 40px;
