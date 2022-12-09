@@ -60,6 +60,52 @@
                 }
             }
         }
+
+        .carousleMove {
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            background-color: #333;
+            color: white;
+
+            .arrowInButton {
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+
+        .movePrev {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            animation: prevAnimation 0.5s;
+
+            @keyframes prevAnimation {
+                from {
+                    transform: translate(-100%, -50%);
+                }
+                to {
+                    transform: translate(0, -50%);
+                }
+            }
+        }
+
+        .moveNext {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translate(-100%, -50%);
+            animation: nextAnimation 0.5s;
+
+            @keyframes nextAnimation {
+                from {
+                    transform: translate(0, -50%);
+                }
+                to {
+                    transform: translate(-100%, -50%);
+                }
+            }
+        }
     }
     .totalIndicator {
         display: flex;
@@ -74,25 +120,5 @@
             height: 2px;
             background-color: rgba(0, 0, 0, 0.6);
         }
-    }
-
-    .carousleMove {
-        width: 80px;
-        height: 80px;
-        background-color: black;
-        color: white;
-    }
-
-    .moveLeft {
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%);
-    }
-
-    .moveRight {
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        transform: translate(-100%, -50%);
     }
 }

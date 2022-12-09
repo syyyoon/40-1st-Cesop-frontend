@@ -18,8 +18,8 @@ const AllProducts = () => {
                     </li>
                     {PRODUCT_LIST.map(list => {
                         return (
-                            <li className="categoryName" key={list.id}>
-                                <button>
+                            <li key={list.id}>
+                                <button className="categoryName">
                                     <span>{list.mainCategory}</span>
                                 </button>
                             </li>
@@ -28,16 +28,19 @@ const AllProducts = () => {
                 </ul>
             </div>
 
-            {PRODUCT_LIST.map(({ id, mainCategory, content, productList }) => {
-                return (
-                    <Carousel
-                        key={id}
-                        mainCategory={mainCategory}
-                        content={content}
-                        productList={productList}
-                    />
-                );
-            })}
+            {PRODUCT_LIST.map(
+                ({ id, mainCategory, content, productList, image }) => {
+                    return (
+                        <Carousel
+                            key={id}
+                            mainCategory={mainCategory}
+                            content={content}
+                            productList={productList}
+                            image={image}
+                        />
+                    );
+                }
+            )}
         </section>
     );
 };

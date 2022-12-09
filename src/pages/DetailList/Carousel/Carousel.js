@@ -3,10 +3,11 @@ import './Carousel.scss';
 
 function Carousel({ mainCategory, content, productList }) {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [showButton, setShowButton] = useState({ display: 'none' });
     const productRef = useRef(null);
     const scrollRef = useRef(null);
 
-    const productNumInFirstView = 3;
+    const productNumInFirstView = 2;
     const numberOfDescription = 1;
 
     const prevSlide = () => {
@@ -25,6 +26,22 @@ function Carousel({ mainCategory, content, productList }) {
         }
     };
 
+    const onMouseEventHandler = () => {
+        productList.length > productNumInFirstView
+            ? setShowButton({ display: 'block' })
+            : setShowButton({ display: 'none' });
+    };
+    const leaveMouseEventHandler = () => {
+        setShowButton({ display: 'none' });
+    };
+
+    const stopShowAtFirst =
+        currentSlide !== 0 ? showButton : { display: 'none' };
+    const stopShowAtLast =
+        currentSlide !== productList.length - productNumInFirstView
+            ? showButton
+            : { display: 'none' };
+
     useEffect(() => {
         productRef.current.style.transition = 'all 0.5s ease-in-out';
         productRef.current.style.transform = `translateX(-${
@@ -41,7 +58,11 @@ function Carousel({ mainCategory, content, productList }) {
 
     return (
         <section className="carousel">
-            <div className="showBox">
+            <div
+                className="showBox"
+                onMouseEnter={onMouseEventHandler}
+                onMouseLeave={leaveMouseEventHandler}
+            >
                 <div className="carouselBox" ref={productRef}>
                     <div className="descriptionOfList">
                         <div>
@@ -59,7 +80,7 @@ function Carousel({ mainCategory, content, productList }) {
                                 <img
                                     className="allProductImage"
                                     alt="product"
-                                    src="/images/DetailList/product1.png"
+                                    src={product.image}
                                 />
                                 <h5 className="productName">{product.name}</h5>
                                 <span className="productInfo">
@@ -74,6 +95,20 @@ function Carousel({ mainCategory, content, productList }) {
                         );
                     })}
                 </div>
+                <button
+                    className="carousleMove movePrev"
+                    onClick={prevSlide}
+                    style={stopShowAtFirst}
+                >
+                    <span className="arrowInButton">〈</span>
+                </button>
+                <button
+                    className="carousleMove moveNext"
+                    onClick={nextSlide}
+                    style={stopShowAtLast}
+                >
+                    <span className="arrowInButton">〉</span>
+                </button>
             </div>
             {productList.length >= 3 ? (
                 <div className="totalIndicator">
@@ -82,13 +117,6 @@ function Carousel({ mainCategory, content, productList }) {
             ) : (
                 <div ref={scrollRef} />
             )}
-
-            <button className="carousleMove moveLeft" onClick={prevSlide}>
-                〈
-            </button>
-            <button className="carousleMove moveRight" onClick={nextSlide}>
-                〉
-            </button>
         </section>
     );
 }
