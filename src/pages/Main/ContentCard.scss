@@ -1,6 +1,6 @@
 @import '../../styles/mixin';
 
-.wrapper {
+.contentCard {
     display: flex;
     padding-top: 180px;
     background-color: #fffef2;
@@ -42,7 +42,7 @@
         width: 27%;
         margin-right: auto;
 
-        .contentCard {
+        .contentBox {
             .title {
                 margin-bottom: 15px;
                 font-size: 30px;

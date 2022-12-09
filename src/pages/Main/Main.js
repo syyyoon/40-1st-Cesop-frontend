@@ -3,6 +3,7 @@ import ContentCard from './ContentCard';
 import { CARD_DATA, CARD_DATA_SERVICE } from './CardData';
 import './Main.scss';
 import '../../styles/mixin.scss';
+import Carousel from './Carousel/Carousel';
 
 const Main = () => {
     return (
@@ -16,7 +17,7 @@ const Main = () => {
                             alt="logo"
                         />
                         <div className="contentTitle">
-                            <section className="contentCard">
+                            <section className="contentBox">
                                 <h1 className="title">
                                     선물을 받는 모든 분들을 위해
                                 </h1>
@@ -66,14 +67,11 @@ const Main = () => {
                         />
                     );
                 })}
-                {/* TODO:캐러셀 컴포넌트 추가 예정 */}
-                <div
-                    className="mainWrapper"
-                    style={{ backgroundColor: '#fffef2' }}
-                >
+
+                <div className="storeWrapper">
                     <div className="storeContent">
                         <div className="storeTitle">
-                            <section className="contentCard">
+                            <section className="storeCard">
                                 <h1 className="title">스토어 로케이터</h1>
                                 <div className="content">
                                     <div className="contentText">
@@ -93,12 +91,8 @@ const Main = () => {
                             </section>
                         </div>
                     </div>
-                    <div className="mainBanner">
-                        <img
-                            className="bannerImage"
-                            src="../../images/main1.png"
-                            alt="main1"
-                        />
+                    <div className="storeBanner">
+                        <Carousel />
                     </div>
                 </div>
             </section>
