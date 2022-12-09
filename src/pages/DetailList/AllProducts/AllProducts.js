@@ -11,16 +11,16 @@ const AllProducts = () => {
             </div>
             <div className="categoryBar">
                 <ul className="categoryList">
-                    <li className="categoryTitles">
+                    <li className="categoryName">
                         <button>
                             <span>모든 스킨</span>
                         </button>
                     </li>
                     {PRODUCT_LIST.map(list => {
                         return (
-                            <li className="categoryTitles" key={list.id}>
+                            <li className="categoryName" key={list.id}>
                                 <button>
-                                    <span>{list.main_category}</span>
+                                    <span>{list.mainCategory}</span>
                                 </button>
                             </li>
                         );
@@ -28,20 +28,16 @@ const AllProducts = () => {
                 </ul>
             </div>
 
-            <div className="carouselSection">
-                {PRODUCT_LIST.map(
-                    ({ id, main_category, content, product_list }) => {
-                        return (
-                            <Carousel
-                                key={id}
-                                main_category={main_category}
-                                content={content}
-                                product_list={product_list}
-                            />
-                        );
-                    }
-                )}
-            </div>
+            {PRODUCT_LIST.map(({ id, mainCategory, content, productList }) => {
+                return (
+                    <Carousel
+                        key={id}
+                        mainCategory={mainCategory}
+                        content={content}
+                        productList={productList}
+                    />
+                );
+            })}
         </section>
     );
 };

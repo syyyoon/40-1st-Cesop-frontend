@@ -17,9 +17,14 @@ function Preview(props) {
                 <a>
                     <h5 className="productName">{product.name}</h5>
                     <div>
-                        <span>{product.volume}</span>
-                        <span> / </span>
-                        <span>￦{product.price.toLocaleString()}</span>
+                        <span>
+                            {product.volume}
+                            {' / '}
+                            {product.price.toLocaleString('ko-KR', {
+                                style: 'currency',
+                                currency: 'KRW',
+                            })}
+                        </span>
                     </div>
                 </a>
             </div>
@@ -28,7 +33,7 @@ function Preview(props) {
                     <li className="detailsInfo">
                         <div className="productInfoTitle">피부 타입</div>
                         <div className="productInfoContent">
-                            {product.skin_type}
+                            {product.skinType}
                         </div>
                     </li>
                     <li className="detailsInfo">

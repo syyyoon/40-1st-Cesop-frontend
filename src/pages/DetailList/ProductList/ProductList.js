@@ -3,13 +3,13 @@ import Preview from '../Preview/Preview';
 import FilterButton from '../FilterButton/FilterButton';
 import './ProductList.scss';
 
-const LIST = [
+const PREVIEW_LIST = [
     {
         id: 1,
         name: '리무브',
         volume: '60 mL',
         price: 27000,
-        skin_type: '모든 피부, 메이크업을 한 피부',
+        skinType: '모든 피부, 메이크업을 한 피부',
         texture: '진정된, 생기있는',
     },
     {
@@ -17,7 +17,7 @@ const LIST = [
         name: '이름파슬리 씨드 오일',
         volume: '200 mL',
         price: 65000,
-        skin_type: '중성, 복합성, 건성, 민감성 피부',
+        skinType: '중성, 복합성, 건성, 민감성 피부',
         texture: '부드러운, 진정된',
     },
     {
@@ -25,7 +25,7 @@ const LIST = [
         name: '퓨리파잉 클렌저',
         volume: '100 mL',
         price: 40000,
-        skin_type: '중성, 건성 피부',
+        skinType: '중성, 건성 피부',
         texture: '탄력, 유연, 부드러운',
     },
     {
@@ -33,7 +33,7 @@ const LIST = [
         name: '페뷸러스 페이스 클렌저',
         volume: '100 mL',
         price: 35000,
-        skin_type: '중성, 건성 피부',
+        skinType: '중성, 건성 피부',
         texture: '상쾌한, 진정된, 부드러운',
     },
     {
@@ -41,7 +41,7 @@ const LIST = [
         name: '파슬리 씨드 페이셜 클렌저',
         volume: '100 mL',
         price: 45000,
-        skin_type: '중성, 복합성, 문제성 피부',
+        skinType: '중성, 복합성, 문제성 피부',
         texture: '매끄러운, 부드러운',
     },
     {
@@ -49,12 +49,12 @@ const LIST = [
         name: '어메이징 페이스 클렌저',
         volume: '100 mL',
         price: 35000,
-        skin_type: '지성, 복합성 피부, 덥고 습한 날씨의 피부',
+        skinType: '지성, 복합성 피부, 덥고 습한 날씨의 피부',
         texture: '산뜻한, 매끄러운',
     },
 ];
 
-const MENU = [
+const CATEGORY_TITLE = [
     { id: 1, title: '모든 스킨' },
     { id: 2, title: '클렌저' },
     { id: 3, title: '각질 제거' },
@@ -71,9 +71,9 @@ const ProductList = () => {
                 </div>
                 <div className="categoryBar">
                     <ul className="categoryList">
-                        {MENU.map(title => {
+                        {CATEGORY_TITLE.map(title => {
                             return (
-                                <li className="categoryTitles" key={title.id}>
+                                <li className="categoryName" key={title.id}>
                                     <button>
                                         <span>{title.title}</span>
                                     </button>
@@ -95,7 +95,7 @@ const ProductList = () => {
                         </p>
                     </div>
                 </div>
-                {LIST.map(product => {
+                {PREVIEW_LIST.map(product => {
                     return <Preview key={product.id} product={product} />;
                 })}
             </div>

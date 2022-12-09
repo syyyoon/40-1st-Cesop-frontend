@@ -6,9 +6,16 @@
     padding: 50px 0;
     color: #333;
 
+    &:nth-child(odd) {
+        background-color: rgb(246, 245, 232);
+    }
+
+    &:nth-child(even) {
+        background-color: rgb(235, 234, 222);
+    }
+
     .showBox {
         display: flex;
-
         overflow: hidden;
 
         .carouselBox {
@@ -20,7 +27,7 @@
             }
 
             .descriptionOfList {
-                flex: 1 1 0;
+                width: calc(100vw / 4);
 
                 .productCategory {
                     margin-bottom: 20px;
@@ -36,7 +43,6 @@
                 }
             }
             .productCell {
-                flex: 1 1 0;
                 @include flex(center, center, column);
                 width: calc(100vw / 4);
                 height: 432px;

@@ -2,14 +2,12 @@
 @import '/src/styles/variables';
 
 .preview {
-    @include flex(center, center);
-    flex-direction: column;
+    @include flex(center, center, column);
     width: 33.333%;
     height: 790px;
 
     .imageSection {
-        display: flex;
-        align-items: flex-end;
+        @include flex(center, flex-end);
         height: 490px;
 
         .productImage {

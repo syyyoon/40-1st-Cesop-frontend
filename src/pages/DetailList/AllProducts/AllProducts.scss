@@ -3,12 +3,10 @@
 
 .allProducts {
     .categoryTitleHolder {
-        padding-right: 20px;
-        padding-left: 40px;
+        padding: 0 20px 0 40px;
 
         .categoryTitle {
-            margin-top: 120px;
-            margin-bottom: 20px;
+            margin: 120px 0 20px 0;
         }
     }
 
@@ -21,21 +19,10 @@
             @include flex(flex-start, center);
             padding-top: 45px;
 
-            .categoryTitles {
+            .categoryName {
                 height: 30px;
-                padding-right: 1.5rem;
-                padding-left: 40px;
+                padding: 0 1.5rem 0 40px;
             }
-        }
-    }
-
-    .carouselSection {
-        section:nth-child(odd) {
-            background-color: rgb(246, 245, 232);
-        }
-
-        section:nth-child(even) {
-            background-color: rgb(235, 234, 222);
         }
     }
 }
