@@ -1,6 +1,6 @@
 import React from 'react';
 import ContentCard from './ContentCard';
-import { CARD_DATA, CARD_DATA_SERVICE } from './CardData';
+import { CARD_DATA, CARD_DATA_SERVICE } from './cardData';
 import './Main.scss';
 import '../../styles/mixin.scss';
 import Carousel from './Carousel/Carousel';
