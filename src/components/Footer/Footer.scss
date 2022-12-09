@@ -15,7 +15,7 @@
         border-bottom: 3px solid #d6d5cb;
         color: #fffef2;
 
-        h3 {
+        .footerTitle {
             margin-top: 0;
             margin-bottom: 0;
             font-size: 15px;
@@ -23,7 +23,7 @@
             line-height: 2;
         }
 
-        section {
+        .footerSection {
             font-size: 14px;
 
             .footerBlockLine {
@@ -31,7 +31,7 @@
                 border-bottom: 1px solid #fffef2;
             }
 
-            ul {
+            .footerUl {
                 line-height: 2.5;
             }
         }

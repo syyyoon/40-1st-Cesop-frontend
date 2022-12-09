@@ -5,9 +5,9 @@ const FooterSection = props => {
     const { title, content } = props;
     return (
         <section className="footerSection">
-            <h3>{title}</h3>
+            <h3 className="footerTitle">{title}</h3>
             <div className="footerBlockLine" />
-            <ul>
+            <ul className="footerUl">
                 {content.map(list => {
                     return <li key={list.id}>{list.text}</li>;
                 })}
