@@ -14,7 +14,7 @@ const DetailProducts = () => {
                 <div className="imageWrapper">
                     <img
                         className="productImage"
-                        src="./images/product_image2.jpg"
+                        src="./images/tube_75mL.png"
                         alt="product_image"
                     />
                     <span className="messageOfEcoFreindly">
@@ -46,42 +46,7 @@ const DetailProducts = () => {
                             term="주요 성분"
                             description="베르가모트오일, 베티버뿌리오일, 비터오렌지잎/잔가지오일"
                         />
-                        {/* 
-                        <div className="productDetailList">
-                            <div className="productTerm">
-                                <strong>사용감</strong>
-                            </div>
-                            <div className="productDescription">
-                                <p>부드러운, 유분기 없는</p>
-                            </div>
-                        </div>
-                        <div className="productDetailList">
-                            <div className="productTerm">
-                                <strong>향</strong>
-                            </div>
-                            <div className="productDescription">
-                                <p>우드, 흙내음, 스모키</p>
-                            </div>
-                        </div>
-                        <div className="productDetailList">
-                            <div className="productTerm">
-                                <strong>주요 성분</strong>
-                            </div>
-                            <div className="productDescription">
-                                <p>
-                                    베르가모트오일, 베티버뿌리오일,
-                                    비터오렌지잎/잔가지오일
-                                </p>
-                            </div>
-                        </div>
-                        <div className="productDetailList">
-                            <div className="productTerm">
-                                <strong>사이즈</strong>
-                            </div>
-                            <div className="productDescription">
-                                <p>75 mL</p>
-                            </div>
-                        </div> */}
+                        <Description term="사이즈" description="ONE SIZE" />
                     </div>
                     <button className="buttonAddToCart">
                         카트에 추가하기 - ₩31,000원
@@ -124,23 +89,6 @@ const DetailProducts = () => {
                     </h2>
                     <Description term="사용량" description="반 티스푼" />
                     <Description term="텍스처" description="크림 제형" />
-
-                    {/* <div className="productDetailList">
-                        <div className="productTerm">
-                            <strong>사용량</strong>
-                        </div>
-                        <div className="productDescription">
-                            <p className="text">반 티스푼</p>
-                        </div>
-                    </div>
-                    <div className="productDetailList">
-                        <div className="productTerm">
-                            <strong>텍스처</strong>
-                        </div>
-                        <div className="productDescription">
-                            <p className="text">크림 제형</p>
-                        </div>
-                    </div> */}
                 </div>
             </section>
         </div>
