@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Banner from './components/Banner/Banner';
 import Cart from './pages/Cart/Cart';
 import DetailList from './pages/DetailList/DetailList';
 import DetailProducts from './pages/DetailProducts/DetailProducts';
@@ -12,6 +13,7 @@ import Test from './pages/Test/Test';
 function Router() {
     return (
         <BrowserRouter>
+            <Banner />
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/test" element={<Test />} />
