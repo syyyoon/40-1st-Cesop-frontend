@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Nav from './components/Nav/Nav';
+import Nav from './components/Nav/Navigation';
 import Banner from './components/Banner/Banner';
 import Cart from './pages/Cart/Cart';
 import DetailList from './pages/DetailList/DetailList';

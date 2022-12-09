@@ -1,7 +1,8 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from './Modal';
-import { CATEGORY_LIST } from './CategoryPage/CategoryList';
+import { CATEGORY_LIST } from './CategoryPage/categoryList';
+import '../../styles/mixin.scss';
 import './Nav.scss';
 
 const Navigation = () => {
@@ -20,7 +21,7 @@ const Navigation = () => {
         setListId(id);
     };
     return (
-        <div className="nav">
+        <div className="navigation">
             <div className="navWrapper">
                 <div className="navCategory">
                     <ul className="navUl" onClick={openModal}>

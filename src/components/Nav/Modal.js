@@ -1,21 +1,16 @@
 import { React } from 'react';
 import { Link } from 'react-router-dom';
+import Category from './CategoryPage/Category';
 import {
     BODY_AND_HAND,
     CATEGORY_LIST,
     HAIR,
     SKIN_CARE,
-} from './CategoryPage/CategoryList';
-import Category from './CategoryPage/Category';
+} from './CategoryPage/categoryList';
+import '../../styles/mixin.scss';
 import './Modal.scss';
 
 const Modal = ({ closeModal, listCheck, listId }) => {
-    const MENU = {
-        1: SKIN_CARE,
-        2: BODY_AND_HAND,
-        3: HAIR,
-    };
-
     return (
         <div className="modal">
             <div className="modalWrapper">
@@ -54,7 +49,7 @@ const Modal = ({ closeModal, listCheck, listId }) => {
                 {MENU[listId] ? (
                     <Category list={MENU[listId]} key={listId} />
                 ) : (
-                    <></>
+                    <h4>준비 중입니다.</h4>
                 )}
             </div>
         </div>
@@ -62,3 +57,9 @@ const Modal = ({ closeModal, listCheck, listId }) => {
 };
 
 export default Modal;
+
+const MENU = {
+    1: SKIN_CARE,
+    2: BODY_AND_HAND,
+    3: HAIR,
+};

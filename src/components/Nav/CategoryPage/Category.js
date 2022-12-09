@@ -20,8 +20,9 @@ const Category = ({ list }) => {
             />
         );
     };
+
     return (
-        <div className="categoryBody">
+        <div className="category">
             <div className="bodyWrapper">
                 <img
                     className="logoImage"
@@ -46,7 +47,7 @@ const Category = ({ list }) => {
                                                 subCategory => {
                                                     return (
                                                         <li
-                                                            className="category"
+                                                            className="subcategoryList"
                                                             key={subCategory.id}
                                                         >
                                                             {subCategory.text}

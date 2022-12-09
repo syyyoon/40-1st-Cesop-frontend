@@ -1,3 +1,5 @@
+@import '../../styles/mixin';
+
 .modal {
     position: fixed;
     z-index: 100;
@@ -8,9 +10,7 @@
     background-color: #fffef2;
 
     .modalWrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex(null, center, space-between);
         height: 80px;
         padding-right: 40px;
         padding-left: 40px;
