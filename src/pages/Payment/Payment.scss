@@ -1,303 +1,651 @@
 .payment {
-    .main {
+    .cartButton {
+        .navCart {
+            display: flex;
+            position: fixed;
+            z-index: 1000;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 85px;
+            padding: 16px 40px;
+            background-color: #252525;
+
+            .cartNumber {
+                display: flex;
+                align-items: center;
+
+                .cart {
+                    color: #bcbbb4;
+                    font-family: 'Suisse' Medium, sans-serif;
+                    font-size: 1.4rem;
+                }
+
+                .number {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    margin-left: 18px;
+                    border-radius: 50%;
+                    background-color: #333;
+                    color: #fffef2;
+                    font-family: 'Suisse' Medium, sans-serif;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .total {
+            color: #fffef2;
+            font-size: 1.6rem;
+        }
     }
-}
-.main {
-    padding-top: 220px;
-    background-color: #f6f5e8;
-}
 
-.mainLeftCenter {
-    background-color: #f6f5e8;
-}
+    .main {
+        padding: 0 40px;
+        padding-top: 250px;
+        padding-bottom: 150px;
+        background-color: #f6f5e8;
 
-.mainLeft {
-}
+        .mainContent {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #f6f5e8;
 
-.logo {
-    position: fixed;
-    top: 220px;
-    left: 40px;
-}
+            .mainLogo {
+                .logo {
+                    position: fixed;
+                    top: 250px;
+                    left: 60px;
 
-.cesopLogo {
-    width: 115px;
-    height: 37px;
-}
+                    .cesopLogo {
+                        width: 115px;
+                        height: 37px;
+                    }
+                }
+            }
+            .mainCenter {
+                width: 100%;
 
-.mainCenter {
-    width: 100%;
-}
+                .customerInfo {
+                    padding-bottom: 150px;
 
-.customerInfo {
-    margin: 0 35% 0 140px;
-    padding-right: 70px;
-    padding-bottom: 150px;
-    padding-left: 70px;
-}
+                    .infoHeading {
+                        width: 100%;
+                        margin-bottom: 30px;
+                        font-size: 2.5rem;
+                        line-height: 1.3;
+                    }
 
-.infoHeading {
-    width: 100%;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-    line-height: 1.3;
-}
+                    .customer {
+                        width: 100%;
+                        margin: 0 0 20px;
+                        padding: 30px 0 0;
+                        color: #666;
+                        font-family: 'Suisse Regular', sans-serif;
 
-.customer {
-    width: 100%;
-    margin: 0 0 20px;
-    padding: 30px 0 0;
-    color: #666;
-    font-family: 'Suisse Regular', sans-serif;
-}
+                        .customerName {
+                            font-size: 1.7rem;
+                        }
 
-.customerName {
-    font-size: 1.7rem;
-}
+                        .customerEmail {
+                            margin-top: 5px;
+                            font-size: 1.7rem;
+                        }
+                    }
+                }
+                .shippingInfo {
+                    margin-top: 100px;
+                    padding-bottom: 150px;
 
-.customerEmail {
-    margin-top: 5px;
-    font-size: 1.7rem;
-}
+                    .shippingInfoText {
+                        width: 100%;
+                        margin-bottom: 30px;
+                        font-size: 2.5rem;
+                        line-height: 1.3;
+                    }
+                    .userInput {
+                        margin: 0 0 30px;
 
-.shippingInfo {
-    margin: 0 35% 0 140px;
-    padding: 150px 70px 150px 70px;
-}
+                        .userName {
+                            display: flex;
+                            margin-bottom: 35px;
+                            padding-top: 35px;
 
-.shippingText {
-    width: 100%;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-    line-height: 1.3;
-}
+                            .lastNameContent {
+                                width: 100%;
 
-.userInput {
-    margin: 0 0 30px;
-    padding: 30px 0 0;
-}
+                                .lastNameLabel {
+                                    position: relative;
 
-.userName {
-    display: flex;
-    width: 100%;
-    margin-bottom: 35px;
-    padding-top: 35px;
-}
+                                    .lastName {
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                        line-height: 1.75;
+                                    }
 
-.lastNameContent {
-    width: 100%;
-}
+                                    .lastNameInput {
+                                        width: 100%;
+                                        padding: 8px 0;
+                                        border-bottom: 1.5px solid #cfcec4;
+                                        font-size: 1.9rem;
+                                        line-height: 1;
 
-.lastNameLabel {
-    position: relative;
-    width: 50%;
-}
+                                        &:focus {
+                                            border-bottom: 1.5px solid #666;
+                                        }
+                                    }
+                                }
+                            }
+                            .firstNameContent {
+                                width: 100%;
+                                margin-left: 30px;
 
-.lastName {
-    position: absolute;
-    // margin-left: -100px;
-    transform: translateY(-40px);
-    color: #666;
-    font-size: 1.2rem;
-    line-height: 1.75;
-}
+                                .firstNameLabel {
+                                    position: relative;
+                                    width: 50%;
 
-.lastNameInput {
-    width: 100%;
-    height: 40px;
-    padding: 8px 0;
-    border-bottom: 1.5px solid #cfcec4;
-    font-size: 1.9rem;
-    line-height: 1;
-}
+                                    .firstName {
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                        line-height: 1.75;
+                                    }
 
-.lastNameInput:focus {
-    border-bottom: 1.5px solid #666;
-}
+                                    .firstNameInput {
+                                        width: 100%;
 
-.firstNameContent {
-    width: 100%;
-    margin-left: 30px;
-}
+                                        padding: 8px 0;
+                                        border-bottom: 1.5px solid #cfcec4;
+                                        font-size: 1.9rem;
+                                        line-height: 1;
 
-.firstNameLabel {
-    position: relative;
-    width: 50%;
-}
+                                        &:focus {
+                                            border-bottom: 1.5px solid #666;
+                                        }
+                                    }
+                                }
+                            }
+                        }
 
-.firstName {
-    position: absolute;
-    // margin-left: -100px;
-    transform: translateY(-40px);
-    color: #666;
-    font-size: 1.2rem;
-    line-height: 1.75;
-}
+                        .userCode {
+                            display: flex;
+                            margin-bottom: 35px;
+                            padding-top: 35px;
 
-.firstNameInput {
-    width: 100%;
-    height: 40px;
-    padding: 8px 0;
-    border-bottom: 1.5px solid #cfcec4;
-    font-size: 1.9rem;
-    line-height: 1;
-}
+                            .nationalContent {
+                                width: 40%;
 
-.firstNameInput:focus {
-    border-bottom: 1.5px solid #666;
-}
+                                .nationalLabel {
+                                    position: relative;
 
-.userCode {
-    display: flex;
-    width: 100%;
-    margin-bottom: 35px;
-    padding-top: 35px;
-}
+                                    .nationalCode {
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                        line-height: 1.75;
+                                    }
 
-.national {
-    width: 40%;
-}
+                                    #selectNational {
+                                        width: 100%;
+                                        border-bottom: 1.5px solid #cfcec4;
+                                        font-size: 1.9rem;
+                                        line-height: 1.75;
+                                        cursor: pointer;
 
-.nationalLabel {
-    position: relative;
-}
+                                        option {
+                                            display: block;
+                                            min-height: 1.2em;
+                                            padding: 0px 2px 1px;
+                                            font-weight: normal;
+                                            white-space: nowrap;
+                                        }
+                                    }
+                                }
+                            }
 
-#selectNational {
-    padding-right: 200px;
-    border-bottom: 1.5px solid #cfcec4;
-    font-size: 1.9rem;
-    line-height: 1.75;
-    cursor: pointer;
-}
+                            .numberContent {
+                                width: 100%;
+                                margin-left: 30px;
 
-option {
-    display: block;
-    min-height: 1.2em;
-    padding: 0px 2px 1px;
-    font-weight: normal;
-    white-space: nowrap;
-}
+                                .numberLabel {
+                                    position: relative;
 
-.nationalCode {
-    // position: absolute;
-    // transform: translate(-285px, -40px);
-    color: #666;
-    font-size: 1.2rem;
-    line-height: 1.75;
-}
+                                    .phoneNumber {
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                        line-height: 1.75;
+                                    }
 
-.number {
-    width: 60%;
-    margin-top: auto;
-}
+                                    .phoneNumberInput {
+                                        width: 100%;
+                                        border-bottom: 1.5px solid #cfcec4;
+                                        font-size: 1.9rem;
+                                        line-height: 1;
 
-.numberLabel {
-    position: relative;
-}
+                                        &:focus {
+                                            border-bottom: 1.5px solid #666;
+                                        }
+                                    }
+                                }
+                            }
+                        }
 
-.phoneNumber {
-    position: absolute;
-    transform: translateY(-40px);
-    color: #666;
-    font-size: 1.2rem;
-    line-height: 1.75;
-}
+                        .countryContent {
+                            width: 100%;
+                            margin-bottom: 35px;
+                            padding-top: 35px;
 
-.phoneNumberInput {
-    width: 100%;
-    height: 40px;
-    // padding: 8px 0;
-    border-bottom: 1.5px solid #cfcec4;
-    font-size: 1.9rem;
-    line-height: 1;
-}
+                            .countryLabel {
+                                position: relative;
 
-.phoneNumberInput:focus {
-    border-bottom: 1.5px solid #666;
-}
+                                .countryName {
+                                    color: #666;
+                                    font-size: 1.2rem;
+                                    line-height: 1.75;
+                                }
+                                #selectcountry {
+                                    width: 100%;
+                                    padding-right: 200px;
+                                    border-bottom: 1.5px solid #cfcec4;
+                                    font-size: 1.9rem;
+                                    line-height: 1.75;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
 
-.country {
-    width: 100%;
-    margin-bottom: 35px;
-    padding-top: 35px;
-}
+                        .userAddressContent {
+                            display: flex;
+                            width: 100%;
+                            margin-bottom: 35px;
+                            padding-top: 35px;
 
-.countryLabel {
-    position: relative;
-}
+                            .addressLabel {
+                                position: relative;
+                                width: 100%;
 
-.countryName {
-    position: absolute;
-    transform: translateY(-40px);
-    color: #666;
-    font-size: 1.2rem;
-    line-height: 1.75;
-}
+                                .address {
+                                    color: #666;
+                                    font-size: 1.2rem;
+                                    line-height: 1.75;
+                                }
 
-#selectcountry {
-    width: 100%;
-    padding-right: 200px;
-    border-bottom: 1.5px solid #cfcec4;
-    font-size: 1.9rem;
-    line-height: 1.75;
-    cursor: pointer;
-}
+                                .addressInput {
+                                    width: 100%;
+                                    padding: 8px 0;
+                                    border-bottom: 1.5px solid #cfcec4;
+                                    font-size: 1.9rem;
+                                    line-height: 1;
 
-.userAddress {
-    display: flex;
-    width: 100%;
-    margin-bottom: 35px;
-    padding-top: 35px;
-}
+                                    &:focus {
+                                        border-bottom: 1.5px solid #666;
+                                    }
+                                }
+                            }
+                        }
 
-.addressLabel {
-    position: relative;
-    width: 100%;
-}
+                        .userDetailAddressContent {
+                            display: flex;
+                            width: 100%;
+                            margin-bottom: 35px;
+                            padding-top: 35px;
 
-// .address {
-//     position: absolute;
-//     // margin-left: -100px;
-//     transform: translateY(-40px);
-//     color: #666;
-//     font-size: 1.2rem;
-//     line-height: 1.75;
-// }
+                            .detailAddressLabel {
+                                position: relative;
+                                width: 100%;
 
-.addressInput {
-    width: 100%;
-    height: 40px;
-    // padding: 8px 0;
-    border-bottom: 1.5px solid #cfcec4;
-    font-size: 1.9rem;
-    line-height: 1;
-}
+                                .detailAddress {
+                                    color: #666;
+                                    font-size: 1.2rem;
+                                    line-height: 1.75;
+                                }
 
-.addressInput:focus {
-    border-bottom: 1.5px solid #666;
-}
+                                .detailAddressInput {
+                                    width: 100%;
+                                    padding: 8px 0;
+                                    border-bottom: 1.5px solid #cfcec4;
+                                    font-size: 1.9rem;
+                                    line-height: 1;
 
-.userDetailAddress {
-    display: flex;
-    width: 100%;
-    margin-bottom: 35px;
-    padding-top: 35px;
-}
+                                    &:focus {
+                                        border-bottom: 1.5px solid #666;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .shippingMethodWrapper {
+                        margin-top: 100px;
 
-.DetailAddressLabel {
-    position: relative;
-    width: 100%;
-}
+                        .shippingMethod {
+                            .methodTopHeading {
+                                width: 100%;
+                                padding-bottom: 20px;
+                                color: #666;
+                                font-size: 1.2rem;
+                            }
+                            .methodBox {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                width: 100%;
+                                height: 250px;
+                                padding: 60px 70px;
+                                background: #fffef2;
 
-.detailAddressInput {
-    width: 100%;
-    height: 40px;
-    // padding: 8px 0;
-    border-bottom: 1.5px solid #cfcec4;
-    font-size: 1.9rem;
-    line-height: 1;
-}
+                                .boxHeading {
+                                    font-size: 2rem;
+                                }
 
-.detailAddressInput:focus {
-    border-bottom: 1.5px solid #666;
+                                .boxSubHeadidng {
+                                    margin-top: 20px;
+                                    color: #666;
+                                    font-size: 1.2rem;
+                                }
+
+                                .boxDate {
+                                    margin-top: 5px;
+                                    color: #666;
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+
+                        .checkOption {
+                            .giftOption {
+                                margin: 40px 0 80px 0;
+
+                                .giftProductOption {
+                                    display: flex;
+                                    margin: 0 0 15px;
+
+                                    .checkbox1 {
+                                        width: 18px;
+                                        height: 18px;
+                                        border: 1.5px solid #cfcec4;
+                                        cursor: pointer;
+                                    }
+
+                                    .giftProduct {
+                                        margin-left: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+                                }
+
+                                .giftMessageOption {
+                                    display: flex;
+                                    margin: 0 0 15px;
+
+                                    .checkbox2 {
+                                        width: 18px;
+                                        height: 18px;
+                                        border: 1.5px solid #cfcec4;
+                                        cursor: pointer;
+                                    }
+
+                                    .giftMessage {
+                                        margin-left: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+                                }
+
+                                .giftTextOption {
+                                    .giftText {
+                                        margin-top: 20px;
+                                        margin-bottom: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+
+                                    .giftInputText {
+                                        width: 100%;
+                                        height: 130px;
+                                        padding: 20px;
+                                        border: 1.5px solid #cfcec4;
+                                        resize: none;
+
+                                        &:focus {
+                                            border: 1.5px solid #666;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .deliveryOption {
+                                margin: 40px 0 80px 0;
+
+                                .deliveryMessageOption {
+                                    display: flex;
+                                    margin: 0 0 15px;
+
+                                    .checkbox3 {
+                                        width: 18px;
+                                        height: 18px;
+                                        border: 1.5px solid #cfcec4;
+                                        cursor: pointer;
+                                    }
+
+                                    .deliveryMessage {
+                                        margin-left: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+                                }
+
+                                .deliveryTextOption {
+                                    .deliveryText {
+                                        margin-top: 20px;
+                                        margin-bottom: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+
+                                    .deliveryInputText {
+                                        width: 100%;
+                                        height: 130px;
+                                        padding: 20px;
+                                        border: 1.5px solid #cfcec4;
+                                        resize: none;
+
+                                        &:focus {
+                                            border: 1.5px solid #666;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .shippingOption {
+                                margin: 40px 0 80px 0;
+
+                                .shippingMessageOption {
+                                    display: flex;
+                                    margin: 0 0 15px;
+
+                                    .checkbox4 {
+                                        width: 18px;
+                                        height: 18px;
+                                        border: 1.5px solid #cfcec4;
+                                        cursor: pointer;
+                                    }
+
+                                    .shippingMessage {
+                                        margin-left: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+                                }
+
+                                .shippingTextOption {
+                                    .shippingText {
+                                        margin-top: 20px;
+                                        margin-bottom: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+
+                                    .shippingInputText {
+                                        width: 100%;
+                                        height: 130px;
+                                        padding: 20px;
+                                        border: 1.5px solid #cfcec4;
+                                        resize: none;
+
+                                        &:focus {
+                                            border: 1.5px solid #666;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .buttonToPayment {
+                        width: 320px;
+                        height: 80px;
+                        background-color: #333;
+                        color: #fffef2;
+                        font-size: 1.2rem;
+
+                        &:hover {
+                            background-color: black;
+                        }
+                    }
+                }
+                .sumInfo {
+                    margin-top: 100px;
+                    padding-bottom: 150px;
+
+                    .sumInfoText {
+                        width: 100%;
+                        margin-bottom: 30px;
+                        font-size: 2.5rem;
+                        line-height: 1.3;
+                    }
+
+                    .orderTable {
+                        .columnEntryList {
+                            display: flex;
+                            position: relative;
+                            justify-content: flex-start;
+                            margin-top: 55px;
+                            padding-bottom: 30px;
+
+                            .productNumber {
+                                display: flex;
+                                position: absolute;
+                                top: 185px;
+                                right: 665px;
+                                align-items: center;
+                                justify-content: center;
+                                width: 35px;
+                                height: 35px;
+                                border-radius: 50%;
+                                background-color: #333;
+                                color: #fffef2;
+                                font-family: 'Suisse' Medium, sans-serif;
+                                font-size: 1.2rem;
+                            }
+                        }
+
+                        .rowEntryList {
+                            width: 100%;
+                            border-top: 3px solid #252525;
+                            border-bottom: 3px solid #252525;
+                            color: #666;
+                            font-size: 1.2rem;
+                            line-height: 1.75;
+
+                            .rowEntry {
+                                display: flex;
+                                justify-content: space-between;
+                                width: 100%;
+                                padding: 25px 0;
+                                border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+                                .rowEntry:last-child {
+                                    border: none;
+                                }
+                                .productName {
+                                    display: flex;
+                                    width: 50%;
+                                }
+
+                                .productSize {
+                                    display: flex;
+                                    width: 15%;
+                                }
+
+                                .productQuantity {
+                                    display: flex;
+                                    width: 15%;
+                                }
+
+                                .productNameAmount {
+                                    display: flex;
+                                }
+                            }
+
+                            .tax {
+                                display: flex;
+                                justify-content: space-between;
+                                width: 100%;
+                                padding: 25px 0;
+                                border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+
+                                .taxAmount {
+                                    color: black;
+                                }
+                            }
+
+                            .shipping {
+                                display: flex;
+                                justify-content: space-between;
+                                width: 100%;
+                                padding: 25px 0;
+
+                                .shippingAmount {
+                                    color: black;
+                                }
+                            }
+                        }
+
+                        .sumRowEntryList {
+                            margin: 10px 0;
+                            color: #666;
+                            font-size: 1.2rem;
+                            line-height: 1.75;
+
+                            .sum {
+                                padding: 10px 0;
+
+                                .sumPoint {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+
+                                    .producPointAmount {
+                                        color: black;
+                                        font-size: 1.8rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        .purchaseCompleted {
+                            width: 100%;
+                            height: 80px;
+                            background-color: #333;
+                            color: #fffef2;
+                            font-size: 1.2rem;
+
+                            &:hover {
+                                background-color: black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
