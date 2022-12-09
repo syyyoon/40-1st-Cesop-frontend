@@ -9,7 +9,7 @@
     .bodyWrapper {
         display: flex;
         height: 100%;
-        font-size: 14px;
+        font-size: 16px;
 
         .logoImage {
             position: absolute;
@@ -19,7 +19,7 @@
             margin-top: 80px;
         }
 
-        .rightImage {
+        .categoryImage {
             position: absolute;
             right: 0;
             width: 575px;
@@ -34,9 +34,10 @@
             margin-bottom: 40px;
             margin-left: 20%;
             line-height: 1.7;
+
             ul {
-                display: flex;
-                flex-direction: row;
+                display: grid;
+                grid-template-columns: repeat(3, minmax(180px, auto));
             }
 
             .categoryList {
@@ -44,16 +45,11 @@
                     margin-bottom: 12px;
                 }
                 .category {
-                    font-size: 14px;
+                    font-size: 16px;
 
                     &:not(:last-child) {
                         margin-bottom: 12px;
                     }
-                }
-
-                &:not(:first-child) {
-                    display: flex;
-                    flex-direction: column;
                 }
             }
         }

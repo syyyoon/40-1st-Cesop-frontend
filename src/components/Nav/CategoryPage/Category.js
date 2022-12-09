@@ -1,33 +1,24 @@
 import React from 'react';
 import './Category.scss';
 
+const IMAGES = Array(3)
+    .fill()
+    .map((_, index) => ({
+        src: `../../images/category${index + 1}.png`,
+        alt: 'skin',
+    }));
+
 const Category = ({ list }) => {
     const imagePosition = () => {
-        if (list[0].id === 1) {
-            return (
-                <img
-                    className="skinImage"
-                    src="../../images/category1.png"
-                    alt="skinImage"
-                />
-            );
-        } else if (list[0].id === 2) {
-            return (
-                <img
-                    className="skinImage"
-                    src="../../images/category2.png"
-                    alt="skinImage"
-                />
-            );
-        } else {
-            return (
-                <img
-                    className="skinImage"
-                    src="../../images/category3.png"
-                    alt="skinImage"
-                />
-            );
-        }
+        const currentImage = IMAGES[list[0].id - 1];
+
+        return (
+            <img
+                className="skinImage"
+                src={currentImage.src}
+                alt={currentImage.alt}
+            />
+        );
     };
     return (
         <div className="categoryBody">
@@ -48,9 +39,9 @@ const Category = ({ list }) => {
                                             className="categoryList"
                                             key={category.id}
                                         >
-                                            <h3 className="categoryTitle">
+                                            <h4 className="categoryTitle">
                                                 {category.title}
-                                            </h3>
+                                            </h4>
                                             {category.subCategory.map(
                                                 subCategory => {
                                                     return (
@@ -70,7 +61,7 @@ const Category = ({ list }) => {
                         );
                     })}
                 </div>
-                <div className="rightImage">{imagePosition()}</div>
+                <div className="categoryImage">{imagePosition()}</div>
             </div>
         </div>
     );

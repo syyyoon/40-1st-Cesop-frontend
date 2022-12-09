@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from './Modal';
-import { CATEGORY_LIST } from './CategoryList';
+import { CATEGORY_LIST } from './CategoryPage/CategoryList';
 import './Nav.scss';
 
 const Navigation = () => {
@@ -37,7 +37,7 @@ const Navigation = () => {
                         <button className="search" type="button" />
                     </ul>
                 </div>
-                <div className="navRight">
+                <div className="navUser">
                     <ul>
                         <li>
                             <button className="navButton">로그인</button>

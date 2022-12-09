@@ -1,8 +1,13 @@
 import { React } from 'react';
 import { Link } from 'react-router-dom';
-import { BODY_AND_HAND, CATEGORY_LIST, HAIR, SKIN_CARE } from './CategoryList';
+import {
+    BODY_AND_HAND,
+    CATEGORY_LIST,
+    HAIR,
+    SKIN_CARE,
+} from './CategoryPage/CategoryList';
 import Category from './CategoryPage/Category';
-import './NavModal.scss';
+import './Modal.scss';
 
 const Modal = ({ closeModal, listCheck, listId }) => {
     const MENU = {
@@ -36,7 +41,7 @@ const Modal = ({ closeModal, listCheck, listId }) => {
                         </button>
                     </ul>
                 </div>
-                <div className="navRight">
+                <div className="navUser">
                     <ul>
                         <li>
                             <button className="navButton">로그인</button>
