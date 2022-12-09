@@ -12,6 +12,55 @@
     color: #333;
     font-family: 'Suisse Regular', sans-serif;
     .signUpContainer {
+        .inputForm {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+
+            .flex {
+                position: relative;
+                width: 50%;
+                &:first-child {
+                    padding-right: 20px;
+                }
+
+                .inputBox {
+                    flex: 1;
+                    width: 100%;
+                    margin-top: 40px;
+                    border-bottom: 1px solid #666;
+                    font-size: 30px;
+                    font-weight: 400;
+                }
+                .label {
+                    position: absolute;
+                    top: 50px;
+                    left: 0;
+                    color: #666;
+                    font-size: 20px;
+                }
+            }
+            .noFlex {
+                position: relative;
+                width: 100%;
+                .inputBox {
+                    flex: 1;
+                    width: 100%;
+                    margin-top: 40px;
+                    border-bottom: 1px solid #666;
+                    font-size: 30px;
+                }
+                .label {
+                    position: absolute;
+                    top: 50px;
+                    left: 0;
+                    color: #666;
+                    font-size: 20px;
+                }
+            }
+        }
+
         .buttonWrapper {
             @include flex(space-between, normal);
             width: 100%;

@@ -1,28 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SignUp.scss';
-import Input from '../../components/Input';
 
 const SignUp = () => {
-    const [lastName, setLastName] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleLastName = e => {
-        setLastName(e.target.value);
-        console.log(e.target.value);
-    };
-    const handleFirstName = e => {
-        setFirstName(e.target.value);
-        console.log(e.target.value);
-    };
-    const handleEmail = e => {
-        setEmail(e.target.value);
-    };
-    const handlePwd = e => {
-        setPassword(e.target.value);
-    };
-
     return (
         <div className="signup">
             <div className="signUpContainer">
@@ -38,29 +17,16 @@ const SignUp = () => {
                         재구매하실 수 있습니다.
                     </span>
                 </div>
-
-                <div style={{ display: 'flex' }}>
-                    <Input
-                        onChange={handleLastName}
-                        placeholder="성"
-                        type="textName"
-                    />
-                    <Input
-                        onChange={handleFirstName}
-                        placeholder="이름"
-                        type="textName"
-                    />
-                </div>
-                <Input
-                    onChange={handleEmail}
-                    placeholder="이메일 주소"
-                    type="text"
-                />
-                <Input
-                    onChange={handlePwd}
-                    placeholder="비밀번호"
-                    type="password"
-                />
+                <form className="inputForm">
+                    {SIGN_UP_FORM.map(input => {
+                        return (
+                            <div className={`${input.className}`}>
+                                <input type="text" className="inputBox" />
+                                <span className="label">{input.label}</span>
+                            </div>
+                        );
+                    })}
+                </form>
 
                 <div className="userCheckBox">
                     <div className="checkList">
@@ -94,5 +60,12 @@ const SignUp = () => {
         </div>
     );
 };
+
+const SIGN_UP_FORM = [
+    { id: 1, label: '성', className: 'flex' },
+    { id: 2, label: '이름', className: ' flex' },
+    { id: 3, label: '이메일 주소', className: 'noFlex' },
+    { id: 4, label: '비밀번호', className: 'noFlex' },
+];
 
 export default SignUp;
