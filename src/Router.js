@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Banner from './components/Banner/Banner';
 import Cart from './pages/Cart/Cart';
 import ProductList from './pages/DetailList/ProductList/ProductList';
 import AllProducts from './pages/DetailList/AllProducts/AllProducts';
@@ -12,6 +13,7 @@ import SignUp from './pages/SignUp/SignUp';
 function Router() {
     return (
         <BrowserRouter>
+            <Banner />
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/login" element={<Login />} />
