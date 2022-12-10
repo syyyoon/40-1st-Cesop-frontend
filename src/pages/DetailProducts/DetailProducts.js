@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Description from '../../components/Description';
 import './DetailProducts.scss';
 
 const DetailProducts = () => {
+    const [itemData, setItemData] = useState({
+        id: 1,
+        main_categories: '바디&핸드',
+        sub_categories: '바디',
+        product_name: '제라늄 리프 바디 클렌저',
+        product_image: './images/tube_75mL.png',
+        product_price: '31,000원',
+        product_description:
+            '기존 비누에 대한 좋은 대안으로, 부드럽게 잔여물을 제거하고 생기를 북돋아 주는 클렌징 젤',
+        image_description:
+            '펌프를 장착하지 않은 리필용 제품으로 구매하시면 플라스틱 사용을 12g 줄여 환경 영향을 최소화합니다.',
+        product_main_content: [
+            { title: '사용감', content: '상쾌함, 깨끗함' },
+            { title: '향', content: '그린,시트러스,상쾌함' },
+            { title: '주요 성분', content: '제라늄 리프,만다린,베르가못' },
+            { title: '사이즈', content: '500mL' },
+        ],
+        product_sub_content: [
+            { title: '사용량', content: '필요한 만큼' },
+            { title: '텍스처', content: '투명하고 거품이 적은 젤' },
+        ],
+        skin_type: '',
+        usage: '손 또는 샤워 볼에 충분히 덜어 목에서 발끝까지 젖은 피부에 마사지 한 후 완전히 헹굽니다.',
+        texture_image: './images/texture_image1.jpg',
+    });
+
     return (
         <div className="detailProduct">
             <div className="productDetailHeader">
@@ -14,42 +40,37 @@ const DetailProducts = () => {
                 <div className="imageWrapper">
                     <img
                         className="productImage"
-                        src="./images/tube_75mL.png"
-                        alt="product_image"
+                        src={itemData.product_image}
+                        alt={itemData.product_name}
                     />
                     <span className="messageOfEcoFreindly">
-                        펌프를 장착하지 않은 리필용 제품으로 구매하시면 플라스틱
-                        사용을 12g 줄여 환경 영향을 최소화합니다.
+                        {itemData.image_description}
                     </span>
                 </div>
+
                 <div className="productContent">
-                    <nav className="productCategory">바디 & 핸드 • 핸드</nav>
+                    <nav className="productCategory">
+                        {itemData.main_categories} • {itemData.sub_categories}
+                    </nav>
                     <div className="productInfo">
-                        <h1 className="productName">
-                            레버런스 아로마틱 핸드 밤
-                        </h1>
+                        <h1 className="productName">{itemData.product_name}</h1>
                         <p className="productDescription">
-                            포타슘 락테이트를 포함한 에몰리언트 성분이 피부의
-                            부드러움과 촉촉함을 유지시켜 주는 핸드 밤
+                            {itemData.product_description}
                         </p>
                     </div>
                     <div className="productDetailBody">
-                        <Description
-                            term="사용감"
-                            description="부드러운,유분기없는"
-                        />
-                        <Description
-                            term="향"
-                            description="우드, 흙내음, 스모키"
-                        />
-                        <Description
-                            term="주요 성분"
-                            description="베르가모트오일, 베티버뿌리오일, 비터오렌지잎/잔가지오일"
-                        />
-                        <Description term="사이즈" description="ONE SIZE" />
+                        {itemData.product_main_content.map((detail, index) => {
+                            return (
+                                <Description
+                                    index={index}
+                                    detail={detail}
+                                    key={index}
+                                />
+                            );
+                        })}
                     </div>
                     <button className="buttonAddToCart">
-                        카트에 추가하기 - ₩31,000원
+                        카트에 추가하기 - {itemData.product_price}
                     </button>
                 </div>
             </div>
@@ -77,18 +98,23 @@ const DetailProducts = () => {
                 <div class="imageWrapper">
                     <img
                         className="textureImage"
-                        src="./images/product_image1.jpg"
-                        alt="creamType"
+                        src={itemData.texture_image}
+                        alt={itemData.usage}
                     />
                 </div>
 
                 <div className="howToUseContent">
                     <p className="usageTitle">사용법</p>
-                    <h2 className="usage">
-                        필요할 때마다 깨끗한 손에 바릅니다.
-                    </h2>
-                    <Description term="사용량" description="반 티스푼" />
-                    <Description term="텍스처" description="크림 제형" />
+                    <h2 className="usage">{itemData.usage}</h2>
+                    {itemData.product_sub_content.map((detail, index) => {
+                        return (
+                            <Description
+                                index={index}
+                                detail={detail}
+                                key={index}
+                            />
+                        );
+                    })}
                 </div>
             </section>
         </div>

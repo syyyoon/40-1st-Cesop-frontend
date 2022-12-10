@@ -1,14 +1,14 @@
 import React from 'react';
 import './Description.scss';
 
-const Description = ({ term, description }) => {
+const Description = ({ detail, index }) => {
     return (
-        <div className="productDetailList">
+        <div key={index} className="productDetailList">
             <div className="productTerm">
-                <strong>{term}</strong>
+                <strong>{detail.title}</strong>
             </div>
             <div className="productDescription">
-                <p>{description}</p>
+                <p>{detail.content}</p>
             </div>
         </div>
     );
