@@ -4,6 +4,7 @@
 .carousel {
     position: relative;
     padding: 50px 0;
+    overflow: hidden;
     color: #333;
 
     &:nth-child(odd) {

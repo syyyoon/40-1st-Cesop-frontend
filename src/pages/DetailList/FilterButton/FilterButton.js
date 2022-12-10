@@ -10,7 +10,7 @@ function FilterButton() {
                     <img
                         className="underArrow"
                         alt="seemore"
-                        src="/images/DetailList/down.png"
+                        src="/images/down.png"
                     />
                 </div>
             </button>

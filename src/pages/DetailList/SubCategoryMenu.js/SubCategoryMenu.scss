@@ -1,0 +1,46 @@
+@import '/src/styles/mixin';
+@import '/src/styles/variables';
+
+.categoryBar {
+    @include flex(space-between, flex-start);
+    height: 110px;
+    background-color: #ebeade;
+
+    .categoryList {
+        @include flex(flex-start, center);
+        padding-top: 45px;
+
+        .noneClick {
+            cursor: default;
+        }
+        .categoryName {
+            height: 30px;
+            padding: 0 1.5rem 0 40px;
+            color: #666;
+            font-size: 14px;
+
+            .textOfName {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    width: 100%;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    transition: transform 0.5s
+                        cubic-bezier(0.645, 0.045, 0.355, 1);
+                    border-bottom: 1px solid #666;
+                }
+                &:hover {
+                    &::after {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+    }
+}

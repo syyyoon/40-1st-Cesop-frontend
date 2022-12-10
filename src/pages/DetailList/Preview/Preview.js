@@ -10,7 +10,7 @@ function Preview(props) {
                 <img
                     className="productImage"
                     alt="preview"
-                    src="/images/DetailList/product1.png"
+                    src={product.image}
                 />
             </picture>
             <div className="productInfo">
