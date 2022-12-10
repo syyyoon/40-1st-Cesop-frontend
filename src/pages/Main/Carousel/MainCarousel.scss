@@ -1,0 +1,43 @@
+@import '../../../styles/mixin';
+
+.carouselBox {
+    position: relative;
+    width: 730px;
+    height: 450px;
+    overflow: hidden;
+
+    .carouselWrapper {
+        display: flex;
+    }
+
+    .carouselButton {
+        position: absolute;
+        top: 40%;
+        width: 100%;
+
+        .prevButton {
+            @include carouselButtonStyle;
+            left: -80px;
+        }
+
+        .nextButton {
+            @include carouselButtonStyle;
+            right: -80px;
+        }
+        .arrowIcon {
+            color: #ffffff;
+        }
+    }
+
+    &:hover {
+        .prevButton {
+            transform: translateX(100%);
+            transition: 0.5s;
+        }
+
+        .nextButton {
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+    }
+}

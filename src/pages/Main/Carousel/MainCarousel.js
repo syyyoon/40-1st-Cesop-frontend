@@ -1,8 +1,12 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { CAROUSEL_IMAGES } from './carouselData';
-import './Carousel.scss';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import './MainCarousel.scss';
+import '../../../styles/mixin.scss';
 
-const Carousel = () => {
+const MainCarousel = () => {
     const TOTAL_IMAGES = 2;
     const [currentImg, setCurrentImg] = useState(0);
 
@@ -27,12 +31,12 @@ const Carousel = () => {
     };
 
     return (
-        <div className="carousel">
+        <div className="mainCarousel">
             <div className="carouselBox">
                 <div className="carouselWrapper" style={carouselStyle}>
                     {CAROUSEL_IMAGES.map(items => {
                         return (
-                            <div className="imagesContainer" key={items.id}>
+                            <div key={items.id}>
                                 <img src={items.img} alt="carouselImage" />
                             </div>
                         );
@@ -44,14 +48,20 @@ const Carousel = () => {
                         className="prevButton"
                         onClick={PrevSlide}
                     >
-                        prev
+                        <FontAwesomeIcon
+                            icon={faChevronLeft}
+                            className="arrowIcon"
+                        />
                     </button>
                     <button
                         type="button"
                         className="nextButton"
                         onClick={NextSlide}
                     >
-                        next
+                        <FontAwesomeIcon
+                            icon={faChevronRight}
+                            className="arrowIcon"
+                        />
                     </button>
                 </div>
             </div>
@@ -59,4 +69,4 @@ const Carousel = () => {
     );
 };
 
-export default Carousel;
+export default MainCarousel;

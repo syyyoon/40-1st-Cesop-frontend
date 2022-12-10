@@ -3,7 +3,7 @@ import ContentCard from './ContentCard';
 import { CARD_DATA, CARD_DATA_SERVICE } from './cardData';
 import './Main.scss';
 import '../../styles/mixin.scss';
-import Carousel from './Carousel/Carousel';
+import MainCarousel from './Carousel/MainCarousel';
 
 const Main = () => {
     return (
@@ -76,7 +76,7 @@ const Main = () => {
                                 <div className="content">
                                     <div className="contentText">
                                         <p>
-                                            매장에서는 이솝 컨설턴트가 고객
+                                            매장에서는 씨솝 컨설턴트가 고객
                                             여러분을 따뜻하게 맞이하고 기프트
                                             구매를 위한 맞춤형 컨설팅을
                                             제공해드립니다.
@@ -92,7 +92,7 @@ const Main = () => {
                         </div>
                     </div>
                     <div className="storeBanner">
-                        <Carousel />
+                        <MainCarousel />
                     </div>
                 </div>
             </section>
