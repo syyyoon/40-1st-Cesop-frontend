@@ -1,7 +1,7 @@
 export const SKIN_PRODUCT_LIST = [
     {
         id: 1,
-        image: '/images/bottle_2_100mL.png',
+        image: '/images/bottleSecond100mL.png',
         name: '리무브',
         volume: '60 mL',
         price: 27000,
@@ -10,7 +10,7 @@ export const SKIN_PRODUCT_LIST = [
     },
     {
         id: 2,
-        image: '/images/bottle_200mL.png',
+        image: '/images/bottle200mL.png',
         name: '이름파슬리 씨드 오일',
         volume: '200 mL',
         price: 65000,
@@ -19,7 +19,7 @@ export const SKIN_PRODUCT_LIST = [
     },
     {
         id: 3,
-        image: '/images/tube_100mL.png',
+        image: '/images/tube100mL.png',
         name: '퓨리파잉 클렌저',
         volume: '100 mL',
         price: 40000,
@@ -28,7 +28,7 @@ export const SKIN_PRODUCT_LIST = [
     },
     {
         id: 4,
-        image: '/images/bottle_1_100mL.png',
+        image: '/images/bottle100mL.png',
         name: '페뷸러스 페이스 클렌저',
         volume: '100 mL',
         price: 35000,
@@ -37,7 +37,7 @@ export const SKIN_PRODUCT_LIST = [
     },
     {
         id: 5,
-        image: '/images/bottle_1_100mL.png',
+        image: '/images/bottle100mL.png',
         name: '파슬리 씨드 페이셜 클렌저',
         volume: '100 mL',
         price: 45000,
@@ -46,7 +46,7 @@ export const SKIN_PRODUCT_LIST = [
     },
     {
         id: 6,
-        image: '/images/bottle_1_100mL.png',
+        image: '/images/bottle100mL.png',
         name: '어메이징 페이스 클렌저',
         volume: '100 mL',
         price: 35000,

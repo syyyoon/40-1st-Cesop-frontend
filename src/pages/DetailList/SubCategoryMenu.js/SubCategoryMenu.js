@@ -1,5 +1,5 @@
 import React from 'react';
-import { PRODUCT_LIST } from '../Datas/AllProductData';
+import { PRODUCT_LIST } from '../Datas/allProductData';
 import FilterButton from '../FilterButton/FilterButton';
 import './SubCategoryMenu.scss';
 

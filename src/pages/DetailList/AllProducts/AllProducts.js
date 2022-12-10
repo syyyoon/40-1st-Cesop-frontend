@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from '../Carousel/Carousel';
 import SubCategoryMenu from '../SubCategoryMenu.js/SubCategoryMenu';
-import { PRODUCT_LIST } from '../Datas/AllProductData';
+import { PRODUCT_LIST } from '../Datas/allProductData';
 import './AllProducts.scss';
 
 const AllProducts = () => {
