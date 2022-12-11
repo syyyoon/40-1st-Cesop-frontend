@@ -7,15 +7,15 @@ const SubCategoryMenu = () => {
     return (
         <div className="categoryBar">
             <ul className="categoryList">
-                <li>
-                    <button className="categoryName noneClick">
-                        <span>모든 스킨</span>
+                <li className=" firstName categoryName">
+                    <button className="subCategoryButton">
+                        <span className="textOfName">모든 스킨</span>
                     </button>
                 </li>
                 {PRODUCT_LIST.map(list => {
                     return (
-                        <li key={list.id}>
-                            <button className="categoryName">
+                        <li key={list.id} className="categoryName">
+                            <button className="subCategoryButton">
                                 <span className="textOfName">
                                     {list.mainCategory}
                                 </span>

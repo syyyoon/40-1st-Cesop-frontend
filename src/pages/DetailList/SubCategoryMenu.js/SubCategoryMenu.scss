@@ -2,23 +2,22 @@
 @import '/src/styles/variables';
 
 .categoryBar {
-    @include flex(space-between, flex-start);
+    @include flex(space-between, center);
     height: 110px;
     background-color: #ebeade;
 
     .categoryList {
         @include flex(flex-start, center);
-        padding-top: 45px;
 
-        .noneClick {
-            cursor: default;
-        }
         .categoryName {
             height: 30px;
-            padding: 0 1.5rem 0 40px;
+            padding: 0 0.5rem 0 1rem;
             color: #666;
             font-size: 14px;
 
+            .subCategoryButton {
+                height: 100%;
+            }
             .textOfName {
                 position: relative;
 
@@ -31,15 +30,29 @@
                     width: 100%;
                     transform: scaleX(0);
                     transform-origin: left;
-                    transition: transform 0.5s
+                    transition: transform 0.25s
                         cubic-bezier(0.645, 0.045, 0.355, 1);
                     border-bottom: 1px solid #666;
                 }
-                &:hover {
-                    &::after {
-                        transform: scaleX(1);
-                    }
+                &:hover::after {
+                    transform: scaleX(1);
                 }
+            }
+        }
+
+        .firstName {
+            position: relative;
+            padding-left: 40px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                height: 10px;
+                margin: auto;
+                transform: translateY(-50%);
+                border-left: 1px solid #666;
             }
         }
     }

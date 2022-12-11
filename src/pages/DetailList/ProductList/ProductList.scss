@@ -2,6 +2,14 @@
 @import '/src/styles/variables';
 
 .productList {
+    padding-top: 80px;
+    .cesopLogo {
+        position: absolute;
+        top: calc(80px + 74px);
+        left: 40px;
+        width: 120px;
+    }
+
     .categoryTitleHolder {
         padding: 0 20px 0 40px;
 
@@ -10,21 +18,6 @@
         }
     }
 
-    .categoryBar {
-        @include flex(space-between, flex-start);
-        height: 110px;
-        background-color: #ebeade;
-
-        .categoryList {
-            @include flex(flex-start, center);
-            padding-top: 45px;
-
-            .categoryName {
-                height: 30px;
-                padding: 0 1.5rem 0 40px;
-            }
-        }
-    }
     .listSection {
         @include flex(flex-start, center);
         flex-wrap: wrap;

@@ -7,12 +7,13 @@ import './ProductList.scss';
 const ProductList = () => {
     return (
         <section className="productList">
-            <div>
-                <div className="categoryTitleHolder">
-                    <h1 className="categoryTitle">클랜저</h1>
-                </div>
-                <SubCategoryMenu />
+            <img className="cesopLogo" alt="logo" src="/images/cesopLogo.png" />
+
+            <div className="categoryTitleHolder">
+                <h1 className="categoryTitle">클랜저</h1>
             </div>
+            <SubCategoryMenu />
+
             <div className="listSection">
                 <div className="descriptionOfList">
                     <div>

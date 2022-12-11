@@ -7,24 +7,26 @@ import './AllProducts.scss';
 const AllProducts = () => {
     return (
         <section className="allProducts">
+            <img className="cesopLogo" alt="logo" src="/images/cesopLogo.png" />
             <div className="categoryTitleHolder">
                 <h1 className="categoryTitle">모든 스킨</h1>
             </div>
             <SubCategoryMenu />
-
-            {PRODUCT_LIST.map(
-                ({ id, mainCategory, content, productList, image }) => {
-                    return (
-                        <Carousel
-                            key={id}
-                            mainCategory={mainCategory}
-                            content={content}
-                            productList={productList}
-                            image={image}
-                        />
-                    );
-                }
-            )}
+            <div>
+                {PRODUCT_LIST.map(
+                    ({ id, mainCategory, content, productList, image }) => {
+                        return (
+                            <Carousel
+                                key={id}
+                                mainCategory={mainCategory}
+                                content={content}
+                                productList={productList}
+                                image={image}
+                            />
+                        );
+                    }
+                )}
+            </div>
         </section>
     );
 };
