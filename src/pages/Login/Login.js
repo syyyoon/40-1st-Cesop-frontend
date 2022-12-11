@@ -63,7 +63,7 @@ const Login = ({ setModalOpen }) => {
                 </button>
                 <div className="joinUs">
                     <span className="checkAccount">회원이 아니신가요?</span>
-                    <button className="buttonSignup">회원가입</button>
+                    <button className="buttonSignUp">회원가입</button>
                 </div>
             </div>
         </div>
