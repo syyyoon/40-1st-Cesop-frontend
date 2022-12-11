@@ -1,4 +1,6 @@
-.cartWrapper {
+@import '../../styles/mixin';
+
+.cart {
     position: fixed;
     max-height: 100vh;
     overflow-y: scroll;
@@ -9,12 +11,11 @@
         width: 100vw;
 
         .cartList {
-            padding: 40px 40px 0px;
+            padding: 50px 50px 0px;
             text-align: left;
 
             .orderHeader {
-                display: flex;
-                justify-content: space-between;
+                @include flex(space-between, null);
                 padding: 0 0 15px;
                 border-bottom: 2.5px solid rgba(255, 254, 242, 0.1);
 
@@ -45,21 +46,26 @@
                 }
 
                 .deleteHeader {
-                    flex-grow: 1;
+                    width: 45.21px;
                 }
 
-                .closeButtonHeader {
-                    width: 18px;
-                    height: 18px;
-                    padding: 0 2px;
-                    background: transparent;
-                    fill: #999;
-                    cursor: pointer;
-
-                    .closeButtonIcon {
+                .closeHeader {
+                    display: flex;
+                    flex-grow: 1;
+                    justify-content: end;
+                    .closeButtonHeader {
                         width: 18px;
                         height: 18px;
-                        filter: invert(75%);
+                        padding: 0 2px;
+                        background: transparent;
+                        fill: #999;
+                        cursor: pointer;
+
+                        .closeButtonIcon {
+                            width: 18px;
+                            height: 18px;
+                            filter: invert(100%);
+                        }
                     }
                 }
             }
@@ -74,91 +80,6 @@
                     margin: 0;
                     padding: 0;
                     list-style: none;
-
-                    .productItem {
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        padding: 15px 0;
-                        border-bottom: 1.5px solid rgba(255, 254, 242, 0.1);
-
-                        .productName {
-                            flex-basis: auto;
-                            width: 42%;
-                            padding-right: 20px;
-                            font-family: 'Suisse' Medium, sans-serif;
-                            font-size: 1.2rem;
-                        }
-
-                        .productSize {
-                            width: 23%;
-                            padding-right: 20px;
-                            font-family: 'Suisse' Medium, sans-serif;
-                            font-size: 1.2rem;
-                            text-align: left;
-                        }
-
-                        .QuantityButtonWrapper {
-                            width: 7%;
-
-                            .productQuantity {
-                                position: relative;
-                                width: 95px;
-                                height: 50px;
-                                margin: 0;
-                                margin-right: 30px;
-                                border: 1.5px solid rgba(255, 254, 242, 0.1);
-                                background: transparent;
-                                color: #fff;
-                                font-family: Suisse Regular, sans-serif;
-                                font-size: 1.4rem;
-                                cursor: pointer;
-
-                                &:hover {
-                                    border-color: rgba(255, 254, 242, 0.8);
-                                }
-
-                                .quantityButtonContent {
-                                    display: flex;
-                                    align-items: center;
-
-                                    .quantityNumber {
-                                        margin-left: 20px;
-                                        color: #fff;
-                                        font-size: 1.3rem;
-                                    }
-
-                                    .quantityIcon {
-                                        width: 14px;
-                                        height: 8px;
-                                        margin-left: 20px;
-                                        filter: invert(100%);
-                                    }
-                                }
-                            }
-                        }
-
-                        .deleteQuantity {
-                            flex-grow: 1;
-                            margin: 10px 0;
-                            opacity: 0;
-                            background: transparent;
-                            color: #b7b7ae;
-                            font-size: 1.2rem;
-                            text-align: left;
-                            cursor: pointer;
-
-                            &:hover {
-                                color: #fffef2;
-                            }
-                        }
-
-                        .totalAmount {
-                            color: #fffef2;
-                            font-size: 1.2rem;
-                            line-height: 1.2;
-                        }
-                    }
                 }
             }
         }
@@ -184,9 +105,7 @@
                     }
 
                     .totalComment {
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
+                        @include flex(space-between, center);
                         width: 100%;
                         margin-bottom: 20px;
 
