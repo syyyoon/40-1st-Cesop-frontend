@@ -8,15 +8,12 @@ import Login from './pages/Login/Login';
 import Main from './pages/Main/Main';
 import Payment from './pages/Payment/Payment';
 import SignUp from './pages/SignUp/SignUp';
-import Test from './pages/Test/Test';
-
 function Router() {
     return (
         <BrowserRouter>
             <Banner />
             <Routes>
                 <Route path="/" element={<Main />} />
-                <Route path="/test" element={<Test />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/detail-list" element={<DetailList />} />

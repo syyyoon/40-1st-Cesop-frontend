@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.scss';
-import Input from '../../components/Input';
+import Input from '../../components/Input/Input';
 
 const Login = ({ setModalOpen }) => {
     const closeModal = () => {
@@ -52,7 +52,6 @@ const Login = ({ setModalOpen }) => {
                     type="password"
                 />
 
-                <div className="buttonWrapper"></div>
                 <button
                     onClick={loginClick}
                     disabled={isValid ? false : true}
