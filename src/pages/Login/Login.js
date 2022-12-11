@@ -42,13 +42,13 @@ const Login = ({ setModalOpen }) => {
                 <Input
                     value={userId}
                     onChange={saveUserId}
-                    placeholder="이메일 주소"
+                    label="이메일 주소"
                     type="text"
                 />
                 <Input
                     value={userPwd}
                     onChange={saveUserPwd}
-                    placeholder="비밀번호"
+                    label="비밀번호"
                     type="password"
                 />
 
