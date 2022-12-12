@@ -1,7 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SignUp.scss';
 
 const SignUp = () => {
+    const [userInfo, setUserInfo] = useState({
+        lastName: '',
+        firstName: '',
+        email: '',
+        password: '',
+    });
+
+    const inputHandler = e => {
+        const { name, value } = e.target;
+        setUserInfo({ ...userInfo, [name]: value });
+    };
+
+    const getUserInfo = () => {
+        fetch('http://10.58.52.204:8000/users/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json;charset=utf-8' },
+            body: JSON.stringify({
+                lastName: userInfo.lastName,
+                firstName: userInfo.firstName,
+                email: userInfo.email,
+                password: userInfo.password,
+            }),
+        })
+            .then(response => response.json())
+            .then(result => {
+                console.log(result);
+            });
+    };
+
+    console.log(userInfo);
+
     return (
         <div className="signup">
             <div className="signUpContainer">
@@ -21,7 +52,12 @@ const SignUp = () => {
                     {SIGN_UP_FORM.map(input => {
                         return (
                             <div className={`${input.className}`}>
-                                <input type="text" className="inputBox" />
+                                <input
+                                    name={input.name}
+                                    onChange={inputHandler}
+                                    type="text"
+                                    className="inputBox"
+                                />
                                 <span className="label">{input.label}</span>
                             </div>
                         );
@@ -51,7 +87,9 @@ const SignUp = () => {
                     </div>
                 </div>
                 <div className="signUpWrapper">
-                    <button className="signUpButton">회원가입</button>
+                    <button onClick={getUserInfo} className="signUpButton">
+                        회원가입
+                    </button>
                     <a className="checkUserAccount" href="#">
                         이미 이솝 계정을 가지고 계십니까?
                     </a>
@@ -62,10 +100,10 @@ const SignUp = () => {
 };
 
 const SIGN_UP_FORM = [
-    { id: 1, label: '성', className: 'flex' },
-    { id: 2, label: '이름', className: ' flex' },
-    { id: 3, label: '이메일 주소', className: 'noFlex' },
-    { id: 4, label: '비밀번호', className: 'noFlex' },
+    { id: 1, label: '성', className: 'flex', name: 'lastName' },
+    { id: 2, label: '이름', className: ' flex', name: 'firstName' },
+    { id: 3, label: '이메일 주소', className: 'noFlex', name: 'email' },
+    { id: 4, label: '비밀번호', className: 'noFlex', name: 'password' },
 ];
 
 export default SignUp;
