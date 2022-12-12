@@ -1,7 +1,9 @@
 @import '../../styles/mixin';
 
 .main {
+    width: 100%;
     min-height: 100vh;
+    overflow: hidden;
 
     .mainSection {
         background-color: #f1e2cf;

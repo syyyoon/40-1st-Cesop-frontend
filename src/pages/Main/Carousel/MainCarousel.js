@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { CAROUSEL_IMAGES } from './carouselData';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import './MainCarousel.scss';
@@ -9,20 +9,37 @@ import '../../../styles/mixin.scss';
 const MainCarousel = () => {
     const TOTAL_IMAGES = 2;
     const [currentImg, setCurrentImg] = useState(0);
+    const imagePageRef = useRef();
 
     const NextSlide = () => {
+        let nextChanged;
+
         if (currentImg >= TOTAL_IMAGES) {
-            setCurrentImg(0);
+            nextChanged = 0;
         } else {
-            setCurrentImg(currentImg + 1);
+            nextChanged = currentImg + 1;
         }
+
+        let moveToPage = nextChanged * 100;
+        imagePageRef.current.style.transition = 'all 0.5s ease-in-out';
+        imagePageRef.current.style.transform = `translateX(${moveToPage}%)`;
+
+        setCurrentImg(nextChanged);
     };
+
     const PrevSlide = () => {
+        let prevChanged;
+
         if (currentImg === 0) {
-            setCurrentImg(TOTAL_IMAGES);
+            prevChanged = TOTAL_IMAGES;
         } else {
-            setCurrentImg(currentImg - 1);
+            prevChanged = currentImg - 1;
         }
+        let moveToPage = prevChanged * 100;
+        imagePageRef.current.style.transition = 'all 0.5s ease-in-out';
+        imagePageRef.current.style.transform = `translateX(${moveToPage}%)`;
+
+        setCurrentImg(prevChanged);
     };
 
     const carouselStyle = {
@@ -64,6 +81,10 @@ const MainCarousel = () => {
                         />
                     </button>
                 </div>
+                <div className="carousel" />
+            </div>
+            <div className="pageBox">
+                <span ref={imagePageRef} className="pagination" />
             </div>
         </div>
     );
