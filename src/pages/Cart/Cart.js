@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import './Cart.scss';
 import '../../styles/mixin.scss';
 import CartProductList from './CartProductList';
+import PRODUCT from './PRODUCT';
 
 const Cart = () => {
+    const [carts, setCarts] = useState(PRODUCT);
+    const onRemove = id => {
+        setCarts(carts.filter(list => list.id !== id));
+    };
+
     return (
         <div className="cart">
             <div className="cartInner">
@@ -25,7 +31,13 @@ const Cart = () => {
                     </div>
                     <div className="cartProduct">
                         <ul className="productList">
-                            <CartProductList />
+                            {carts.map(cart => (
+                                <CartProductList
+                                    key={cart.id}
+                                    cart={cart}
+                                    onRemove={onRemove}
+                                />
+                            ))}
                         </ul>
                     </div>
                 </div>
