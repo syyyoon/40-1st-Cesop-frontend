@@ -1,6 +1,22 @@
 @import '/src/styles/mixin';
 @import '/src/styles/variables';
 
+.allProducts {
+    padding-top: 80px;
+    .cesopLogo {
+        position: absolute;
+        top: calc(80px + 74px);
+        left: 40px;
+        width: 120px;
+    }
+    .categoryTitleHolder {
+        padding: 0 20px 0 40px;
+
+        .categoryTitle {
+            margin: 120px 0 20px 0;
+        }
+    }
+}
 .categoryBar {
     @include flex(space-between, center);
     height: 110px;
@@ -15,6 +31,21 @@
             color: #666;
             font-size: 14px;
 
+            &:first-child {
+                position: relative;
+                padding-left: 40px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 100%;
+                    height: 10px;
+                    margin: auto;
+                    transform: translateY(-50%);
+                    border-left: 1px solid #666;
+                }
+            }
             .subCategoryButton {
                 height: 100%;
             }
@@ -37,22 +68,20 @@
                 &:hover::after {
                     transform: scaleX(1);
                 }
-            }
-        }
 
-        .firstName {
-            position: relative;
-            padding-left: 40px;
+                &--selected {
+                    position: relative;
 
-            &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 100%;
-                height: 10px;
-                margin: auto;
-                transform: translateY(-50%);
-                border-left: 1px solid #666;
+                    &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 100%;
+                        right: 0;
+                        width: 100%;
+                        border-bottom: 1px solid #666;
+                    }
+                }
             }
         }
     }
