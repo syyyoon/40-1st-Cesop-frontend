@@ -21,7 +21,7 @@ const Login = ({ setModalOpen }) => {
     };
 
     const loginClick = () => {
-        fetch('http://10.58.52.128:8000/user/signup', {
+        fetch('http://10.58.52.204:8000/users/signin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json;charset=utf-8' },
             body: JSON.stringify({ email: userId, password: userPwd }),
