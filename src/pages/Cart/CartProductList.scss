@@ -4,6 +4,11 @@
     @include flex(space-between, center);
     padding: 20px 0;
     border-bottom: 1.5px solid rgba(255, 254, 242, 0.1);
+    &:hover {
+        .deleteQuantity {
+            opacity: 1;
+        }
+    }
 
     .productName {
         flex-basis: auto;

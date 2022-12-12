@@ -71,11 +71,6 @@
             }
 
             .cartProduct {
-                &:hover {
-                    .productList .productItem .deleteQuantity {
-                        opacity: 1;
-                    }
-                }
                 .productList {
                     margin: 0;
                     padding: 0;
