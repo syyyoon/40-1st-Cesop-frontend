@@ -2,15 +2,9 @@
 @import '/src/styles/variables';
 
 .detailProducts {
-    margin-top: 150px;
     background-color: #fffef2;
     .productDetailHeader {
-        @include flex(
-            $display: flex,
-            $flex-d: null,
-            $align-i: center,
-            $justify-c: end
-        );
+        @include flex($direction: null, $align: center, $justify: end);
         margin-right: 160px;
         padding: 150px 0;
         background-color: #fffef2;
@@ -60,10 +54,11 @@
             }
         }
     }
+
     .messageToCustomer {
         padding: 0 0 100px;
         .message {
-            @include flex($justify-c: center, $align-i: center);
+            @include flex($direction: null, $align: center, $justify: center);
             height: 130px;
             .freeService {
                 align-items: center;
@@ -98,7 +93,8 @@
         }
 
         .howToUseContent {
-            @include flex($flex-d: column, $justify-c: center);
+            @include flex($direction: column, $align: null, $justify: center);
+
             width: 50%;
             padding: 150px;
             background-color: #f6f5e8;
