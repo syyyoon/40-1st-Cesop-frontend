@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { CAROUSEL_IMAGES } from './carouselData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -7,43 +7,44 @@ import './MainCarousel.scss';
 import '../../../styles/mixin.scss';
 
 const MainCarousel = () => {
-    const TOTAL_IMAGES = 2;
-    const [currentImg, setCurrentImg] = useState(0);
-    const imagePageRef = useRef();
+    const carouselImages = [
+        CAROUSEL_IMAGES[CAROUSEL_IMAGES.length - 1],
+        ...CAROUSEL_IMAGES,
+        CAROUSEL_IMAGES[0],
+    ];
+    const totalImage = carouselImages.length - 1;
+    const [currentImg, setCurrentImg] = useState(1);
+    const [transition, setTransition] = useState('transform 500ms ease-in-out');
 
-    const NextSlide = () => {
-        let nextChanged;
+    const nextButtonClick = () => {
+        const nextChanged = currentImg + 1;
 
-        if (currentImg >= TOTAL_IMAGES) {
-            nextChanged = 0;
-        } else {
-            nextChanged = currentImg + 1;
+        if (currentImg >= totalImage - 1) {
+            moveToNthSlide(1);
         }
-
-        let moveToPage = nextChanged * 100;
-        imagePageRef.current.style.transition = 'all 0.5s ease-in-out';
-        imagePageRef.current.style.transform = `translateX(${moveToPage}%)`;
-
+        setTransition('all 0.5s ease-in-out ');
         setCurrentImg(nextChanged);
     };
 
-    const PrevSlide = () => {
-        let prevChanged;
+    const prevButtonClick = () => {
+        const prevChanged = currentImg - 1;
 
-        if (currentImg === 0) {
-            prevChanged = TOTAL_IMAGES;
-        } else {
-            prevChanged = currentImg - 1;
+        if (prevChanged === 0) {
+            moveToNthSlide(totalImage - 1);
         }
-        let moveToPage = prevChanged * 100;
-        imagePageRef.current.style.transition = 'all 0.5s ease-in-out';
-        imagePageRef.current.style.transform = `translateX(${moveToPage}%)`;
-
+        setTransition('all 0.5s ease-in-out ');
         setCurrentImg(prevChanged);
     };
 
+    const moveToNthSlide = n => {
+        setTimeout(() => {
+            setTransition('');
+            setCurrentImg(n);
+        }, 500);
+    };
+
     const carouselStyle = {
-        transition: 'all 0.5s ease-in-out',
+        transition,
         transform: `translateX(-${currentImg}00%)`,
     };
 
@@ -51,9 +52,9 @@ const MainCarousel = () => {
         <div className="mainCarousel">
             <div className="carouselBox">
                 <div className="carouselWrapper" style={carouselStyle}>
-                    {CAROUSEL_IMAGES.map(items => {
+                    {carouselImages.map((items, idx) => {
                         return (
-                            <div key={items.id}>
+                            <div key={'' + items.id + idx}>
                                 <img src={items.img} alt="carouselImage" />
                             </div>
                         );
@@ -63,7 +64,7 @@ const MainCarousel = () => {
                     <button
                         type="button"
                         className="prevButton"
-                        onClick={PrevSlide}
+                        onClick={prevButtonClick}
                     >
                         <FontAwesomeIcon
                             icon={faChevronLeft}
@@ -73,7 +74,7 @@ const MainCarousel = () => {
                     <button
                         type="button"
                         className="nextButton"
-                        onClick={NextSlide}
+                        onClick={nextButtonClick}
                     >
                         <FontAwesomeIcon
                             icon={faChevronRight}
@@ -82,9 +83,6 @@ const MainCarousel = () => {
                     </button>
                 </div>
                 <div className="carousel" />
-            </div>
-            <div className="pageBox">
-                <span ref={imagePageRef} className="pagination" />
             </div>
         </div>
     );
