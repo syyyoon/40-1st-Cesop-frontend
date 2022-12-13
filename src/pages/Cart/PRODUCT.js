@@ -4,14 +4,14 @@ const PRODUCT = [
     {
         id: 'product1',
         productName: '레저렉션 아로마틱 핸드 워시',
-        productSize: '500mL(펌프포함)',
+        productSize: '500mL',
         productPrice: 1000,
         amount: 1,
     },
     {
         id: 'product2',
         productName: '레버런스 아로마틱 핸드  워시',
-        productSize: '100mL',
+        productSize: '500mL',
         productPrice: 1000,
         amount: 1,
     },
@@ -25,7 +25,7 @@ const PRODUCT = [
     {
         id: 'product4',
         productName: '젠틀 딥  클렌징 듀오',
-        productSize: '750mL',
+        productSize: '500mL',
         productPrice: 1000,
         amount: 1,
     },

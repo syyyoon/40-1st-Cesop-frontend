@@ -1,68 +1,70 @@
 @import '../../styles/mixin';
 
-.productItem {
-    @include flex(space-between, center);
-    padding: 20px 0;
-    border-bottom: 1.5px solid rgba(255, 254, 242, 0.1);
-    &:hover {
-        .deleteQuantity {
-            opacity: 1;
-        }
-    }
+.cartList {
+    padding: 50px 50px 0px;
+    text-align: left;
 
-    .productName {
-        flex-basis: auto;
-        width: 42%;
-        padding-right: 20px;
-        font-family: 'Suisse' Medium, sans-serif;
-        font-size: 1.2rem;
-    }
+    .orderHeader {
+        @include flex(space-between, null);
+        padding: 0 0 15px;
+        border-bottom: 2.5px solid rgba(255, 254, 242, 0.1);
 
-    .productSize {
-        width: 23%;
-        padding-right: 20px;
-        font-family: 'Suisse' Medium, sans-serif;
-        font-size: 1.2rem;
-        text-align: left;
-    }
-
-    .QuantityButtonWrapper {
-        width: 7%;
-
-        #selectQuantity {
-            padding: 12px 25px;
-            border: 1.5px solid rgba(255, 254, 242, 0.1);
-            color: #fff;
-            font-family: Suisse Regular, sans-serif;
+        .cartHeader {
+            flex-basis: auto;
+            width: 42%;
+            color: #bcbbb4;
+            font-family: 'Suisse' Medium, sans-serif;
             font-size: 1.2rem;
-            text-align-last: center;
-            cursor: pointer;
+            line-height: 1.2;
+        }
 
-            &:hover {
-                border-color: rgba(255, 254, 242, 0.8);
+        .sizeHeader {
+            flex-basis: auto;
+            width: 23%;
+            color: #bcbbb4;
+            font-family: 'Suisse' Medium, sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .quantityHeader {
+            width: 7%;
+            color: #bcbbb4;
+            font-family: 'Suisse' Medium, sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .deleteHeader {
+            width: 45.21px;
+        }
+
+        .closeHeader {
+            display: flex;
+            flex-grow: 1;
+            justify-content: end;
+            .closeButtonHeader {
+                width: 18px;
+                height: 18px;
+                padding: 0 2px;
+                background: transparent;
+                fill: #999;
+                cursor: pointer;
+
+                .closeButtonIcon {
+                    width: 18px;
+                    height: 18px;
+                    filter: invert(100%);
+                }
             }
         }
     }
 
-    .deleteQuantity {
-        opacity: 0;
-        background: transparent;
-        color: #b7b7ae;
-        font-size: 1.2rem;
-        text-align: left;
-        cursor: pointer;
-
-        &:hover {
-            color: #fffef2;
+    .cartProduct {
+        .productList {
+            margin: 0;
+            padding: 0;
+            list-style: none;
         }
-    }
-
-    .totalPrice {
-        display: flex;
-        flex-grow: 1;
-        justify-content: end;
-        color: #fffef2;
-        font-size: 1.2rem;
-        line-height: 1.2;
     }
 }

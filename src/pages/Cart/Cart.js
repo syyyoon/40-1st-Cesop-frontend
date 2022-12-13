@@ -1,47 +1,41 @@
 import React, { useState } from 'react';
 import './Cart.scss';
 import '../../styles/mixin.scss';
-import CartProductList from './CartProductList';
 import PRODUCT from './PRODUCT';
+import CartProductList from './CartProductList';
 
 const Cart = () => {
     const [carts, setCarts] = useState(PRODUCT);
+
+    const total = carts
+        .reduce((a, b) => a + b.productPrice * b.amount, 0)
+        .toString()
+        .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+
     const onRemove = id => {
         setCarts(carts.filter(list => list.id !== id));
+    };
+
+    const onChangeAmount = (id, amount) => {
+        setCarts(
+            carts.map(cart => {
+                if (cart.id === id) {
+                    cart.amount = amount;
+                }
+                return cart;
+            })
+        );
     };
 
     return (
         <div className="cart">
             <div className="cartInner">
-                <div className="cartList">
-                    <div className="orderHeader">
-                        <div className="cartHeader">카트</div>
-                        <div className="sizeHeader">사이즈</div>
-                        <div className="quantityHeader">수량</div>
-                        <div className="deleteHeader" />
-                        <div className="closeHeader">
-                            <button className="closeButtonHeader">
-                                <img
-                                    className="closeButtonIcon"
-                                    src="./images/x.png"
-                                    alt="closeIcon"
-                                />
-                            </button>
-                        </div>
-                    </div>
-                    <div className="cartProduct">
-                        <ul className="productList">
-                            {carts.map(cart => (
-                                <CartProductList
-                                    key={cart.id}
-                                    cart={cart}
-                                    onRemove={onRemove}
-                                />
-                            ))}
-                        </ul>
-                    </div>
-                </div>
                 <div className="cartOrganize">
+                    <CartProductList
+                        carts={carts}
+                        onRemove={onRemove}
+                        onChangeAmount={onChangeAmount}
+                    />
                     <div className="cartOrganizeWrapper">
                         <div className="cartOrganizeInner">
                             <div className="cartOrganizeNoticeTop">
@@ -54,7 +48,7 @@ const Cart = () => {
                                     소계(세금 포함)
                                 </div>
                                 <div className="OrganizeTotalAmount">
-                                    <span>₩77,000</span>
+                                    ₩{total}
                                 </div>
                             </div>
                             <div className="cartOrganizeButtonBottom">

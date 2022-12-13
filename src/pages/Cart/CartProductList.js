@@ -1,42 +1,38 @@
 import React from 'react';
-import { useState } from 'react';
 import './CartProductList.scss';
+import CartProductRow from './CartProductRow';
 
-const CartProductList = ({ cart, onRemove }) => {
-    const [amount, setAmount] = useState(cart.amount);
-    const handleSelect = e => {
-        setAmount(e.target.value);
-    };
-
+const CartProductList = ({ carts, onRemove, onChangeAmount }) => {
     return (
-        <li className="productItem">
-            <div className="productName">{cart.productName}</div>
-            <div className="productSize">{cart.productSize}</div>
-            <div className="QuantityButtonWrapper">
-                <select
-                    name="productQuantity"
-                    id="selectQuantity"
-                    // onChange={() => {}}
-                    // onChange={e => handleSelect(e)}
-                    // onChange={handleSelect}
-                    // value={setCarts}
-                    onChange={handleSelect}
-                >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
+        <div className="cartList">
+            <div className="orderHeader">
+                <div className="cartHeader">카트</div>
+                <div className="sizeHeader">사이즈</div>
+                <div className="quantityHeader">수량</div>
+                <div className="deleteHeader" />
+                <div className="closeHeader">
+                    <button className="closeButtonHeader">
+                        <img
+                            className="closeButtonIcon"
+                            src="./images/x.png"
+                            alt="closeIcon"
+                        />
+                    </button>
+                </div>
             </div>
-            <button
-                className="deleteQuantity"
-                onClick={() => onRemove(cart.id)}
-            >
-                삭제
-            </button>
-            <div className="totalPrice">₩{cart.productPrice * amount}</div>
-        </li>
+            <div className="cartProduct">
+                <ul className="productList">
+                    {carts.map(cart => (
+                        <CartProductRow
+                            key={cart.id}
+                            cart={cart}
+                            onRemove={onRemove}
+                            onChangeAmount={onChangeAmount}
+                        />
+                    ))}
+                </ul>
+            </div>
+        </div>
     );
 };
 
