@@ -6,7 +6,7 @@
     .loginContainer {
         position: absolute;
         z-index: 1;
-        top: 20%;
+        top: 6%;
         width: 600px;
         padding: 50px;
         border: 1px solid #ccc;
@@ -38,8 +38,13 @@
             width: 100%;
             margin: 50px 0;
             padding: 20px 100px;
+            opacity: 0.6;
             background-color: #333;
             color: white;
+        }
+
+        .buttonActive {
+            opacity: 1;
         }
         .joinUs {
             .checkAccount {

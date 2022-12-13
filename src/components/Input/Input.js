@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Input.scss';
 
-const Input = ({ label, type, value, onChange }) => {
+const Input = ({ label, type, value, onChange, name }) => {
     const [isFloatLabel, setIsFloatLabel] = useState(false);
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
@@ -14,7 +14,7 @@ const Input = ({ label, type, value, onChange }) => {
         setIsFloatLabel(false);
     };
 
-    const PasswordTypeHandler = () => {
+    const passwordTypeHandler = () => {
         setIsPasswordVisible(prevState => {
             return !prevState;
         });
@@ -23,6 +23,7 @@ const Input = ({ label, type, value, onChange }) => {
     return (
         <div className="input">
             <input
+                name={name}
                 className="inputBox"
                 onFocus={inputFocus}
                 onBlur={inputBlur}
@@ -43,7 +44,7 @@ const Input = ({ label, type, value, onChange }) => {
             {type === 'password' ? (
                 <button
                     className="showHiddenPassword"
-                    onClick={PasswordTypeHandler}
+                    onClick={passwordTypeHandler}
                 >
                     {isPasswordVisible ? '숨기기' : '보기'}
                 </button>
