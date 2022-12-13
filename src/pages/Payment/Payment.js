@@ -219,7 +219,8 @@ const Payment = () => {
                                                     <span>{sum.text}</span>
                                                     <span className="producPointAmount">
                                                         {sum.productSumAmount}
-                                                        {sum.pointAmount}
+                                                        {sum.nowPointAmount}
+                                                        {sum.remainPointAmount}
                                                     </span>
                                                 </div>
                                             </li>

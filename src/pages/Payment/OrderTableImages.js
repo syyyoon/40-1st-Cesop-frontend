@@ -8,6 +8,5 @@ export const OrderTableImages = [
         id: 2,
         link: '',
         productImages: './images/tube_100mL.png',
-        productNumber: '3',
     },
 ];
