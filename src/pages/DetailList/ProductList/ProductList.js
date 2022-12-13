@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Preview from '../Preview/Preview';
-import { SKIN_PRODUCT_LIST } from '../Datas/skinProductList';
 import './ProductList.scss';
 
 const ProductList = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch('/data/product.json')
+            .then(response => response.json())
+            .then(result => setData(result));
+    }, []);
     return (
         <section className="productList">
             <div className="listSection">
@@ -17,7 +23,7 @@ const ProductList = () => {
                         </p>
                     </div>
                 </div>
-                {SKIN_PRODUCT_LIST.map(product => {
+                {data.map(product => {
                     return <Preview key={product.id} product={product} />;
                 })}
             </div>

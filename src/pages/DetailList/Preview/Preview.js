@@ -10,15 +10,15 @@ function Preview(props) {
                 <img
                     className="productImage"
                     alt="preview"
-                    src={product.image}
+                    src={product.productImage}
                 />
             </picture>
             <div className="productInfo">
                 <a>
-                    <h5 className="productName">{product.name}</h5>
+                    <h5 className="productName">{product.productName}</h5>
                     <div>
                         <span>
-                            {product.volume}
+                            {product.size}
                             {' / '}
                             {product.price.toLocaleString('ko-KR', {
                                 style: 'currency',

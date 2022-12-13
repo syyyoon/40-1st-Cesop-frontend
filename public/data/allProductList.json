@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "subCategories": "클렌저",
+        "productName": "클렌저1",
+        "productImage": "/images/bottleSecond100mL.png",
+        "size": "ONE",
+        "price": 20000
+    },
+    {
+        "id": 2,
+        "subCategories": "클렌저",
+        "productName": "클렌저2",
+        "productImage": "/images/bottle200mL.png",
+        "size": "ONE",
+        "price": 20000
+    },
+    {
+        "id": 3,
+        "subCategories": "클렌저",
+        "productName": "클렌저3",
+        "productImage": "/images/tube100mL.png",
+        "size": "ONE",
+        "price": 20000
+    },
+    {
+        "id": 4,
+        "subCategories": "클렌저",
+        "productName": "클렌저4",
+        "productImage": "/images/bottle100mL.png",
+        "size": "ONE",
+        "price": 20000
+    },
+    {
+        "id": 5,
+        "subCategories": "클렌저",
+        "productName": "클렌저5",
+        "productImage": "/images/bottle100mL.png",
+        "size": "ONE",
+        "price": 20000
+    },
+    {
+        "id": 6,
+        "subCategories": "각질 제거",
+        "productName": "각질제거1",
+        "productImage": "/images/tube100mL.png",
+        "size": "ONE",
+        "price": 20000
+    },
+    {
+        "id": 7,
+        "subCategories": "각질 제거",
+        "productName": "각질제거2",
+        "productImage": "/images/bottle30g.png",
+        "size": "ONE",
+        "price": 20000
+    },
+    {
+        "id": 8,
+        "subCategories": "트리트먼트",
+        "productName": "트리트먼트1",
+        "productImage": "/images/tube75mL.png",
+        "size": "ONE",
+        "price": 20000
+    },
+    {
+        "id": 9,
+        "subCategories": "트리트먼트",
+        "productName": "트리트먼트2",
+        "productImage": "/images/treatment75mL.png",
+        "size": "ONE",
+        "price": 20000
+    },
+    {
+        "id": 10,
+        "subCategories": "트리트먼트",
+        "productName": "트리트먼트3",
+        "productImage": "/images/treatment75mL.png",
+        "size": "ONE",
+        "price": 20000
+    },
+    {
+        "id": 11,
+        "subCategories": "토너",
+        "productName": "토너1",
+        "productImage": "/images/tube75mL.png",
+        "size": "ONE",
+        "price": 20000
+    }
+]
