@@ -267,12 +267,12 @@ const Payment = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button className="buttonToPayment">
+                            {/* <button className="buttonToPayment">
                                 결제하기로 이동
-                            </button>
+                            </button> */}
                         </div>
                         <div className="sumInfo">
-                            <p className="sumInfoText">다음 페이지</p>
+                            <p className="sumInfoText">구매 할 제품</p>
                             <div className="orderTable">
                                 <ul className="columnEntryList">
                                     {OrderTableImages.map(columnEntry => {
@@ -318,7 +318,7 @@ const Payment = () => {
                                         );
                                     })}
                                     <div className="tax">
-                                        <span>소계 (세금 10% 포함)</span>
+                                        <span>소계 (세금 포함)</span>
                                         <span className="taxAmount">
                                             ₩206,000
                                         </span>
