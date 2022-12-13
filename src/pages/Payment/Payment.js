@@ -151,9 +151,6 @@ const Payment = () => {
                                     </div>
                                 </div>
                             </div>
-                            {/* <button className="buttonToPayment">
-                                결제하기로 이동
-                            </button> */}
                         </div>
                         <div className="sumInfo">
                             <p className="sumInfoText">구매할 제품</p>
