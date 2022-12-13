@@ -52,9 +52,9 @@ const MainCarousel = () => {
         <div className="mainCarousel">
             <div className="carouselBox">
                 <div className="carouselWrapper" style={carouselStyle}>
-                    {carouselImages.map((items, idx) => {
+                    {carouselImages.map((items, index) => {
                         return (
-                            <div key={'' + items.id + idx}>
+                            <div key={'' + items.id + index}>
                                 <img src={items.img} alt="carouselImage" />
                             </div>
                         );
