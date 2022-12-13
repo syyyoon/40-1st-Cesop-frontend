@@ -4,13 +4,13 @@
 .detailProducts {
     background-color: #fffef2;
     .productDetailHeader {
-        @include flex($direction: null, $align: center, $justify: end);
+        @include flex(null, center, end);
         margin-right: 160px;
         padding: 150px 0;
         background-color: #fffef2;
         color: #333;
         .cesopLogo {
-            @include position($top: 270px, $left: 40px);
+            @include position(270px, null, 40px, null);
             width: 120px;
             height: 40px;
         }
@@ -58,7 +58,7 @@
     .messageToCustomer {
         padding: 0 0 100px;
         .message {
-            @include flex($direction: null, $align: center, $justify: center);
+            @include flex(null, center, center);
             height: 130px;
             .freeService {
                 align-items: center;
@@ -93,7 +93,7 @@
         }
 
         .howToUseContent {
-            @include flex($direction: column, $align: null, $justify: center);
+            @include flex(column, null, center);
 
             width: 50%;
             padding: 150px;

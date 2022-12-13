@@ -3,7 +3,7 @@ import './Description.scss';
 
 const MainDescription = ({ itemData }) => {
     return (
-        <div>
+        <div className="mainDescription">
             {ITEM_MAIN_TITLE_LIST.map(itemTitle => {
                 return (
                     <div className="productDetailList">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import MainDescription from '../../components/MainDescription';
-import SubDescription from '../../components/SubDescription';
+import MainDescription from './Description/MainDescription';
+import SubDescription from './Description/SubDescription';
 import './DetailProducts.scss';
 
 const DetailProducts = () => {

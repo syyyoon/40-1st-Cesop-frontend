@@ -9,7 +9,7 @@ import Login from './pages/Login/Login';
 import Main from './pages/Main/Main';
 import Payment from './pages/Payment/Payment';
 import SignUp from './pages/SignUp/SignUp';
-// import DetailProducts_copy from './pages/DetailProducts/DetailProducts_copy';
+
 function Router() {
     return (
         <BrowserRouter>
