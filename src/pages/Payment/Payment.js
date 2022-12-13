@@ -2,6 +2,8 @@ import React from 'react';
 import { OrderTable } from './OrderTable';
 import { OrderTableImages } from './OrderTableImages';
 import { OrderTableSum } from './OrderTableSum';
+import OrderInput from './OrderInput';
+import './OrderInput.scss';
 import './Payment.scss';
 
 const Payment = () => {
@@ -19,13 +21,13 @@ const Payment = () => {
             <div className="main">
                 <div className="mainContent">
                     <div className="mainLogo">
-                        <a className="logo" href="">
+                        <div className="logo" href="">
                             <img
                                 className="cesopLogo"
                                 src="./images/cesopLogo1.png"
                                 alt=""
                             />
-                        </a>
+                        </div>
                     </div>
                     <div className="mainCenter">
                         <div className="customerInfo">
@@ -41,125 +43,7 @@ const Payment = () => {
                             <p className="shippingInfoText">
                                 주문을 어디로 보내시겠습니까?
                             </p>
-                            <div className="userInput">
-                                <div className="userName">
-                                    <div className="lastNameContent">
-                                        <label
-                                            className="lastNameLabel"
-                                            htmlFor="lastNameLabel"
-                                        >
-                                            <p className="lastName">성</p>
-                                            <input
-                                                className="lastNameInput"
-                                                type="text"
-                                                placeholder="성"
-                                            />
-                                        </label>
-                                    </div>
-                                    <div className="firstNameContent">
-                                        <label
-                                            className="firstNameLabel"
-                                            htmlFor="firstNameLabel"
-                                        >
-                                            <p className="firstName">이름</p>
-                                            <input
-                                                className="firstNameInput"
-                                                type="text"
-                                                placeholder="이름"
-                                            />
-                                        </label>
-                                    </div>
-                                </div>
-                                <div className="userCode">
-                                    <div className="nationalContent">
-                                        <label
-                                            className="nationalLabel"
-                                            htmlFor="nationalLabel"
-                                        >
-                                            <p className="nationalCode">
-                                                국가 코드
-                                            </p>
-                                            <select
-                                                name="nationalName"
-                                                id="selectNational"
-                                            >
-                                                <option value="AF">AFG</option>
-                                                <option value="AL">ALB</option>
-                                                <option value="DZA">DZA</option>
-                                                <option value="AS">ASM</option>
-                                                <option value="AD">AND</option>
-                                                <option value="AO">AGO</option>
-                                                <option value="AW">ABW</option>
-                                                <option value="AU">AUS</option>
-                                                <option value="AZ">AZE</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                    <div className="numberContent">
-                                        <label
-                                            className="numberLabel"
-                                            htmlFor="numberContent"
-                                        >
-                                            <p className="phoneNumber">
-                                                전화번호 (010-0000-0000)
-                                            </p>
-                                            <input
-                                                className="phoneNumberInput"
-                                                type="text"
-                                                placeholder="000-0000-0000"
-                                            />
-                                        </label>
-                                    </div>
-                                </div>
-                                <div className="countryContent">
-                                    <label
-                                        className="countryLabel"
-                                        htmlFor="countryLabel"
-                                    >
-                                        <p className="countryName">국가</p>
-                                        <select
-                                            name="selectcountry"
-                                            id="selectcountry"
-                                        >
-                                            <option value="대한민국">
-                                                대한민국
-                                            </option>
-                                            <option value="나열되지 않은 국가">
-                                                나열되지 않은 국가
-                                            </option>
-                                        </select>
-                                    </label>
-                                </div>
-                                <div className="userAddressContent">
-                                    <label
-                                        className="addressLabel"
-                                        htmlFor="addressLabel"
-                                    >
-                                        <p className="address">주소</p>
-                                        <input
-                                            className="addressInput"
-                                            type="text"
-                                            placeholder="주소"
-                                        />
-                                    </label>
-                                </div>
-                                <div className="userDetailAddressContent">
-                                    <label
-                                        className="detailAddressLabel"
-                                        htmlFor="detailAddressLabel"
-                                    >
-                                        <p className="detailAddress">
-                                            상세주소(아파트 동/호수, 일반주택
-                                            등)
-                                        </p>
-                                        <input
-                                            className="detailAddressInput"
-                                            type="text"
-                                            placeholder="상세주소"
-                                        />
-                                    </label>
-                                </div>
-                            </div>
+                            <OrderInput />
                             <div className="shippingMethodWrapper">
                                 <div className="shippingMethod">
                                     <p className="methodTopHeading">
@@ -272,7 +156,7 @@ const Payment = () => {
                             </button> */}
                         </div>
                         <div className="sumInfo">
-                            <p className="sumInfoText">구매 할 제품</p>
+                            <p className="sumInfoText">구매할 제품</p>
                             <div className="orderTable">
                                 <ul className="columnEntryList">
                                     {OrderTableImages.map(columnEntry => {
@@ -299,12 +183,12 @@ const Payment = () => {
                                                 className="rowEntry"
                                                 key={rowEntry.id}
                                             >
-                                                <a
+                                                <div
                                                     className="productName"
                                                     href={rowEntry.link}
                                                 >
                                                     {rowEntry.productName}
-                                                </a>
+                                                </div>
                                                 <span className="productSize">
                                                     {rowEntry.productSize}
                                                 </span>
