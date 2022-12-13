@@ -31,8 +31,6 @@ const SignUp = () => {
             });
     };
 
-    console.log(userInfo);
-
     return (
         <div className="signup">
             <div className="signUpContainer">
