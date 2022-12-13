@@ -33,7 +33,7 @@ const Category = ({ list }) => {
                 <div className="categoryWrapper">
                     {list.map(menu => {
                         return (
-                            <ul key={menu.id}>
+                            <ul className="categoryWrapperUl" key={menu.id}>
                                 {menu.category.map(category => {
                                     return (
                                         <div

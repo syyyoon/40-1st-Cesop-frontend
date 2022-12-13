@@ -28,6 +28,7 @@ const Navigation = () => {
                         {CATEGORY_LIST.map(list => {
                             return (
                                 <li
+                                    className="navLi"
                                     key={list.id}
                                     onClick={() => listCheck(list.id)}
                                 >

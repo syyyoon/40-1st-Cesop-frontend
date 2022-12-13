@@ -15,10 +15,11 @@ const Modal = ({ closeModal, listCheck, listId }) => {
         <div className="modal">
             <div className="modalWrapper">
                 <div className="modalCategory">
-                    <ul>
+                    <ul className="modalUl">
                         {CATEGORY_LIST.map(list => {
                             return (
                                 <li
+                                    className="modalLi"
                                     key={list.id}
                                     onClick={() => listCheck(list.id)}
                                 >
@@ -49,7 +50,7 @@ const Modal = ({ closeModal, listCheck, listId }) => {
                 {MENU[listId] ? (
                     <Category list={MENU[listId]} key={listId} />
                 ) : (
-                    <h4>준비 중입니다.</h4>
+                    <h4 className="loadingMessage">준비 중입니다.</h4>
                 )}
             </div>
         </div>
