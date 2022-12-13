@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import AllProducts from '../AllProducts/AllProducts';
-import FilterButton from '../FilterButton/FilterButton';
 import ProductList from '../ProductList/ProductList';
 import './SubCategoryMenu.scss';
 
@@ -40,8 +39,9 @@ const SubCategoryMenu = () => {
                         );
                     })}
                 </ul>
-                {currentTap !== '모든 스킨 보기' && <FilterButton />}
+                {/* {currentTap !== '모든 스킨 보기' && <FilterButton />} */}
             </div>
+            {/* {<FilterButton /> && <FilterSection />} */}
 
             {MAPPING_OBJ[currentTap]}
         </>

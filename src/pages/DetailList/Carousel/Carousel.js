@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Carousel.scss';
 
-function Carousel({ mainCategory, content, productList }) {
+const Carousel = ({ list, sub_categories }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [showButton, setShowButton] = useState({ display: 'none' });
     const productRef = useRef(null);
     const scrollRef = useRef(null);
 
+    console.log(list);
     const productNumInFirstView = 2;
     const numberOfDescription = 1;
 
@@ -19,15 +20,15 @@ function Carousel({ mainCategory, content, productList }) {
     };
 
     const nextSlide = () => {
-        if (currentSlide >= productList.length - productNumInFirstView) {
-            setCurrentSlide(productList.length - productNumInFirstView);
+        if (currentSlide >= list.length - productNumInFirstView) {
+            setCurrentSlide(list.length - productNumInFirstView);
         } else {
             setCurrentSlide(currentSlide + 1);
         }
     };
 
     const onMouseEventHandler = () => {
-        productList.length > productNumInFirstView
+        list.length > productNumInFirstView
             ? setShowButton({ display: 'block' })
             : setShowButton({ display: 'none' });
     };
@@ -38,17 +39,17 @@ function Carousel({ mainCategory, content, productList }) {
     const stopShowAtFirst =
         currentSlide !== 0 ? showButton : { display: 'none' };
     const stopShowAtLast =
-        currentSlide !== productList.length - productNumInFirstView
+        currentSlide !== list.length - productNumInFirstView
             ? showButton
             : { display: 'none' };
 
     useEffect(() => {
         productRef.current.style.transition = 'all 0.5s ease-in-out';
         productRef.current.style.transform = `translateX(-${
-            (100 / (productList.length + numberOfDescription)) * currentSlide
+            (100 / (list.length + numberOfDescription)) * currentSlide
         }%)`;
         scrollRef.current.style.width = `${
-            100 / (productList.length - (productNumInFirstView - 1))
+            100 / (list.length - (productNumInFirstView - 1))
         }%`;
         scrollRef.current.style.transition = 'all 0.5s ease-in-out';
         scrollRef.current.style.transform = `translateX(${
@@ -66,25 +67,29 @@ function Carousel({ mainCategory, content, productList }) {
                 <div className="carouselBox" ref={productRef}>
                     <div className="descriptionOfList">
                         <div>
-                            <h2 className="productCategory">{mainCategory}</h2>
-                            <p className="descriptionCategory">{content}</p>
+                            <h2 className="productCategory">
+                                {list[0].sub_categories}
+                            </h2>
+                            <p className="descriptionCategory">aaaa</p>
                             <a className="anchorToList">
-                                {mainCategory} 모두 보기 ({productList.length})
+                                {sub_categories} 모두 보기 ({list.length})
                                 <span className="arrowToList">→</span>
                             </a>
                         </div>
                     </div>
-                    {productList.map(product => {
+                    {list.map(product => {
                         return (
                             <div key={product.id} className="productCell">
                                 <img
                                     className="allProductImage"
                                     alt="product"
-                                    src={product.image}
+                                    src={product.product_image}
                                 />
-                                <h5 className="productName">{product.name}</h5>
+                                <h5 className="productName">
+                                    {product.product_name}
+                                </h5>
                                 <span className="productInfo">
-                                    {product.volume}
+                                    {product.size}
                                     {' / '}
                                     {product.price.toLocaleString('ko-KR', {
                                         style: 'currency',
@@ -110,7 +115,7 @@ function Carousel({ mainCategory, content, productList }) {
                     <span className="arrowInButton">〉</span>
                 </button>
             </div>
-            {productList.length >= 3 ? (
+            {list.length >= 3 ? (
                 <div className="totalIndicator">
                     <div className="selectedIndicator" ref={scrollRef} />
                 </div>
@@ -119,6 +124,6 @@ function Carousel({ mainCategory, content, productList }) {
             )}
         </section>
     );
-}
+};
 
 export default Carousel;
