@@ -1,21 +1,8 @@
 @import '/src/styles/variables';
 @import '/src/styles/mixin';
 
-@mixin flex($direction: row, $align: center, $justify: center) {
-    display: flex;
-    flex-direction: $direction;
-    align-items: $align;
-    justify-content: $justify;
-}
-
-@mixin absolute($top, $right) {
-    position: absolute;
-    top: $top;
-    right: $right;
-}
-
 .signup {
-    @include flex($direction: null, $align: center, $justify: center);
+    @include flex(null, center, center);
     @include absolute(10%, 30%);
     z-index: 1;
     width: 600px;
@@ -26,10 +13,8 @@
     font-family: 'Suisse Regular', sans-serif;
     .signUpContainer {
         .inputForm {
-            display: flex;
+            @include flex(null, center, space-around);
             flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-around;
 
             .flex {
                 position: relative;
@@ -75,12 +60,7 @@
         }
 
         .buttonWrapper {
-            @include flex(
-                $direction: null,
-                $align: null,
-                $justify: space-between
-            );
-
+            @include flex(null, null, space-between);
             width: 100%;
             margin-bottom: 30px;
 
@@ -91,10 +71,8 @@
                 background-size: cover;
             }
             .closeButton {
-                width: 20px;
-                height: 20px;
+                @extend .arrowLeft;
                 background: url('../../assets/images/close.png') no-repeat;
-                background-size: cover;
             }
         }
         .signupTitle {
@@ -104,8 +82,7 @@
             }
         }
         .userCheckBox {
-            padding-top: 40px;
-            padding-bottom: 30px;
+            padding: 40px 0 30px 0;
             .checkList {
                 .checkBox {
                     margin-bottom: 20px;
