@@ -5,7 +5,7 @@
     text-align: left;
 
     .orderHeader {
-        @include flex(space-between, null);
+        @include flex(null, null, space-between);
         padding: 0 0 15px;
         border-bottom: 2.5px solid rgba(255, 254, 242, 0.1);
 
