@@ -10,7 +10,6 @@ const Payment = () => {
         nowPointAmount: 0,
         remainPointAmount: 0,
     });
-    // const [total, setTotal] = useState(0);
 
     useEffect(() => {
         fetch('/data/orderTable.json', {
@@ -25,33 +24,6 @@ const Payment = () => {
             .then(response => response.json())
             .then(data => setOrderSum(data[0]));
     }, []);
-
-    // useEffect(() => {
-    //     fetch('/data/orderTableSum.json', {
-    //         method: 'GET',
-    //     })
-    //         .then(response => response.json())
-    //         .then(data => setOrderSum(data[0]));
-    // }, []);
-    console.log(orderSum);
-    // const sumAmount = orderSum.productSumAmount;
-
-    // setTotal(sumAmount.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ','));
-    // // .toString()
-    // // .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
-
-    // console.log(total);
-
-    // const point = orderSum.nowPointAmount;
-    // // .toString()
-    // // .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
-    // console.log(point);
-
-    // const remainPoint = orderSum.nowPointAmount - orderSum.productSumAmount;
-    // // .toString()
-    // // .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
-
-    // console.log(remainPoint);
 
     return (
         <div className="payment">
