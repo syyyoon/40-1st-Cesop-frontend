@@ -65,7 +65,7 @@ export const FOOTER_DATA = [
     {
         id: 7,
         title: '소셜',
-        content: [{ id: 1, text: 'GIT' }],
+        content: [{ id: 1, text: 'Contact Us' }],
     },
     {
         id: 8,
