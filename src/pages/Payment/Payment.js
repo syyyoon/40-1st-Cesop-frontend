@@ -3,6 +3,7 @@ import { OrderTable } from './OrderTable';
 import { OrderTableImages } from './OrderTableImages';
 import { OrderTableSum } from './OrderTableSum';
 import OrderInput from './OrderInput';
+import COUNTRYCODE from './COUNTRYCODE';
 import './OrderInput.scss';
 import './Payment.scss';
 
@@ -226,6 +227,7 @@ const Payment = () => {
                                             </li>
                                         );
                                     })}
+                                    <span className="producPiontAmount" />
                                 </ul>
                                 <button className="purchaseCompleted">
                                     구매 완료

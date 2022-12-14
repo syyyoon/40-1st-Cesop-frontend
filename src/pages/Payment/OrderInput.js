@@ -1,14 +1,8 @@
 import React from 'react';
+import { COUNTRYCODE } from './COUNTRYCODE';
 const OrderInput = () => {
-    // const autoHyphen = target => {
-    //     target.value = target.value
-    //         .replace(/[^0-9]/g, '')
-    //         .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, '$1-$2-$3')
-    //         .replace(/(\-{1,2})$/g, '');
-    // };
-
     return (
-        <div className="userInput">
+        <div className="orderInput">
             <div className="userName">
                 <div className="lastNameContent">
                     <label className="lastNameLabel" htmlFor="lastNameLabel">
@@ -36,15 +30,16 @@ const OrderInput = () => {
                     <label className="nationalLabel" htmlFor="nationalLabel">
                         <p className="nationalCode">국가 코드</p>
                         <select name="nationalName" id="selectNational">
-                            <option value="ST">STP</option>
-                            <option value="AL">ALB</option>
-                            <option value="DZA">DZA</option>
-                            <option value="KR">KOR</option>
-                            <option value="ZA">ZAF</option>
-                            <option value="RW">RWA</option>
-                            <option value="AW">ABW</option>
-                            <option value="PY">PRY</option>
-                            <option value="NU">NIU</option>
+                            {COUNTRYCODE.map(option => {
+                                return (
+                                    <option
+                                        key={option.id}
+                                        value={option.value}
+                                    >
+                                        {option.country}
+                                    </option>
+                                );
+                            })}
                         </select>
                     </label>
                 </div>
@@ -53,7 +48,6 @@ const OrderInput = () => {
                         <p className="phoneNumber">전화번호 (010-0000-0000)</p>
                         <input
                             className="phoneNumberInput"
-                            // oninput="autoHyphen2(this)"
                             type="text"
                             placeholder="000-0000-0000"
                             maxlength="13"
