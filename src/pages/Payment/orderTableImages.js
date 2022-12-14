@@ -1,4 +1,4 @@
-export const orderTableImages = [
+export const ORDER_TABLE_IMAGES = [
     {
         id: 1,
         link: '',

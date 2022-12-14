@@ -1,0 +1,19 @@
+{
+    "id": "1",
+    "subCategories": "바디&핸드",
+    "productName": "파슬리 씨드 페이셜 클렌징 오일",
+    "productImage": "./images/tube_75mL.png",
+    "productDescription": "진한 메이크업도 부드럽고 깨끗하게 닦아주는 오일 타입의 클렌저",
+    "skinType": "모든 피부타입",
+    "amountUsed": "반 티스푼",
+    "price": "31,000",
+    "size": "ONE SIZE",
+    "feeling": "부드러운, 진정된",
+    "flavor": "그린,시트러스,상쾌함",
+    "mainIngredient": "마카다미아 씨, 토코페롤, 베타 카로틴",
+    "howToUse": "필요할 때마다 깨끗한 손에 바릅니다.",
+    "texture": "크림 타입",
+    "textureImage": "/images/texture1.jpg",
+    "createdAt": "2022-12-10T09:09:45.000Z",
+    "updatedAt": "2022-12-10T09:09:45.000Z"
+}

@@ -1,9 +1,9 @@
 import React from 'react';
-import { orderTable } from './orderTable';
-import { orderTableImages } from './orderTableImages';
-import { orderTableSum } from './orderTableSum';
-import orderInput from './orderInput';
-import './orderInput.scss';
+import { ORDER_TABLE } from './orderTable';
+import { ORDER_TABLE_IMAGES } from './orderTableImages';
+import { OREDER_TABLE_SUM } from './orderTableSum';
+import OrderInput from './OrderInput';
+
 import './Payment.scss';
 
 const Payment = () => {
@@ -43,7 +43,7 @@ const Payment = () => {
                             <p className="shippingInfoText">
                                 주문을 어디로 보내시겠습니까?
                             </p>
-                            <orderInput />
+                            <OrderInput />
                             <div className="shippingMethodWrapper">
                                 <div className="shippingMethod">
                                     <p className="methodTopHeading">
@@ -156,7 +156,7 @@ const Payment = () => {
                             <p className="sumInfoText">구매할 제품</p>
                             <div className="orderTable">
                                 <ul className="columnEntryList">
-                                    {orderTableImages.map(columnEntry => {
+                                    {ORDER_TABLE_IMAGES.map(columnEntry => {
                                         return (
                                             <li key={columnEntry.id}>
                                                 <img
@@ -174,7 +174,7 @@ const Payment = () => {
                                     })}
                                 </ul>
                                 <ul className="rowEntryList">
-                                    {orderTable.map(rowEntry => {
+                                    {ORDER_TABLE.map(rowEntry => {
                                         return (
                                             <li
                                                 className="rowEntry"
@@ -212,7 +212,7 @@ const Payment = () => {
                                     </div>
                                 </ul>
                                 <ul className="sumRowEntryList">
-                                    {orderTableSum.map(sum => {
+                                    {OREDER_TABLE_SUM.map(sum => {
                                         return (
                                             <li className="sum" key={sum.id}>
                                                 <div className="sumPoint">

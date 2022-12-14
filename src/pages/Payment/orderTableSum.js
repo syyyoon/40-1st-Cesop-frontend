@@ -1,4 +1,4 @@
-export const orderTableSum = [
+export const OREDER_TABLE_SUM = [
     {
         id: 1,
         link: '',

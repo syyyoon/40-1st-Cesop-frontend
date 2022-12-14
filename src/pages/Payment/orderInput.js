@@ -1,5 +1,7 @@
 import React from 'react';
-import { COUNTRYCODE } from './COUNTRYCODE';
+import { COUNTRY_CODE } from './contryCode';
+import './OrderInput.scss';
+
 const orderInput = () => {
     return (
         <div className="orderInput">
@@ -30,7 +32,7 @@ const orderInput = () => {
                     <label className="nationalLabel" htmlFor="nationalLabel">
                         <p className="nationalCode">국가 코드</p>
                         <select name="nationalName" id="selectNational">
-                            {COUNTRYCODE.map(option => {
+                            {COUNTRY_CODE.map(option => {
                                 return (
                                     <option
                                         key={option.id}
