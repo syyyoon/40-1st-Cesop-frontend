@@ -1,0 +1,61 @@
+@import '../../styles/mixin';
+@import '../../styles/variables';
+
+.login {
+    @include flex(null, center, center);
+    .loginContainer {
+        position: absolute;
+        z-index: 1;
+        top: 6%;
+        width: 600px;
+        padding: 50px;
+        border: 1px solid #ccc;
+        background-color: #fffef2;
+        color: #333;
+        font-family: 'Suisse Regular', sans-serif;
+        font-weight: 300;
+
+        .buttonWrapper {
+            @include flex(null, null, end);
+            margin-bottom: 30px;
+
+            .closeButton {
+                width: 20px;
+                height: 20px;
+                background: url('../../assets/images/close.png') no-repeat;
+                background-size: cover;
+                cursor: pointer;
+            }
+        }
+
+        .title {
+            padding-bottom: 50px;
+            font-weight: 400;
+        }
+
+        .buttonLogin {
+            width: 100%;
+            margin: 50px 0;
+            padding: 20px 100px;
+            opacity: 0.6;
+            background-color: #333;
+            color: white;
+        }
+
+        .buttonActive {
+            opacity: 1;
+        }
+        .joinUs {
+            .checkAccount {
+                font-size: 24px;
+                font-weight: 400;
+            }
+            .buttonSignUp {
+                width: 100%;
+                margin-top: 25px;
+                padding: 20px 100px;
+                border: 1px solid #ccc;
+            }
+        }
+    }
+}

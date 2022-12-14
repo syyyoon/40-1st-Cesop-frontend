@@ -1,0 +1,355 @@
+.payment {
+    .main {
+        padding: 0 40px;
+        padding-top: 250px;
+        padding-bottom: 150px;
+        background-color: #f6f5e8;
+
+        .mainContent {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #f6f5e8;
+
+            .mainLogo {
+                .logo {
+                    position: fixed;
+                    top: 250px;
+                    left: 60px;
+
+                    .cesopLogo {
+                        width: 115px;
+                        height: 37px;
+                    }
+                }
+            }
+            .mainCenter {
+                width: 100%;
+
+                .customerInfo {
+                    padding-bottom: 150px;
+
+                    .infoHeading {
+                        width: 100%;
+                        margin-bottom: 30px;
+                        font-size: 2.5rem;
+                        line-height: 1.3;
+                    }
+
+                    .customer {
+                        width: 100%;
+                        margin: 0 0 20px;
+                        padding: 30px 0 0;
+                        color: #666;
+                        font-family: 'Suisse Regular', sans-serif;
+
+                        .customerName {
+                            font-size: 1.7rem;
+                        }
+
+                        .customerEmail {
+                            margin-top: 5px;
+                            font-size: 1.7rem;
+                        }
+                    }
+                }
+                .shippingInfo {
+                    margin-top: 100px;
+                    padding-bottom: 150px;
+
+                    .shippingInfoText {
+                        width: 100%;
+                        margin-bottom: 30px;
+                        font-size: 2.5rem;
+                        line-height: 1.3;
+                    }
+
+                    .shippingMethodWrapper {
+                        margin-top: 100px;
+
+                        .shippingMethod {
+                            .methodTopHeading {
+                                width: 100%;
+                                padding-bottom: 20px;
+                                color: #666;
+                                font-size: 1.2rem;
+                            }
+                            .methodBox {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                width: 100%;
+                                height: 250px;
+                                padding: 60px 70px;
+                                background: #fffef2;
+
+                                .boxHeading {
+                                    font-size: 2rem;
+                                }
+
+                                .boxSubHeadidng {
+                                    margin-top: 20px;
+                                    color: #666;
+                                    font-size: 1.2rem;
+                                }
+
+                                .boxDate {
+                                    margin-top: 5px;
+                                    color: #666;
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+
+                        .checkOption {
+                            .giftOption {
+                                margin: 40px 0 80px 0;
+
+                                .giftProductOption {
+                                    display: flex;
+                                    margin: 0 0 15px;
+
+                                    .checkbox1 {
+                                        width: 18px;
+                                        height: 18px;
+                                        border: 1.5px solid #cfcec4;
+                                        cursor: pointer;
+                                    }
+
+                                    .giftProduct {
+                                        margin-left: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+                                }
+
+                                .giftMessageOption {
+                                    display: flex;
+                                    margin: 0 0 15px;
+
+                                    .checkbox2 {
+                                        width: 18px;
+                                        height: 18px;
+                                        border: 1.5px solid #cfcec4;
+                                        cursor: pointer;
+                                    }
+
+                                    .giftMessage {
+                                        margin-left: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+                                }
+
+                                .giftTextOption {
+                                    .giftText {
+                                        margin-top: 20px;
+                                        margin-bottom: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+
+                                    .giftInputText {
+                                        width: 100%;
+                                        height: 130px;
+                                        padding: 20px;
+                                        border: 1.5px solid #cfcec4;
+                                        resize: none;
+
+                                        &:focus {
+                                            border: 1.5px solid #666;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .deliveryOption {
+                                margin: 40px 0 80px 0;
+
+                                .deliveryMessageOption {
+                                    display: flex;
+                                    margin: 0 0 15px;
+
+                                    .checkbox3 {
+                                        width: 18px;
+                                        height: 18px;
+                                        border: 1.5px solid #cfcec4;
+                                        cursor: pointer;
+                                    }
+
+                                    .deliveryMessage {
+                                        margin-left: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+                                }
+
+                                .deliveryTextOption {
+                                    .deliveryText {
+                                        margin-top: 20px;
+                                        margin-bottom: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+
+                                    .deliveryInputText {
+                                        width: 100%;
+                                        height: 130px;
+                                        padding: 20px;
+                                        border: 1.5px solid #cfcec4;
+                                        resize: none;
+
+                                        &:focus {
+                                            border: 1.5px solid #666;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .shippingOption {
+                                margin: 40px 0 80px 0;
+
+                                .shippingMessageOption {
+                                    display: flex;
+                                    margin: 0 0 15px;
+
+                                    .checkbox4 {
+                                        width: 18px;
+                                        height: 18px;
+                                        border: 1.5px solid #cfcec4;
+                                        cursor: pointer;
+                                    }
+
+                                    .shippingMessage {
+                                        margin-left: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+                                }
+
+                                .shippingTextOption {
+                                    .shippingText {
+                                        margin-top: 20px;
+                                        margin-bottom: 10px;
+                                        color: #666;
+                                        font-size: 1.2rem;
+                                    }
+
+                                    .shippingInputText {
+                                        width: 100%;
+                                        height: 130px;
+                                        padding: 20px;
+                                        border: 1.5px solid #cfcec4;
+                                        resize: none;
+
+                                        &:focus {
+                                            border: 1.5px solid #666;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .sumInfo {
+                    margin-top: 100px;
+                    padding-bottom: 150px;
+
+                    .sumInfoText {
+                        width: 100%;
+                        margin-bottom: 55px;
+                        font-size: 2.5rem;
+                        line-height: 1.3;
+                    }
+
+                    .orderTable {
+                        .rowEntryList {
+                            width: 100%;
+                            border-top: 3px solid #252525;
+                            border-bottom: 3px solid #252525;
+                            color: #666;
+                            font-size: 1.2rem;
+                            line-height: 1.75;
+
+                            .rowEntry {
+                                display: flex;
+                                justify-content: space-between;
+                                width: 100%;
+                                padding: 25px 0;
+                                border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+                                .rowEntry:last-child {
+                                    border: none;
+                                }
+                                .productName {
+                                    display: flex;
+                                    width: 50%;
+                                }
+
+                                .productSize {
+                                    display: flex;
+                                    width: 15%;
+                                }
+
+                                .productQuantity {
+                                    display: flex;
+                                    width: 15%;
+                                }
+
+                                .productNameAmount {
+                                    display: flex;
+                                }
+                            }
+
+                            .shipping {
+                                display: flex;
+                                justify-content: space-between;
+                                width: 100%;
+                                padding: 25px 0;
+
+                                .shippingAmount {
+                                    color: black;
+                                }
+                            }
+                        }
+
+                        .sumRowEntryList {
+                            margin: 20px 0;
+                            color: #666;
+                            font-size: 1.2rem;
+                            line-height: 1.75;
+
+                            .sum {
+                                padding: 10px 0;
+
+                                .sumPoint {
+                                    .pointAmount {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        margin-bottom: 10px;
+
+                                        .producPointAmount {
+                                            color: black;
+                                            font-size: 1.8rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .purchaseCompleted {
+                            width: 100%;
+                            height: 80px;
+                            background-color: #333;
+                            color: #fffef2;
+                            font-size: 1.2rem;
+
+                            &:hover {
+                                background-color: black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

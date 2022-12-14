@@ -11,3 +11,11 @@
     align-items: $align;
     justify-content: $justify;
 }
+
+@mixin position($top: null, $bottom: null, $left: null, $right: null) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
