@@ -1,10 +1,9 @@
 import React from 'react';
-import { OrderTable } from './OrderTable';
-import { OrderTableImages } from './OrderTableImages';
-import { OrderTableSum } from './OrderTableSum';
-import OrderInput from './OrderInput';
-import COUNTRYCODE from './COUNTRYCODE';
-import './OrderInput.scss';
+import { orderTable } from './orderTable';
+import { orderTableImages } from './orderTableImages';
+import { orderTableSum } from './orderTableSum';
+import orderInput from './orderInput';
+import './orderInput.scss';
 import './Payment.scss';
 
 const Payment = () => {
@@ -44,7 +43,7 @@ const Payment = () => {
                             <p className="shippingInfoText">
                                 주문을 어디로 보내시겠습니까?
                             </p>
-                            <OrderInput />
+                            <orderInput />
                             <div className="shippingMethodWrapper">
                                 <div className="shippingMethod">
                                     <p className="methodTopHeading">
@@ -66,24 +65,24 @@ const Payment = () => {
                                     <div className="giftOption">
                                         <div className="giftProductOption">
                                             <input
-                                                className="checkbox1"
+                                                className="forGift"
                                                 type="checkbox"
                                             />
                                             <label
                                                 className="giftProduct"
-                                                htmlFor=""
+                                                htmlFor="forGift"
                                             >
                                                 선물할 제품입니다.
                                             </label>
                                         </div>
                                         <div className="giftMessageOption">
                                             <input
-                                                className="checkbox2"
+                                                className="forGiftMessage"
                                                 type="checkbox"
                                             />
                                             <label
                                                 className="giftMessage"
-                                                htmlFor=""
+                                                htmlFor="forGiftMessage"
                                             >
                                                 기프트 메시지 카드를 함께 보내고
                                                 싶습니다.
@@ -103,12 +102,12 @@ const Payment = () => {
                                     <div className="deliveryOption">
                                         <div className="deliveryMessageOption">
                                             <input
-                                                className="checkbox3"
+                                                className="forDelivery"
                                                 type="checkbox"
                                             />
                                             <label
                                                 className="deliveryMessage"
-                                                htmlFor=""
+                                                htmlFor="forDelivery"
                                             >
                                                 배송 기사님께 요청 사항이
                                                 있습니다.
@@ -128,12 +127,12 @@ const Payment = () => {
                                     <div className="shippingOption">
                                         <div className="shippingMessageOption">
                                             <input
-                                                className="checkbox4"
+                                                className="forShipping"
                                                 type="checkbox"
                                             />
                                             <label
                                                 className="shippingMessage"
-                                                htmlFor=""
+                                                htmlFor="forShipping"
                                             >
                                                 주문 포장 및 기타 요청 사항이
                                                 있습니다. (예: 개별 포장)
@@ -157,7 +156,7 @@ const Payment = () => {
                             <p className="sumInfoText">구매할 제품</p>
                             <div className="orderTable">
                                 <ul className="columnEntryList">
-                                    {OrderTableImages.map(columnEntry => {
+                                    {orderTableImages.map(columnEntry => {
                                         return (
                                             <li key={columnEntry.id}>
                                                 <img
@@ -175,7 +174,7 @@ const Payment = () => {
                                     })}
                                 </ul>
                                 <ul className="rowEntryList">
-                                    {OrderTable.map(rowEntry => {
+                                    {orderTable.map(rowEntry => {
                                         return (
                                             <li
                                                 className="rowEntry"
@@ -213,7 +212,7 @@ const Payment = () => {
                                     </div>
                                 </ul>
                                 <ul className="sumRowEntryList">
-                                    {OrderTableSum.map(sum => {
+                                    {orderTableSum.map(sum => {
                                         return (
                                             <li className="sum" key={sum.id}>
                                                 <div className="sumPoint">

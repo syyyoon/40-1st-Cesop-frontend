@@ -1,6 +1,6 @@
 import React from 'react';
 import { COUNTRYCODE } from './COUNTRYCODE';
-const OrderInput = () => {
+const orderInput = () => {
     return (
         <div className="orderInput">
             <div className="userName">
@@ -95,4 +95,4 @@ const OrderInput = () => {
     );
 };
 
-export default OrderInput;
+export default orderInput;

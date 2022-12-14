@@ -1,4 +1,4 @@
-export const OrderTable = [
+export const orderTable = [
     {
         id: 1,
         link: '',
