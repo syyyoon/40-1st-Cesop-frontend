@@ -2,7 +2,7 @@ import React from 'react';
 import { COUNTRY_CODE } from './contryCode';
 import './OrderInput.scss';
 
-const orderInput = () => {
+const OrderInput = () => {
     return (
         <div className="orderInput">
             <div className="userName">
@@ -97,4 +97,4 @@ const orderInput = () => {
     );
 };
 
-export default orderInput;
+export default OrderInput;

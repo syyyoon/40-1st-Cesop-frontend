@@ -3,7 +3,7 @@ import DescriptionCarousel from '../DescriptionCarousel/DescriptionCarousel';
 import './Carousel.scss';
 
 const Carousel = ({ list }) => {
-    const { subCategories, content, product } = list;
+    const { subcategory, content, products } = list;
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isShowButton, setIsShowButton] = useState('');
     const productRef = useRef(null);
@@ -21,15 +21,15 @@ const Carousel = ({ list }) => {
     };
 
     const nextSlide = () => {
-        if (currentSlide >= product.length - productNumInFirstView) {
-            setCurrentSlide(product.length - productNumInFirstView);
+        if (currentSlide >= products.length - productNumInFirstView) {
+            setCurrentSlide(products.length - productNumInFirstView);
         } else {
             setCurrentSlide(currentSlide + 1);
         }
     };
 
     const onMouseEventHandler = () => {
-        product.length > productNumInFirstView
+        products.length > productNumInFirstView
             ? setIsShowButton('--show')
             : setIsShowButton('');
     };
@@ -40,10 +40,10 @@ const Carousel = ({ list }) => {
     useEffect(() => {
         productRef.current.style.transition = 'all 0.5s ease-in-out';
         productRef.current.style.transform = `translateX(-${
-            (100 / (product.length + numberOfDescription)) * currentSlide
+            (100 / (products.length + numberOfDescription)) * currentSlide
         }%)`;
         scrollRef.current.style.width = `${
-            100 / (product.length - (productNumInFirstView - 1))
+            100 / (products.length - (productNumInFirstView - 1))
         }%`;
         scrollRef.current.style.transition = 'all 0.5s ease-in-out';
         scrollRef.current.style.transform = `translateX(${
@@ -60,11 +60,11 @@ const Carousel = ({ list }) => {
             >
                 <div className="carouselBox" ref={productRef}>
                     <DescriptionCarousel
-                        subCategories={subCategories}
+                        subcategory={subcategory}
                         content={content}
-                        product={product}
+                        products={products}
                     />
-                    {product.map(product => {
+                    {products.map(product => {
                         return (
                             <div key={product.id} className="productCell">
                                 <img
@@ -97,7 +97,7 @@ const Carousel = ({ list }) => {
                 </button>
                 <button
                     className={`carousleMove${
-                        currentSlide !== product.length - productNumInFirstView
+                        currentSlide !== products.length - productNumInFirstView
                             ? isShowButton
                             : ''
                     } moveNext`}
@@ -106,7 +106,7 @@ const Carousel = ({ list }) => {
                     <span className="arrowInButton">〉</span>
                 </button>
             </div>
-            {product.length >= 3 ? (
+            {products.length >= 3 ? (
                 <div className="totalIndicator">
                     <div className="selectedIndicator" ref={scrollRef} />
                 </div>
