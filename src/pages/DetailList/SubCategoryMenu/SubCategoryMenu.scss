@@ -1,0 +1,90 @@
+@import '/src/styles/mixin';
+@import '/src/styles/variables';
+
+.subCategoryMenu {
+    padding-top: 80px;
+    .topSection {
+        .cesopLogo {
+            position: absolute;
+            top: calc(80px + 74px);
+            left: 40px;
+            width: 120px;
+        }
+        .categoryTitleHolder {
+            padding: 0 20px 0 40px;
+
+            .categoryTitle {
+                margin: 120px 0 20px 0;
+            }
+        }
+    }
+    .categoryBar {
+        @include flex(space-between, center);
+        height: 110px;
+        background-color: #ebeade;
+
+        .categoryList {
+            @include flex(flex-start, center);
+
+            .categoryName {
+                height: 30px;
+                padding: 0 0.5rem 0 1rem;
+                color: #666;
+                font-size: 14px;
+
+                &:first-child {
+                    position: relative;
+                    padding-left: 40px;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 100%;
+                        height: 10px;
+                        margin: auto;
+                        transform: translateY(-50%);
+                        border-left: 1px solid #666;
+                    }
+                }
+                .subCategoryButton {
+                    height: 100%;
+                }
+                .textOfName {
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 100%;
+                        right: 0;
+                        width: 100%;
+                        transform: scaleX(0);
+                        transform-origin: left;
+                        transition: transform 0.25s
+                            cubic-bezier(0.645, 0.045, 0.355, 1);
+                        border-bottom: 1px solid #666;
+                    }
+                    &:hover::after {
+                        transform: scaleX(1);
+                    }
+
+                    &--selected {
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            top: 100%;
+                            right: 0;
+                            width: 100%;
+                            border-bottom: 1px solid #666;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

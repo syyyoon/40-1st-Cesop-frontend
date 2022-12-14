@@ -1,20 +1,36 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Preview.scss';
 
-function Preview(props) {
-    const { product } = props;
+const Preview = ({ product }) => {
+    const previewRef = useRef(null);
+    const previewButtonRef = useRef(null);
 
+    const onMouseEventHandler = () => {
+        previewRef.current.style.backgroundColor = '#F0EFE1';
+        previewButtonRef.current.style.opacity = '1';
+    };
+
+    const leaveMouseEventHandler = () => {
+        previewRef.current.style.backgroundColor = 'transparent';
+        previewButtonRef.current.style.opacity = '0';
+    };
     return (
-        <div className="preview">
-            <picture className="imageSection">
-                <img
-                    className="productImage"
-                    alt="preview"
-                    src={product.productImage}
-                />
-            </picture>
-            <div className="productInfo">
-                <a>
+        <div
+            className="preview"
+            ref={previewRef}
+            onMouseEnter={onMouseEventHandler}
+            onMouseLeave={leaveMouseEventHandler}
+        >
+            <Link>
+                <picture className="imageSection">
+                    <img
+                        className="productImage"
+                        alt="preview"
+                        src={product.productImage}
+                    />
+                </picture>
+                <div className="productInfo">
                     <h5 className="productName">{product.productName}</h5>
                     <div>
                         <span>
@@ -26,8 +42,8 @@ function Preview(props) {
                             })}
                         </span>
                     </div>
-                </a>
-            </div>
+                </div>
+            </Link>
             <div className="productDetails">
                 <ul className="listOfDetails">
                     <li className="detailsInfo">
@@ -44,9 +60,11 @@ function Preview(props) {
                     </li>
                 </ul>
             </div>
-            <button className="addCartButton">카트에 추가</button>
+            <button className="addCartButton" ref={previewButtonRef}>
+                카트에 추가
+            </button>
         </div>
     );
-}
+};
 
 export default Preview;

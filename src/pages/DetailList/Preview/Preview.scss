@@ -5,6 +5,7 @@
     @include flex(center, center, column);
     width: 33.333%;
     height: 790px;
+    transition: background-color 0.3s;
 
     .imageSection {
         @include flex(center, flex-end);
@@ -50,10 +51,11 @@
         }
     }
     .addCartButton {
-        visibility: hidden;
         width: 100%;
         height: 60px;
         padding: 21px 23px;
+        transition: opacity 0.3s;
+        opacity: 0;
         background-color: #333;
         color: white;
     }

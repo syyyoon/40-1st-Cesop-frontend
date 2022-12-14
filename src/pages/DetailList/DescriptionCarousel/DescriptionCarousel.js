@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './DescriptionCarousel.scss';
 
 const DescriptionCarousel = ({ subCategories, content, product }) => {
@@ -7,10 +8,12 @@ const DescriptionCarousel = ({ subCategories, content, product }) => {
             <div>
                 <h2 className="productCategory">{subCategories}</h2>
                 <p className="descriptionCategory">{content}</p>
-                <a className="anchorToList">
-                    {subCategories} 모두 보기 ({product.length})
-                    <span className="arrowToList">→</span>
-                </a>
+                <Link>
+                    <span className="anchorToList">
+                        {subCategories} 모두 보기 ({product.length})
+                        <span className="arrowToList">→</span>
+                    </span>
+                </Link>
             </div>
         </div>
     );

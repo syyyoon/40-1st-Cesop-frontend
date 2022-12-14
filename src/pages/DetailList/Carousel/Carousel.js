@@ -5,11 +5,10 @@ import './Carousel.scss';
 const Carousel = ({ list }) => {
     const { subCategories, content, product } = list;
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [showButton, setShowButton] = useState({ display: 'none' });
+    const [isShowButton, setIsShowButton] = useState('');
     const productRef = useRef(null);
     const scrollRef = useRef(null);
 
-    console.log(product);
     const productNumInFirstView = 2;
     const numberOfDescription = 1;
 
@@ -31,19 +30,12 @@ const Carousel = ({ list }) => {
 
     const onMouseEventHandler = () => {
         product.length > productNumInFirstView
-            ? setShowButton({ display: 'block' })
-            : setShowButton({ display: 'none' });
+            ? setIsShowButton('--show')
+            : setIsShowButton('');
     };
     const leaveMouseEventHandler = () => {
-        setShowButton({ display: 'none' });
+        setIsShowButton('');
     };
-
-    const stopShowAtFirst =
-        currentSlide !== 0 ? showButton : { display: 'none' };
-    const stopShowAtLast =
-        currentSlide !== product.length - productNumInFirstView
-            ? showButton
-            : { display: 'none' };
 
     useEffect(() => {
         productRef.current.style.transition = 'all 0.5s ease-in-out';
@@ -96,16 +88,20 @@ const Carousel = ({ list }) => {
                     })}
                 </div>
                 <button
-                    className="carousleMove movePrev"
+                    className={`carousleMove${
+                        currentSlide !== 0 ? isShowButton : ''
+                    } movePrev`}
                     onClick={prevSlide}
-                    style={stopShowAtFirst}
                 >
                     <span className="arrowInButton">〈</span>
                 </button>
                 <button
-                    className="carousleMove moveNext"
+                    className={`carousleMove${
+                        currentSlide !== product.length - productNumInFirstView
+                            ? isShowButton
+                            : ''
+                    } moveNext`}
                     onClick={nextSlide}
-                    style={stopShowAtLast}
                 >
                     <span className="arrowInButton">〉</span>
                 </button>

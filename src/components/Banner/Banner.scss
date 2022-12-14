@@ -27,7 +27,7 @@
         background-color: #252525;
 
         .shippingContent {
-            @include flex(row, center, center);
+            @include flex(center, center, row);
 
             .shippingButton {
                 @include flex(null, center, null);

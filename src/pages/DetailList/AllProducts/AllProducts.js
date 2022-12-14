@@ -1,25 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from '../Carousel/Carousel';
+import SubCategoryMenu from '../SubCategoryMenu/SubCategoryMenu';
 import { SUB_CATEGORY_LIST } from '../Datas/subCategoryList';
 import './AllProducts.scss';
+
 const AllProducts = () => {
-    const [data, setData] = useState([]);
+    const [allProductData, setAllProductData] = useState([]);
+
+    const divisionBySubCategory = [];
 
     useEffect(() => {
         fetch('/data/allProductList.json')
             .then(response => response.json())
-            .then(result => setData(result));
+            .then(result => {
+                setAllProductData(result);
+            });
     }, []);
 
-    const allList = [];
     const changeDataToArray = () => {
         SUB_CATEGORY_LIST.map(sub => {
             let listBySubCategory = [];
-            data.map(list => {
+            allProductData.map(list => {
                 list.subCategories === sub.subCategories &&
                     listBySubCategory.push(list);
             });
-            allList.push({
+            divisionBySubCategory.push({
                 id: sub.id,
                 subCategories: sub.subCategories,
                 content: sub.content,
@@ -30,14 +35,16 @@ const AllProducts = () => {
 
     changeDataToArray();
 
-    console.log(data);
-
     return (
-        <div>
-            {allList.map(list => {
-                return <Carousel key={list.id} list={list} />;
-            })}
-        </div>
+        <>
+            <SubCategoryMenu />
+
+            <div className="allProducts">
+                {divisionBySubCategory.map(list => {
+                    return <Carousel key={list.id} list={list} />;
+                })}
+            </div>
+        </>
     );
 };
 
