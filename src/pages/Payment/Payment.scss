@@ -321,13 +321,18 @@
                                 padding: 10px 0;
 
                                 .sumPoint {
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: space-between;
+                                    // flex-direction: column;
+                                    // align-items: flex-end;
 
-                                    .producPointAmount {
-                                        color: black;
-                                        font-size: 1.8rem;
+                                    .pointAmount {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+
+                                        .producPointAmount {
+                                            color: black;
+                                            font-size: 1.8rem;
+                                        }
                                     }
                                 }
                             }

@@ -5,7 +5,12 @@ import './Payment.scss';
 
 const Payment = () => {
     const [carts, setCarts] = useState([]);
-    const [orderSum, setOrderSum] = useState([]);
+    const [orderSum, setOrderSum] = useState({
+        productSumAmount: 0,
+        nowPointAmount: 0,
+        remainPointAmount: 0,
+    });
+    // const [total, setTotal] = useState(0);
 
     useEffect(() => {
         fetch('/data/orderTable.json', {
@@ -13,15 +18,40 @@ const Payment = () => {
         })
             .then(response => response.json())
             .then(data => setCarts(data));
-    }, []);
 
-    useEffect(() => {
         fetch('/data/orderTableSum.json', {
             method: 'GET',
         })
             .then(response => response.json())
-            .then(data => setOrderSum(data));
+            .then(data => setOrderSum(data[0]));
     }, []);
+
+    // useEffect(() => {
+    //     fetch('/data/orderTableSum.json', {
+    //         method: 'GET',
+    //     })
+    //         .then(response => response.json())
+    //         .then(data => setOrderSum(data[0]));
+    // }, []);
+    console.log(orderSum);
+    // const sumAmount = orderSum.productSumAmount;
+
+    // setTotal(sumAmount.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ','));
+    // // .toString()
+    // // .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+
+    // console.log(total);
+
+    // const point = orderSum.nowPointAmount;
+    // // .toString()
+    // // .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+    // console.log(point);
+
+    // const remainPoint = orderSum.nowPointAmount - orderSum.productSumAmount;
+    // // .toString()
+    // // .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+
+    // console.log(remainPoint);
 
     return (
         <div className="payment">
@@ -196,20 +226,31 @@ const Payment = () => {
                                     </div>
                                 </ul>
                                 <ul className="sumRowEntryList">
-                                    {orderSum.map(sum => {
-                                        return (
-                                            <li className="sum" key={sum.id}>
-                                                <div className="sumPoint">
-                                                    <span>{sum.text}</span>
-                                                    <span className="producPointAmount">
-                                                        {sum.productSumAmount}
-                                                        {sum.nowPointAmount}
-                                                        {sum.remainPointAmount}
-                                                    </span>
-                                                </div>
-                                            </li>
-                                        );
-                                    })}
+                                    <li className="sum">
+                                        <div className="sumPoint">
+                                            <div className="pointAmount">
+                                                <span>합계</span>
+                                                <span className="producPointAmount">
+                                                    ₩
+                                                    {orderSum.productSumAmount.toLocaleString()}
+                                                </span>
+                                            </div>
+                                            <div className="pointAmount">
+                                                <span>현재 보유 포인트</span>
+                                                <span className="producPointAmount">
+                                                    ₩
+                                                    {orderSum.nowPointAmount.toLocaleString()}
+                                                </span>
+                                            </div>
+                                            <div className="pointAmount">
+                                                <span>구매 후 잔여 포인트</span>
+                                                <span className="producPointAmount">
+                                                    ₩
+                                                    {orderSum.remainPointAmount.toLocaleString()}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
                                     <span className="producPiontAmount" />
                                 </ul>
                                 <button className="purchaseCompleted">

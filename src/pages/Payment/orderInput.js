@@ -52,7 +52,7 @@ const orderInput = () => {
                             className="phoneNumberInput"
                             type="text"
                             placeholder="000-0000-0000"
-                            maxlength="13"
+                            // maxlength="13"
                         />
                     </label>
                 </div>
