@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Cart.scss';
 import '../../styles/mixin.scss';
-import PRODUCT from './PRODUCT';
 import CartProductList from './CartProductList';
 
 const Cart = () => {
@@ -14,7 +13,6 @@ const Cart = () => {
             .then(response => response.json())
             .then(data => setCarts(data));
     }, []);
-
     const total = carts
         .reduce((a, b) => a + b.productPrice * b.amount, 0)
         // 숫자 3자리 단위 마다 ,를 찍는 정규표현식 코드입니다.
@@ -34,6 +32,24 @@ const Cart = () => {
                 return cart;
             })
         );
+    };
+
+    const payButtonClick = () => {
+        fetch('http://10.58.52.204:8000/cart', {
+            method: 'POST',
+
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8',
+            },
+            body: JSON.stringify({
+                product_name: '레저렉션 아로마틱 핸드 워시',
+                quantity: '1',
+                price: '1000',
+                total_price: { total },
+            }),
+        })
+            .then(response => response.json())
+            .then(data => setCarts(data));
     };
 
     return (
@@ -61,7 +77,10 @@ const Cart = () => {
                                 </div>
                             </div>
                             <div className="cartOrganizeButtonBottom">
-                                <button className="cartPayButton">
+                                <button
+                                    className="cartPayButton"
+                                    onClick={payButtonClick}
+                                >
                                     결제하기
                                 </button>
                             </div>
