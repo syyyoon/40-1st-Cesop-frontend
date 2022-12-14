@@ -1,23 +1,30 @@
-import React from 'react';
-import { ORDER_TABLE } from './orderTable';
-import { ORDER_TABLE_IMAGES } from './orderTableImages';
-import { OREDER_TABLE_SUM } from './orderTableSum';
+import React, { useEffect, useState } from 'react';
 import OrderInput from './OrderInput';
 
 import './Payment.scss';
 
 const Payment = () => {
+    const [carts, setCarts] = useState([]);
+    const [orderSum, setOrderSum] = useState([]);
+
+    useEffect(() => {
+        fetch('/data/orderTable.json', {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(data => setCarts(data));
+    }, []);
+
+    useEffect(() => {
+        fetch('/data/orderTableSum.json', {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(data => setOrderSum(data));
+    }, []);
+
     return (
         <div className="payment">
-            <div className="cartButton">
-                <button className="navCart">
-                    <div className="cartNumber">
-                        <div className="cart">카트</div>
-                        <div className="number">4</div>
-                    </div>
-                    <div className="total">₩206,000</div>
-                </button>
-            </div>
             <div className="main">
                 <div className="mainContent">
                     <div className="mainLogo">
@@ -155,26 +162,8 @@ const Payment = () => {
                         <div className="sumInfo">
                             <p className="sumInfoText">구매할 제품</p>
                             <div className="orderTable">
-                                <ul className="columnEntryList">
-                                    {ORDER_TABLE_IMAGES.map(columnEntry => {
-                                        return (
-                                            <li key={columnEntry.id}>
-                                                <img
-                                                    className="productImage"
-                                                    src={
-                                                        columnEntry.productImages
-                                                    }
-                                                    alt=""
-                                                />
-                                                <span className="productNumber">
-                                                    {columnEntry.productNumber}
-                                                </span>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
                                 <ul className="rowEntryList">
-                                    {ORDER_TABLE.map(rowEntry => {
+                                    {carts.map(rowEntry => {
                                         return (
                                             <li
                                                 className="rowEntry"
@@ -198,12 +187,7 @@ const Payment = () => {
                                             </li>
                                         );
                                     })}
-                                    <div className="tax">
-                                        <span>소계 (세금 포함)</span>
-                                        <span className="taxAmount">
-                                            ₩206,000
-                                        </span>
-                                    </div>
+
                                     <div className="shipping">
                                         <span>배송 방법 - 무료배송</span>
                                         <span className="shippingAmount">
@@ -212,7 +196,7 @@ const Payment = () => {
                                     </div>
                                 </ul>
                                 <ul className="sumRowEntryList">
-                                    {OREDER_TABLE_SUM.map(sum => {
+                                    {orderSum.map(sum => {
                                         return (
                                             <li className="sum" key={sum.id}>
                                                 <div className="sumPoint">
