@@ -2,6 +2,25 @@ import React, { useState } from 'react';
 import './SignUp.scss';
 
 const SignUp = () => {
+    const infoRegEx = {
+        // 1~5길이의 한글
+        lastName: /^[가-힣]{1,5}$/,
+        // 1~5길이의 한글
+        firstName: /^[가-힣]{1,5}$/,
+        // 영문자/숫자/특수문자 가능 + @포함 + 영문자/숫자/특수문자 가능 + .포함 + 영문자 최소2~3글자
+        email: /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/,
+        // 비밀번호는 적어도 하나 이상의 숫자, 문자를 포함해야하고 길이가 8 이상
+        password: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+    };
+
+    const errorMessage = {
+        lastName: '한 글자 이상 입력해주세요.',
+        firstName: '한 글자 이상 입력해주세요.',
+        email: '이메일 주소 형식에 맞지 않습니다. 다시 확인해주세요. (예: name@example.com)',
+        password:
+            '패스워드는 문자, 숫자를 하나 이상 포함해야 하며 8자 이상이어야 합니다',
+    };
+
     const [userInfo, setUserInfo] = useState({
         lastName: '',
         firstName: '',
@@ -9,27 +28,92 @@ const SignUp = () => {
         password: '',
     });
 
-    const inputHandler = e => {
+    const [isFloatLabel, setIsFloatLabel] = useState({
+        lastName: false,
+        firstName: false,
+        email: false,
+        password: false,
+    });
+
+    const [isValid, setIsValid] = useState({
+        lastName: false,
+        firstName: false,
+        email: false,
+        password: false,
+        age: false,
+        human: false,
+    });
+
+    const [isChecked, setIsChecked] = useState({
+        lastName: false,
+        firstName: false,
+        email: false,
+        password: false,
+        age: false,
+        human: false,
+    });
+
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+    const getUserInfo = e => {
         const { name, value } = e.target;
-        setUserInfo({ ...userInfo, [name]: value });
-        console.log(userInfo);
+        setUserInfo(prevState => {
+            return {
+                ...prevState,
+                [name]: value,
+            };
+        });
+        setIsValid(prevState => {
+            return { ...prevState, [name]: infoRegEx[name].test(value) };
+        });
     };
 
-    const getUserInfo = () => {
+    const inputFocus = e => {
+        const { name, value } = e.target;
+        setIsFloatLabel(prevState => {
+            return { ...prevState, [name]: true };
+        });
+        setIsChecked(prevState => {
+            return { ...prevState, [name]: true };
+        });
+    };
+
+    const inputBlur = e => {
+        const { name, value } = e.target;
+        if (value.length !== 0) return;
+
+        setIsFloatLabel(prevState => {
+            return { ...prevState, [name]: false };
+        });
+        setIsChecked(prevState => {
+            return { ...prevState, [name]: false };
+        });
+    };
+
+    const checkBoxClick = e => {
+        const { name, checked } = e.target;
+        setIsValid(prevState => {
+            return { ...prevState, [name]: checked };
+        });
+        setIsChecked(prevState => {
+            return { ...prevState, [name]: true };
+        });
+    };
+
+    const passwordTypeHandler = () => {
+        setIsPasswordVisible(prevState => {
+            return !prevState;
+        });
+    };
+
+    const signupClick = () => {
         fetch('http://10.58.52.204:8000/users/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json;charset=utf-8' },
-            body: JSON.stringify({
-                lastName: userInfo.lastName,
-                firstName: userInfo.firstName,
-                email: userInfo.email,
-                password: userInfo.password,
-            }),
+            body: JSON.stringify(userInfo),
         })
             .then(response => response.json())
-            .then(result => {
-                console.log(result);
-            });
+            .then(result => {});
     };
 
     return (
@@ -47,21 +131,61 @@ const SignUp = () => {
                         재구매하실 수 있습니다.
                     </span>
                 </div>
-                <form className="inputForm">
+                <div className="inputForm">
                     {SIGN_UP_FORM.map(input => {
                         return (
-                            <div className={`${input.className}`}>
+                            <div
+                                className={`${input.className}`}
+                                key={input.id}
+                            >
                                 <input
+                                    onFocus={inputFocus}
+                                    onBlur={inputBlur}
                                     name={input.name}
-                                    onChange={inputHandler}
-                                    type="text"
+                                    onChange={getUserInfo}
                                     className="inputBox"
+                                    type={
+                                        input.type === 'password'
+                                            ? isPasswordVisible
+                                                ? 'text'
+                                                : 'password'
+                                            : 'text'
+                                    }
                                 />
-                                <span className="label">{input.label}</span>
+                                <span
+                                    className={
+                                        isFloatLabel[input.name]
+                                            ? 'label floatLabel'
+                                            : 'label'
+                                    }
+                                >
+                                    {input.label}
+                                </span>
+
+                                <span className="errorMessage">
+                                    {isChecked[input.name]
+                                        ? isValid[input.name]
+                                            ? ''
+                                            : errorMessage[input.name]
+                                        : ''}
+                                </span>
                             </div>
                         );
                     })}
-                </form>
+                    <button
+                        className="showHiddenPassword"
+                        onClick={passwordTypeHandler}
+                        type={
+                            'password'
+                                ? isPasswordVisible
+                                    ? 'text'
+                                    : 'password'
+                                : 'text'
+                        }
+                    >
+                        {isPasswordVisible ? '숨기기' : '보기'}
+                    </button>
+                </div>
 
                 <div className="userCheckBox">
                     <div className="checkList">
@@ -69,8 +193,8 @@ const SignUp = () => {
                             <input
                                 className="checkBox"
                                 type="checkbox"
-                                name=""
-                                value=""
+                                name="age"
+                                onClick={checkBoxClick}
                             />
                             &nbsp;본인은 14세 이상입니다 (필수)
                         </div>
@@ -78,15 +202,28 @@ const SignUp = () => {
                             <input
                                 className="checkBox"
                                 type="checkbox"
-                                name=""
-                                value=""
+                                name="human"
+                                onClick={checkBoxClick}
                             />
                             &nbsp;본인은 로봇이 아닙니다 (필수)
                         </div>
                     </div>
                 </div>
                 <div className="signUpWrapper">
-                    <button onClick={getUserInfo} className="signUpButton">
+                    <button
+                        onClick={signupClick}
+                        className="signUpButton"
+                        disabled={
+                            !(
+                                isValid['age'] &&
+                                isValid['email'] &&
+                                isValid['firstName'] &&
+                                isValid['lastName'] &&
+                                isValid['human'] &&
+                                isValid['password']
+                            )
+                        }
+                    >
                         회원가입
                     </button>
                     <a className="checkUserAccount" href="#">
@@ -99,10 +236,28 @@ const SignUp = () => {
 };
 
 const SIGN_UP_FORM = [
-    { id: 1, label: '성', className: 'flex', name: 'lastName' },
-    { id: 2, label: '이름', className: ' flex', name: 'firstName' },
-    { id: 3, label: '이메일 주소', className: 'noFlex', name: 'email' },
-    { id: 4, label: '비밀번호', className: 'noFlex', name: 'password' },
+    { id: 1, label: '성', className: 'flex', name: 'lastName', type: 'text' },
+    {
+        id: 2,
+        label: '이름',
+        className: ' flex',
+        name: 'firstName',
+        type: 'text',
+    },
+    {
+        id: 3,
+        label: '이메일 주소',
+        className: 'noFlex',
+        name: 'email',
+        type: 'text',
+    },
+    {
+        id: 4,
+        label: '비밀번호',
+        className: 'noFlex',
+        name: 'password',
+        type: 'password',
+    },
 ];
 
 export default SignUp;
