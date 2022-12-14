@@ -3,7 +3,7 @@
 
 .productList {
     .listSection {
-        @include flex(flex-start, center);
+        @include flex(null, center, flex-start);
         flex-wrap: wrap;
         background-color: #f6f5e8;
 

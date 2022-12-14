@@ -5,9 +5,7 @@
     padding-top: 80px;
     .topSection {
         .cesopLogo {
-            position: absolute;
-            top: calc(80px + 74px);
-            left: 40px;
+            @include position(calc(80px + 74px + 80px), null, 40px, null);
             width: 120px;
         }
         .categoryTitleHolder {
@@ -19,12 +17,12 @@
         }
     }
     .categoryBar {
-        @include flex(space-between, center);
+        @include flex(null, center, space-between);
         height: 110px;
         background-color: #ebeade;
 
         .categoryList {
-            @include flex(flex-start, center);
+            @include flex(null, center, flex-start);
 
             .categoryName {
                 height: 30px;
@@ -38,9 +36,7 @@
 
                     &::after {
                         content: '';
-                        position: absolute;
-                        top: 50%;
-                        left: 100%;
+                        @include position(50%, null, 100%);
                         height: 10px;
                         margin: auto;
                         transform: translateY(-50%);
@@ -56,9 +52,7 @@
                     &::after {
                         content: '';
                         display: block;
-                        position: absolute;
-                        top: 100%;
-                        right: 0;
+                        @include position(100%, null, null, 0);
                         width: 100%;
                         transform: scaleX(0);
                         transform-origin: left;
@@ -76,9 +70,7 @@
                         &::after {
                             content: '';
                             display: block;
-                            position: absolute;
-                            top: 100%;
-                            right: 0;
+                            @include position(100%, null, null, 0);
                             width: 100%;
                             border-bottom: 1px solid #666;
                         }

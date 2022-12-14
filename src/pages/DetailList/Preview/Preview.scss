@@ -2,13 +2,13 @@
 @import '/src/styles/variables';
 
 .preview {
-    @include flex(center, center, column);
+    @include flex(column, center, center);
     width: 33.333%;
     height: 790px;
     transition: background-color 0.3s;
 
     .imageSection {
-        @include flex(center, flex-end);
+        @include flex(null, flex-end, center);
         height: 490px;
 
         .productImage {

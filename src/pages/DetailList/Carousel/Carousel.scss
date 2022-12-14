@@ -28,7 +28,7 @@
             }
 
             .productCell {
-                @include flex(center, center, column);
+                @include flex(column, center, center);
                 width: calc(100vw / 4);
                 height: 432px;
 
@@ -65,8 +65,7 @@
         }
 
         .movePrev {
-            position: absolute;
-            top: 50%;
+            @include position(50%);
             transform: translate(0, -50%);
             animation: prevAnimation 0.5s;
 
@@ -81,9 +80,7 @@
         }
 
         .moveNext {
-            position: absolute;
-            top: 50%;
-            left: 100%;
+            @include position(50%, null, 100%);
             transform: translate(-100%, -50%);
             animation: nextAnimation 0.5s;
 
@@ -105,8 +102,7 @@
         background-color: rgba(0, 0, 0, 0.2);
 
         .selectedIndicator {
-            position: absolute;
-            top: -50%;
+            @include position(-50%);
             height: 2px;
             background-color: rgba(0, 0, 0, 0.6);
         }

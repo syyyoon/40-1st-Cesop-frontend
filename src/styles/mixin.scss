@@ -1,4 +1,11 @@
-@mixin flex($justify: center, $align: center, $direction: row) {
+@mixin position($top: null, $bottom: null, $left: null, $right: null) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+@mixin flex($direction: row, $align: center, $justify: center) {
     display: flex;
     flex-direction: $direction;
     align-items: $align;
