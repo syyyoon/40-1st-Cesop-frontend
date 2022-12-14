@@ -3,5 +3,5 @@ const API = {
     signin: `${BASE_URL}/users/signin`,
     signup: `${BASE_URL}/users/signup`,
     list: `${BASE_URL}/products/all`,
-    detail: `${BASE_URL}/products/product?name= (쿼리스트링)`,
+    detail: `${BASE_URL}/products/product`,
 };

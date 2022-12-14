@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { API } from '../../../src/config';
 import './Login.scss';
 import Input from './Input/Input';
-import { API } from '../../../src/config';
 
 const Login = ({ setModalOpen }) => {
     const [userInfo, setUserInfo] = useState({
@@ -22,7 +22,7 @@ const Login = ({ setModalOpen }) => {
         userInfo.email.includes('@') && userInfo.password.length >= 8;
 
     const loginClick = () => {
-        fetch(`${API.signin}`, {
+        fetch(API.signin, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json;charset=utf-8' },
             body: JSON.stringify(userInfo),
