@@ -28,12 +28,11 @@ const DetailProducts = () => {
                         src={itemData.productImage}
                         alt={itemData.productName}
                     />
-                    <span className="ecoFreindlyMessage"></span>
                 </div>
 
                 <div className="productContent">
                     <nav className="productCategory">
-                        {itemData.mainCategories} • {itemData.subCategories}
+                        {itemData.subCategories}
                     </nav>
                     <div className="productInfo">
                         <h1 className="productName">{itemData.productName}</h1>
