@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Login.scss';
-import Input from '../../components/Input/Input';
+import Input from './Input/Input';
+import { API } from '../../../src/config';
 
 const Login = ({ setModalOpen }) => {
     const [userInfo, setUserInfo] = useState({
@@ -16,11 +17,12 @@ const Login = ({ setModalOpen }) => {
     const closeModal = () => {
         setModalOpen(false);
     };
+
     const isValid =
         userInfo.email.includes('@') && userInfo.password.length >= 8;
 
     const loginClick = () => {
-        fetch('http://10.58.52.204:8000/users/signin', {
+        fetch(`${API.signin}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json;charset=utf-8' },
             body: JSON.stringify(userInfo),
