@@ -2,6 +2,24 @@ import React, { useState } from 'react';
 import './SignUp.scss';
 
 const SignUp = () => {
+    const [userInfo, setUserInfo] = useState({
+        lastName: '',
+        firstName: '',
+        email: '',
+        password: '',
+        age: false,
+        human: false,
+    });
+
+    const [isFocused, setIsFocused] = useState({
+        lastName: false,
+        firstName: false,
+        email: false,
+        password: false,
+    });
+
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
     const infoRegEx = {
         // 1~5길이의 한글
         lastName: /^[가-힣]{1,5}$/,
@@ -13,6 +31,14 @@ const SignUp = () => {
         password: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
     };
 
+    const { lastName, firstName, email, password } = infoRegEx;
+    const validCheck = {
+        lastName: lastName.test(userInfo.lastName),
+        firstName: firstName.test(userInfo.firstName),
+        email: email.test(userInfo.email),
+        password: password.test(userInfo.password),
+    };
+
     const errorMessage = {
         lastName: '한 글자 이상 입력해주세요.',
         firstName: '한 글자 이상 입력해주세요.',
@@ -21,104 +47,50 @@ const SignUp = () => {
             '패스워드는 문자, 숫자를 하나 이상 포함해야 하며 8자 이상이어야 합니다',
     };
 
-    const [userInfo, setUserInfo] = useState({
-        lastName: '',
-        firstName: '',
-        email: '',
-        password: '',
-    });
-
-    const [isFloatLabel, setIsFloatLabel] = useState({
-        lastName: false,
-        firstName: false,
-        email: false,
-        password: false,
-    });
-
-    const [isValid, setIsValid] = useState({
-        lastName: false,
-        firstName: false,
-        email: false,
-        password: false,
-        age: false,
-        human: false,
-    });
-
-    const [isChecked, setIsChecked] = useState({
-        lastName: false,
-        firstName: false,
-        email: false,
-        password: false,
-        age: false,
-        human: false,
-    });
-
-    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
     const getUserInfo = e => {
         const { name, value } = e.target;
-        setUserInfo(prevState => {
-            return {
-                ...prevState,
-                [name]: value,
-            };
-        });
-        setIsValid(prevState => {
-            return { ...prevState, [name]: infoRegEx[name].test(value) };
-        });
+        setUserInfo({ ...userInfo, [name]: value });
     };
 
     const inputFocus = e => {
-        const { name, value } = e.target;
-        setIsFloatLabel(prevState => {
-            return { ...prevState, [name]: true };
-        });
-        setIsChecked(prevState => {
-            return { ...prevState, [name]: true };
-        });
+        const { name } = e.target;
+        setIsFocused({ ...isFocused, [name]: true });
     };
 
     const inputBlur = e => {
         const { name, value } = e.target;
         if (value.length !== 0) return;
-
-        setIsFloatLabel(prevState => {
-            return { ...prevState, [name]: false };
-        });
-        setIsChecked(prevState => {
-            return { ...prevState, [name]: false };
-        });
+        setIsFocused({ ...isFocused, [name]: false });
     };
 
     const checkBoxClick = e => {
-        const { name, checked } = e.target;
-        setIsValid(prevState => {
-            return { ...prevState, [name]: checked };
-        });
-        setIsChecked(prevState => {
-            return { ...prevState, [name]: true };
-        });
+        const { name } = e;
+        setUserInfo({ ...userInfo, [name]: e.target.checked });
     };
 
-    const passwordTypeHandler = () => {
-        setIsPasswordVisible(prevState => {
-            return !prevState;
-        });
+    const isPasswordView = () => {
+        setIsPasswordVisible(!isPasswordVisible);
     };
 
-    const signupClick = () => {
+    const signupClick = e => {
+        e.preventDefault();
         fetch('http://10.58.52.204:8000/users/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json;charset=utf-8' },
             body: JSON.stringify(userInfo),
         })
-            .then(response => response.json())
-            .then(result => {});
+            .then(response => {
+                if (response.ok === false) {
+                    alert('회원정보를 다시 입력 해 주세요');
+                } else {
+                    response.json();
+                }
+            })
+            .then(result => console.log('result', result));
     };
-
     return (
         <div className="signup">
-            <div className="signUpContainer">
+            <form className="signUpContainer" onSubmit={signupClick}>
                 <div className="buttonWrapper">
                     <button className="arrowLeft" />
                     <button className="closeButton" />
@@ -133,6 +105,7 @@ const SignUp = () => {
                 </div>
                 <div className="inputForm">
                     {SIGN_UP_FORM.map(input => {
+                        console.log(input.type);
                         return (
                             <div
                                 className={`${input.className}`}
@@ -144,6 +117,7 @@ const SignUp = () => {
                                     name={input.name}
                                     onChange={getUserInfo}
                                     className="inputBox"
+                                    value={userInfo[input.name].info}
                                     type={
                                         input.type === 'password'
                                             ? isPasswordVisible
@@ -154,7 +128,7 @@ const SignUp = () => {
                                 />
                                 <span
                                     className={
-                                        isFloatLabel[input.name]
+                                        isFocused[input.name]
                                             ? 'label floatLabel'
                                             : 'label'
                                     }
@@ -163,25 +137,19 @@ const SignUp = () => {
                                 </span>
 
                                 <span className="errorMessage">
-                                    {isChecked[input.name]
-                                        ? isValid[input.name]
-                                            ? ''
-                                            : errorMessage[input.name]
-                                        : ''}
+                                    {/* {!validCheck[input.name] &&
+                                    userInfo[input.name].length === 0
+                                        ? errorMessage[input.name]
+                                        : ''} */}
+                                    {/* TODO : 포커스 된 인풋만 errormessage 보이게 하면 완전 끝. */}
                                 </span>
                             </div>
                         );
                     })}
                     <button
                         className="showHiddenPassword"
-                        onClick={passwordTypeHandler}
-                        type={
-                            'password'
-                                ? isPasswordVisible
-                                    ? 'text'
-                                    : 'password'
-                                : 'text'
-                        }
+                        onClick={isPasswordView}
+                        type="button"
                     >
                         {isPasswordVisible ? '숨기기' : '보기'}
                     </button>
@@ -194,7 +162,7 @@ const SignUp = () => {
                                 className="checkBox"
                                 type="checkbox"
                                 name="age"
-                                onClick={checkBoxClick}
+                                onChange={checkBoxClick}
                             />
                             &nbsp;본인은 14세 이상입니다 (필수)
                         </div>
@@ -203,7 +171,7 @@ const SignUp = () => {
                                 className="checkBox"
                                 type="checkbox"
                                 name="human"
-                                onClick={checkBoxClick}
+                                onChange={checkBoxClick}
                             />
                             &nbsp;본인은 로봇이 아닙니다 (필수)
                         </div>
@@ -213,24 +181,15 @@ const SignUp = () => {
                     <button
                         onClick={signupClick}
                         className="signUpButton"
-                        disabled={
-                            !(
-                                isValid['age'] &&
-                                isValid['email'] &&
-                                isValid['firstName'] &&
-                                isValid['lastName'] &&
-                                isValid['human'] &&
-                                isValid['password']
-                            )
-                        }
+                        type="submit"
                     >
                         회원가입
                     </button>
-                    <a className="checkUserAccount" href="#">
+                    <button className="checkUserAccount" href="#">
                         이미 이솝 계정을 가지고 계십니까?
-                    </a>
+                    </button>
                 </div>
-            </div>
+            </form>
         </div>
     );
 };
