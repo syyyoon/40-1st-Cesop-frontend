@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import OrderInput from './OrderInput';
+import OrderInput from './orderInput';
 
 import './Payment.scss';
 

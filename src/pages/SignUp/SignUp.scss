@@ -1,9 +1,17 @@
 @import '/src/styles/variables';
 @import '/src/styles/mixin';
 
+@mixin position($top: null, $bottom: null, $left: null, $right: null) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
 .signup {
     @include flex(null, center, center);
-    @include absolute(8%, 30%);
+    @include position(5%, null, 30%, null);
     z-index: 1;
     width: 600px;
     padding: 45px;
@@ -82,7 +90,7 @@
                 }
             }
             .showHiddenPassword {
-                @include absolute(380px, 55px);
+                @include position(380px, 0, 0, 0);
             }
         }
 

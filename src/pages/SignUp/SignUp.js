@@ -136,13 +136,7 @@ const SignUp = () => {
                                     {input.label}
                                 </span>
 
-                                <span className="errorMessage">
-                                    {/* {!validCheck[input.name] &&
-                                    userInfo[input.name].length === 0
-                                        ? errorMessage[input.name]
-                                        : ''} */}
-                                    {/* TODO : 포커스 된 인풋만 errormessage 보이게 하면 완전 끝. */}
-                                </span>
+                                <span className="errorMessage"></span>
                             </div>
                         );
                     })}
