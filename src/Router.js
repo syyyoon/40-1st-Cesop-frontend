@@ -8,7 +8,6 @@ import AllProducts from './pages/DetailList/AllProducts/AllProducts';
 import DetailProducts from './pages/DetailProducts/DetailProducts';
 import Main from './pages/Main/Main';
 import Payment from './pages/Payment/Payment';
-import SubCategoryMenu from './pages/DetailList/SubCategoryMenu/SubCategoryMenu';
 
 function Router() {
     return (
@@ -18,15 +17,17 @@ function Router() {
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route
-                    path="/products/sub_categories/:id"
-                    element={<SubCategoryMenu />}
-                />
-                <Route
-                    path="/products/main_categories/:id"
+                    path="/products/mainCategories/:id"
                     element={<AllProducts />}
                 />
-                <Route path="/product-list" element={<ProductList />} />
-                <Route path="/detail-products" element={<DetailProducts />} />
+                <Route
+                    path="/products/subCategories/:id"
+                    element={<ProductList />}
+                />
+                <Route
+                    path="/products/product/:id"
+                    element={<DetailProducts />}
+                />
                 <Route path="/payment" element={<Payment />} />
             </Routes>
             <Footer />

@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Preview from '../Preview/Preview';
 import SubCategoryMenu from '../SubCategoryMenu/SubCategoryMenu';
+import { SUB_CATEGORY_LIST } from '../Datas/subCategoryList';
 import './ProductList.scss';
+import { API } from '../../../config';
 
 const ProductList = () => {
     const [productData, setProductData] = useState([]);
+    const subParams = useParams();
 
     useEffect(() => {
-        fetch('/data/product.json')
+        fetch(`${API.sub_categories}/${subParams.id}`, {
+            method: 'GET',
+        })
             .then(response => response.json())
             .then(result => setProductData(result));
     }, []);
@@ -19,11 +25,21 @@ const ProductList = () => {
                 <div className="listSection">
                     <div className="descriptionOfList">
                         <div>
-                            <h2 className="listTitle">클랜저</h2>
+                            <h2 className="listTitle">
+                                {SUB_CATEGORY_LIST.map(sub => {
+                                    return (
+                                        sub.subCategories ===
+                                            Number(subParams.id) && sub.title
+                                    );
+                                })}
+                            </h2>
                             <p>
-                                피부의 남은 각질, 불필요한 유분 그리고 기타
-                                잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는
-                                것은 인텔리전트 스킨케어의 기초입니다.
+                                {SUB_CATEGORY_LIST.map(sub => {
+                                    return (
+                                        sub.subCategories ===
+                                            Number(subParams.id) && sub.content
+                                    );
+                                })}
                             </p>
                         </div>
                     </div>

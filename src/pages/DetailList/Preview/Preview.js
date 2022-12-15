@@ -27,11 +27,11 @@ const Preview = ({ product }) => {
                     <img
                         className="productImage"
                         alt="preview"
-                        src={product.productImage}
+                        src={product.product_image}
                     />
                 </picture>
                 <div className="productInfo">
-                    <h5 className="productName">{product.productName}</h5>
+                    <h5 className="productName">{product.product_name}</h5>
                     <div>
                         <span>
                             {product.size}
@@ -49,13 +49,13 @@ const Preview = ({ product }) => {
                     <li className="detailsInfo">
                         <div className="productInfoTitle">피부 타입</div>
                         <div className="productInfoContent">
-                            {product.skinType}
+                            {product.texture_image}
                         </div>
                     </li>
                     <li className="detailsInfo">
                         <div className="productInfoTitle">사용감</div>
                         <div className="productInfoContent">
-                            {product.texture}
+                            {product.feeling}
                         </div>
                     </li>
                 </ul>

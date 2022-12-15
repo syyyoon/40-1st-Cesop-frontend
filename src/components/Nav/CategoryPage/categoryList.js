@@ -22,17 +22,17 @@ export const SKIN_CARE = [
                     {
                         id: 1,
                         text: '스킨 케어 모두 보기',
-                        path: '/products/main_categories/1',
+                        path: '/products/mainCategories/1',
                     },
                     {
                         id: 2,
                         text: '클렌저',
-                        path: '/products/sub_categories/1',
+                        path: '/products/subCategories/1',
                     },
                     {
                         id: 3,
                         text: '각질 제거',
-                        path: '/products/sub_categories/2',
+                        path: '/products/subCategories/2',
                     },
                     { id: 4, text: '트리트먼트 & 마스크' },
                     { id: 5, text: '토너' },

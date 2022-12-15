@@ -3,7 +3,7 @@ import DescriptionCarousel from '../DescriptionCarousel/DescriptionCarousel';
 import './Carousel.scss';
 
 const Carousel = ({ list }) => {
-    const { subcategory, content, products } = list;
+    const { title, content, products } = list;
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isShowButton, setIsShowButton] = useState('');
     const productRef = useRef(null);
@@ -60,7 +60,7 @@ const Carousel = ({ list }) => {
             >
                 <div className="carouselBox" ref={productRef}>
                     <DescriptionCarousel
-                        subcategory={subcategory}
+                        title={title}
                         content={content}
                         products={products}
                     />
