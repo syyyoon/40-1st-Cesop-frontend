@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import CartProductList from './CartProductList';
 import './Cart.scss';
 import '../../styles/mixin.scss';
-import CartProductList from './CartProductList';
 
-const Cart = ({ closeCartModal }) => {
+const Cart = ({ switchCartModal }) => {
     const [carts, setCarts] = useState([]);
 
     useEffect(() => {
@@ -59,7 +59,7 @@ const Cart = ({ closeCartModal }) => {
                             carts={carts}
                             onRemove={onRemove}
                             onChangeAmount={onChangeAmount}
-                            closeCartModal={closeCartModal}
+                            switchCartModal={switchCartModal}
                         />
                         <div className="cartOrganizeWrapper">
                             <div className="cartOrganizeInner">

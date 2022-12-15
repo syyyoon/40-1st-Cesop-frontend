@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SignUp.scss';
 
-const SignUp = ({ signupCloseModal }) => {
+const SignUp = ({ switchSignupModal }) => {
     const [userInfo, setUserInfo] = useState({
         lastName: '',
         firstName: '',
@@ -78,16 +78,14 @@ const SignUp = ({ signupCloseModal }) => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json;charset=utf-8' },
             body: JSON.stringify(userInfo),
-        })
-            .then(response => {
-                if (response.ok === false) {
-                    alert('회원정보를 다시 입력 해 주세요');
-                } else {
-                    response.json();
-                    signupCloseModal();
-                }
-            })
-            .then(result => console.log('result', result));
+        }).then(response => {
+            if (response.ok === false) {
+                alert('회원정보를 다시 입력 해 주세요');
+            } else {
+                response.json();
+                switchSignupModal();
+            }
+        });
     };
     return (
         <div className="signup">
@@ -95,7 +93,7 @@ const SignUp = ({ signupCloseModal }) => {
                 <div className="buttonWrapper">
                     <button
                         className="closeButton"
-                        onClick={signupCloseModal}
+                        onClick={switchSignupModal}
                     />
                 </div>
 

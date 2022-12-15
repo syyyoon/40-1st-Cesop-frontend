@@ -8,8 +8,8 @@ const ProductCarousel = props => {
     const productRef = useRef(null);
     const scrollRef = useRef(null);
 
-    const productNumInFirstView = 2;
-    const numberOfDescription = 1;
+    const PRODUCT_NUM_IN_FIRST_VIEW = 2;
+    const NUMBER_OF_DESCRIPTION = 1;
 
     const prevSlide = () => {
         if (currentSlide === 0) {
@@ -20,15 +20,15 @@ const ProductCarousel = props => {
     };
 
     const nextSlide = () => {
-        if (currentSlide >= productData.length - productNumInFirstView) {
-            setCurrentSlide(productData.length - productNumInFirstView);
+        if (currentSlide >= productData.length - PRODUCT_NUM_IN_FIRST_VIEW) {
+            setCurrentSlide(productData.length - PRODUCT_NUM_IN_FIRST_VIEW);
         } else {
             setCurrentSlide(currentSlide + 1);
         }
     };
 
     const onMouseEventHandler = () => {
-        productData.length > productNumInFirstView
+        productData.length > PRODUCT_NUM_IN_FIRST_VIEW
             ? setIsShowButton('--show')
             : setIsShowButton('');
     };
@@ -39,10 +39,10 @@ const ProductCarousel = props => {
     useEffect(() => {
         productRef.current.style.transition = 'all 0.5s ease-in-out';
         productRef.current.style.transform = `translateX(-${
-            (100 / (productData.length + numberOfDescription)) * currentSlide
+            (100 / (productData.length + NUMBER_OF_DESCRIPTION)) * currentSlide
         }%)`;
         scrollRef.current.style.width = `${
-            100 / (productData.length - (productNumInFirstView - 1))
+            100 / (productData.length - (PRODUCT_NUM_IN_FIRST_VIEW - 1))
         }%`;
         scrollRef.current.style.transition = 'all 0.5s ease-in-out';
         scrollRef.current.style.transform = `translateX(${
@@ -70,8 +70,7 @@ const ProductCarousel = props => {
                                     {product.productName}
                                 </h5>
                                 <span className="productInfo">
-                                    {product.size}
-                                    {' / '}
+                                    {product.size}/
                                     {product.price.toLocaleString('ko-KR', {
                                         style: 'currency',
                                         currency: 'KRW',
@@ -92,7 +91,7 @@ const ProductCarousel = props => {
                 <button
                     className={`carousleMove${
                         currentSlide !==
-                        productData.length - productNumInFirstView
+                        productData.length - PRODUCT_NUM_IN_FIRST_VIEW
                             ? isShowButton
                             : ''
                     } moveNext`}

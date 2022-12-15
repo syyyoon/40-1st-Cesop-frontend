@@ -17,8 +17,14 @@ function Router() {
             <Nav />
             <Routes>
                 <Route path="/" element={<Main />} />
-                <Route path="/sub" element={<SubCategoryMenu />} />
-                <Route path="/all-products" element={<AllProducts />} />
+                <Route
+                    path="/products/sub_categories/:id"
+                    element={<SubCategoryMenu />}
+                />
+                <Route
+                    path="/products/main_categories/:id"
+                    element={<AllProducts />}
+                />
                 <Route path="/product-list" element={<ProductList />} />
                 <Route path="/detail-products" element={<DetailProducts />} />
                 <Route path="/payment" element={<Payment />} />

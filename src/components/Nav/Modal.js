@@ -1,6 +1,9 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Category from './CategoryPage/Category';
+import Login from '../../pages/Login/Login';
+import Signup from '../../pages/SignUp/SignUp';
+import Cart from '../../pages/Cart/Cart';
 import {
     BODY_AND_HAND,
     CATEGORY_LIST,
@@ -9,17 +12,22 @@ import {
 } from './CategoryPage/categoryList';
 import '../../styles/mixin.scss';
 import './Modal.scss';
-import Cart from '../../pages/Cart/Cart';
 
 const Modal = ({ closeModal, listCheck, listId }) => {
-    const [iscartModal, setIsCartModal] = useState(false);
+    const [isLoginModal, setIsLoginModal] = useState(false);
+    const [isSignupModal, setIsSignupModal] = useState(false);
+    const [isCartModal, setIsCartModal] = useState(false);
 
-    const openCartModal = () => {
-        setIsCartModal(true);
+    const switchLoginModal = () => {
+        setIsLoginModal(prev => !prev);
     };
 
-    const closeCartModal = () => {
-        setIsCartModal(false);
+    const switchSignupModal = () => {
+        setIsSignupModal(prev => !prev);
+    };
+
+    const switchCartModal = () => {
+        setIsCartModal(prev => !prev);
     };
     return (
         <div className="modal">
@@ -50,10 +58,15 @@ const Modal = ({ closeModal, listCheck, listId }) => {
                 <div className="navUser">
                     <ul>
                         <li>
-                            <button className="navButton">로그인</button>
                             <button
                                 className="navButton"
-                                onClick={openCartModal}
+                                onClick={switchLoginModal}
+                            >
+                                로그인
+                            </button>
+                            <button
+                                className="navButton"
+                                onClick={switchCartModal}
                             >
                                 카트
                             </button>
@@ -68,7 +81,14 @@ const Modal = ({ closeModal, listCheck, listId }) => {
                     <h4 className="loadingMessage">준비 중입니다.</h4>
                 )}
             </div>
-            {iscartModal && <Cart closeCartModal={closeCartModal} />}
+            {isLoginModal && (
+                <Login
+                    switchLoginModal={switchLoginModal}
+                    switchSignupModal={switchSignupModal}
+                />
+            )}
+            {isSignupModal && <Signup switchSignupModal={switchSignupModal} />}
+            {isCartModal && <Cart switchCartModal={switchCartModal} />}
         </div>
     );
 };

@@ -1,12 +1,12 @@
 import React from 'react';
-import './CartProductList.scss';
 import CartProductRow from './CartProductRow';
+import './CartProductList.scss';
 
 const CartProductList = ({
     carts,
     onRemove,
     onChangeAmount,
-    closeCartModal,
+    switchCartModal,
 }) => {
     return (
         <div className="cartList">
@@ -18,7 +18,7 @@ const CartProductList = ({
                 <div className="closeHeader">
                     <button
                         className="closeButtonHeader"
-                        onClick={closeCartModal}
+                        onClick={switchCartModal}
                     >
                         <img
                             className="closeButtonIcon"

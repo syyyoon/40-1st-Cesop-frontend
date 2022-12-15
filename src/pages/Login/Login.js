@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { API } from '../../../src/config';
 import Input from './Input/Input';
 import './Login.scss';
 
-const Login = ({ closeLoginModal, openSignupModal }) => {
+const Login = ({ switchLoginModal, switchSignupModal }) => {
     const navigate = useNavigate();
     const [userInfo, setUserInfo] = useState({
         email: '',
@@ -12,18 +12,14 @@ const Login = ({ closeLoginModal, openSignupModal }) => {
     });
 
     const signupModal = () => {
-        openSignupModal();
-        closeLoginModal();
+        switchSignupModal();
+        switchLoginModal();
     };
 
     const getUserInfo = e => {
         const { name, value } = e.target;
         setUserInfo({ ...userInfo, [name]: value });
     };
-
-    // const closeModal = () => {
-    //     setModalOpen(false);
-    // };
 
     const isValid =
         userInfo.email.includes('@') && userInfo.password.length >= 8;
@@ -38,7 +34,7 @@ const Login = ({ closeLoginModal, openSignupModal }) => {
             .then(data => {
                 if (data.accessToken) {
                     localStorage.setItem('token', data.accessToken);
-                    closeLoginModal();
+                    switchLoginModal();
                     navigate('/');
                 } else {
                     alert('이메일, 비밀번호가 일치하지 않습니다');
@@ -50,7 +46,10 @@ const Login = ({ closeLoginModal, openSignupModal }) => {
         <div className="login">
             <main className="loginContainer">
                 <div className="buttonWrapper">
-                    <button onClick={closeLoginModal} className="closeButton" />
+                    <button
+                        onClick={switchLoginModal}
+                        className="closeButton"
+                    />
                 </div>
 
                 <h1 className="title">로그인</h1>

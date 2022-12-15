@@ -11,7 +11,7 @@ import './Nav.scss';
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [listId, setListId] = useState(1);
-    const [isLoginOpen, setIsLoginOpen] = useState(false);
+    const [isLoginModal, setIsLoginModal] = useState(false);
     const [isSignupModal, setIsSignupModal] = useState(false);
     const [iscartModal, setIsCartModal] = useState(false);
 
@@ -27,24 +27,16 @@ const Navigation = () => {
         setListId(id);
     };
 
-    const closeLoginModal = () => {
-        setIsLoginOpen(!isLoginOpen);
+    const switchLoginModal = () => {
+        setIsLoginModal(prev => !prev);
     };
 
-    const openSignupModal = () => {
-        setIsSignupModal(true);
+    const switchSignupModal = () => {
+        setIsSignupModal(prev => !prev);
     };
 
-    const closeSignupModal = () => {
-        setIsSignupModal(false);
-    };
-
-    const openCartModal = () => {
-        setIsCartModal(true);
-    };
-
-    const closeCartModal = () => {
-        setIsCartModal(false);
+    const switchCartModal = () => {
+        setIsCartModal(prev => !prev);
     };
 
     return (
@@ -71,13 +63,13 @@ const Navigation = () => {
                         <li>
                             <button
                                 className="navButton"
-                                onClick={closeLoginModal}
+                                onClick={switchLoginModal}
                             >
                                 로그인
                             </button>
                             <button
                                 className="navButton"
-                                onClick={openCartModal}
+                                onClick={switchCartModal}
                             >
                                 카트
                             </button>
@@ -93,14 +85,14 @@ const Navigation = () => {
                     />
                 )}
             </div>
-            {isLoginOpen && (
+            {isLoginModal && (
                 <Login
-                    closeLoginModal={closeLoginModal}
-                    openSignupModal={openSignupModal}
+                    switchLoginModal={switchLoginModal}
+                    switchSignupModal={switchSignupModal}
                 />
             )}
-            {isSignupModal && <Signup signupCloseModal={closeSignupModal} />}
-            {iscartModal && <Cart closeCartModal={closeCartModal} />}
+            {isSignupModal && <Signup switchSignupModal={switchSignupModal} />}
+            {iscartModal && <Cart switchCartModal={switchCartModal} />}
         </div>
     );
 };
