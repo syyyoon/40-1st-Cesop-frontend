@@ -8,7 +8,7 @@ const Cart = ({ switchCartModal }) => {
     const [carts, setCarts] = useState([]);
 
     useEffect(() => {
-        fetch('/data/cartProduct.json', {
+        fetch('http://10.58.52.204:8000/cart/', {
             method: 'GET',
         })
             .then(response => response.json())
@@ -21,8 +21,9 @@ const Cart = ({ switchCartModal }) => {
         setCarts(carts.filter(list => list.id !== id));
         fetch('http://10.58.52.204:8000/cart/' + id, {
             method: 'DELETE',
-        }).catch(err => console.log(err));
+        });
     };
+
     const onChangeAmount = (id, quantity) => {
         setCarts(
             carts.map(cart => {
@@ -38,9 +39,7 @@ const Cart = ({ switchCartModal }) => {
                 'Content-Type': 'application/json;charset=utf-8',
             },
             body: JSON.stringify({ quantity }),
-        })
-            .then(response => response.json())
-            .then(data => console.log(data));
+        }).then(response => response.json());
     };
 
     return (
