@@ -44,9 +44,9 @@ const SubCategoryMenu = () => {
 export default SubCategoryMenu;
 
 const TAB_ARR = [
-    { id: 1, text: '모든 스킨 보기', path: '/products/main_categories/1' },
-    { id: 2, text: '클렌저', path: '/products/sub_categories/1' },
-    { id: 3, text: '각질 제거', path: '/products/sub_categories/2' },
-    { id: 4, text: '트리트먼트&마스크', path: '/products/sub_categories/3' },
-    { id: 5, text: '토너', path: '/products/sub_categories/4' },
+    { id: 1, text: '모든 스킨 보기', path: '/products/mainCategories/1' },
+    { id: 2, text: '클렌저', path: '/products/subCategories/1' },
+    { id: 3, text: '각질 제거', path: '/products/subCategories/2' },
+    { id: 4, text: '트리트먼트&마스크', path: '/products/subCategories/3' },
+    { id: 5, text: '토너', path: '/products/subCategories/4' },
 ];

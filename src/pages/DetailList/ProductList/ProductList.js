@@ -20,7 +20,6 @@ const ProductList = () => {
             .then(result => setProductData(result));
     }, []);
 
-    console.log(productData);
     return (
         <>
             <SubCategoryMenu />
@@ -29,12 +28,20 @@ const ProductList = () => {
                     <div className="descriptionOfList">
                         <div>
                             <h2 className="listTitle">
-                                {/* {SUB_CATEGORY_LIST.map(sub=> {return subCategory === subParams.id ?  sub.title : })} */}
+                                {SUB_CATEGORY_LIST.map(sub => {
+                                    return (
+                                        sub.subCategories ===
+                                            Number(subParams.id) && sub.title
+                                    );
+                                })}
                             </h2>
                             <p>
-                                피부의 남은 각질, 불필요한 유분 그리고 기타
-                                잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는
-                                것은 인텔리전트 스킨케어의 기초입니다.
+                                {SUB_CATEGORY_LIST.map(sub => {
+                                    return (
+                                        sub.subCategories ===
+                                            Number(subParams.id) && sub.content
+                                    );
+                                })}
                             </p>
                         </div>
                     </div>
