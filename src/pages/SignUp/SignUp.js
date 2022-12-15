@@ -84,6 +84,7 @@ const SignUp = ({ signupCloseModal }) => {
                     alert('회원정보를 다시 입력 해 주세요');
                 } else {
                     response.json();
+                    signupCloseModal();
                 }
             })
             .then(result => console.log('result', result));
