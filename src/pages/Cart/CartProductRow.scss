@@ -1,0 +1,68 @@
+@import '../../styles/mixin';
+
+.productItem {
+    @include flex(null, center, space-between);
+    padding: 20px 0;
+    border-bottom: 1.5px solid rgba(255, 254, 242, 0.1);
+    &:hover {
+        .deleteQuantity {
+            opacity: 1;
+        }
+    }
+
+    .productName {
+        flex-basis: auto;
+        width: 42%;
+        padding-right: 20px;
+        font-family: 'Suisse' Medium, sans-serif;
+        font-size: 1.2rem;
+    }
+
+    .productSize {
+        width: 23%;
+        padding-right: 20px;
+        font-family: 'Suisse' Medium, sans-serif;
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    .QuantityButtonWrapper {
+        width: 7%;
+
+        #selectQuantity {
+            padding: 12px 25px;
+            border: 1.5px solid rgba(255, 254, 242, 0.1);
+            color: #fff;
+            font-family: Suisse Regular, sans-serif;
+            font-size: 1.2rem;
+            text-align-last: center;
+            cursor: pointer;
+
+            &:hover {
+                border-color: rgba(255, 254, 242, 0.8);
+            }
+        }
+    }
+
+    .deleteQuantity {
+        opacity: 0;
+        background: transparent;
+        color: #b7b7ae;
+        font-size: 1.2rem;
+        text-align: left;
+        cursor: pointer;
+
+        &:hover {
+            color: #fffef2;
+        }
+    }
+
+    .totalPrice {
+        display: flex;
+        flex-grow: 1;
+        justify-content: end;
+        color: #fffef2;
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+}
