@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "subCategories": "클렌저",
+        "productName": "리무브",
+        "productImage": "/images/bottleSecond100mL.png",
+        "size": "60ml",
+        "price": 10000,
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "진정된, 생기있는"
+    },
+    {
+        "id": 2,
+        "subCategories": "클렌저",
+        "productName": "파슬리 씨드 페이셜 클렌징 오일",
+        "productImage": "/images/bottle200mL.png",
+        "size": "200ml",
+        "price": 20000,
+        "skinType": "중성, 복합성, 건성, 민감성 피부",
+        "texture": "부드러운, 진정된"
+    },
+    {
+        "id": 3,
+        "subCategories": "클렌저",
+        "productName": "퓨리파잉 페이셜 크림 클렌저",
+        "productImage": "/images/tube100mL.png",
+        "size": "100ml",
+        "price": 30000,
+        "skinType": "중성, 건성 피부",
+        "texture": "탄력, 유연, 부드러운"
+    },
+    {
+        "id": 4,
+        "subCategories": "클렌저",
+        "productName": "페뷸러스 페이스 클렌저",
+        "productImage": "/images/bottle100mL.png",
+        "size": "100ml",
+        "price": 20000,
+        "skinType": "중성, 건성 피부",
+        "texture": "상쾌한, 진정된, 부드러운"
+    },
+    {
+        "id": 5,
+        "subCategories": "클렌저",
+        "productName": "파슬리 씨드 페이셜 클렌저",
+        "productImage": "/images/bottle100mL.png",
+        "size": "100ml",
+        "price": 60000,
+        "skinType": "중성, 복합성, 문제성 피부",
+        "texture": "매끄러운, 부드러운"
+    },
+    {
+        "id": 6,
+        "subCategories": "클렌저",
+        "productName": "어메이징 페이스 클렌저",
+        "productImage": "/images/bottle200mL.png",
+        "size": "200ml",
+        "price": 80000,
+        "skinType": "지성, 복합성 피부, 덥고 습한 날씨의 피부",
+        "texture": "산뜻한, 매끄러운"
+    }
+]

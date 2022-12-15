@@ -1,0 +1,22 @@
+@import '/src/styles/mixin';
+@import '/src/styles/variables';
+
+.productList {
+    .listSection {
+        @include flex(null, center, flex-start);
+        flex-wrap: wrap;
+        background-color: #f6f5e8;
+
+        .descriptionOfList {
+            width: 33.333%;
+            height: 700px;
+            padding: 80px 40px;
+
+            .listTitle {
+                margin: 20px 0;
+                color: #252525;
+                font-weight: 400;
+            }
+        }
+    }
+}
