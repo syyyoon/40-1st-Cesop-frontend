@@ -1,30 +1,23 @@
 [
     {
         "id": 1,
-        "productName": "레저렉션 아로마틱 핸드 워시",
-        "productSize": "500mL",
-        "productPrice": 1000,
-        "amount": 1
+        "productName": "씨솝 프로텍티브 바디 로션",
+        "productSize": "100mL",
+        "price": 47000,
+        "quantity": 1
     },
     {
         "id": 2,
-        "productName": "레버런스 아로마틱 핸드  워시",
-        "productSize": "500mL",
-        "productPrice": 1000,
-        "amount": 1
+        "productName": "씨솝 로즈 아더 네임 바디 클렌저",
+        "productSize": "100mL",
+        "price": 20000,
+        "quantity": 1
     },
     {
-        "id": 3,
-        "productName": "퓨리파잉 페이셜 엑스폴리언트 페이스트",
-        "productSize": "500mL",
-        "productPrice": 1000,
-        "amount": 1
-    },
-    {
-        "id": 4,
-        "productName": "젠틀 딥  클렌징 듀오",
-        "productSize": "500mL",
-        "productPrice": 1000,
-        "amount": 1
+        "id": 5,
+        "productName": "씨솝 레저렉션 핸드  워시",
+        "productSize": "100mL",
+        "price": 46000,
+        "quantity": 1
     }
 ]
