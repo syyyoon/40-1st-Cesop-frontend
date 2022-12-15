@@ -19,9 +19,21 @@ export const SKIN_CARE = [
                 id: 1,
                 title: '카테고리',
                 subCategory: [
-                    { id: 1, text: '스킨 케어 모두 보기' },
-                    { id: 2, text: '클렌저' },
-                    { id: 3, text: '각질 제거' },
+                    {
+                        id: 1,
+                        text: '스킨 케어 모두 보기',
+                        path: '/products/main_categories/1',
+                    },
+                    {
+                        id: 2,
+                        text: '클렌저',
+                        path: '/products/sub_categories/1',
+                    },
+                    {
+                        id: 3,
+                        text: '각질 제거',
+                        path: '/products/sub_categories/2',
+                    },
                     { id: 4, text: '트리트먼트 & 마스크' },
                     { id: 5, text: '토너' },
                     { id: 6, text: '립 & 아이' },

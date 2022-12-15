@@ -3,14 +3,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/Navigation';
 import Footer from './components/Footer/Footer';
 import Banner from './components/Banner/Banner';
-import Cart from './pages/Cart/Cart';
 import ProductList from './pages/DetailList/ProductList/ProductList';
 import AllProducts from './pages/DetailList/AllProducts/AllProducts';
 import DetailProducts from './pages/DetailProducts/DetailProducts';
-import Login from './pages/Login/Login';
 import Main from './pages/Main/Main';
 import Payment from './pages/Payment/Payment';
-import SignUp from './pages/SignUp/SignUp';
 import SubCategoryMenu from './pages/DetailList/SubCategoryMenu/SubCategoryMenu';
 
 function Router() {
@@ -20,13 +17,16 @@ function Router() {
             <Nav />
             <Routes>
                 <Route path="/" element={<Main />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<SignUp />} />
-                <Route path="/sub" element={<SubCategoryMenu />} />
-                <Route path="/all-products" element={<AllProducts />} />
+                <Route
+                    path="/products/sub_categories/:id"
+                    element={<SubCategoryMenu />}
+                />
+                <Route
+                    path="/products/main_categories/:id"
+                    element={<AllProducts />}
+                />
                 <Route path="/product-list" element={<ProductList />} />
                 <Route path="/detail-products" element={<DetailProducts />} />
-                <Route path="/cart" element={<Cart />} />
                 <Route path="/payment" element={<Payment />} />
             </Routes>
             <Footer />
