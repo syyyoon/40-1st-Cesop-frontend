@@ -4,6 +4,7 @@ import Carousel from '../Carousel/Carousel';
 import SubCategoryMenu from '../SubCategoryMenu/SubCategoryMenu';
 import { SUB_CATEGORY_LIST } from '../Datas/subCategoryList';
 import './AllProducts.scss';
+import { API } from '../../../config';
 
 const AllProducts = () => {
     const [allProductData, setAllProductData] = useState([]);
@@ -12,12 +13,9 @@ const AllProducts = () => {
     const divisionBySubCategory = [];
 
     useEffect(() => {
-        fetch(
-            `http://10.58.52.204:8000/products/main_categories/${mainParams.id}`,
-            {
-                method: 'GET',
-            }
-        )
+        fetch(`${API.main_categories}/${mainParams.id}`, {
+            method: 'GET',
+        })
             .then(response => response.json())
             .then(result => {
                 setAllProductData(result);

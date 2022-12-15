@@ -4,18 +4,16 @@ import Preview from '../Preview/Preview';
 import SubCategoryMenu from '../SubCategoryMenu/SubCategoryMenu';
 import { SUB_CATEGORY_LIST } from '../Datas/subCategoryList';
 import './ProductList.scss';
+import { API } from '../../../config';
 
 const ProductList = () => {
     const [productData, setProductData] = useState([]);
     const subParams = useParams();
 
     useEffect(() => {
-        fetch(
-            `http://10.58.52.204:8000/products/sub_categories/${subParams.id}`,
-            {
-                method: 'GET',
-            }
-        )
+        fetch(`${API.sub_categories}/${subParams.id}`, {
+            method: 'GET',
+        })
             .then(response => response.json())
             .then(result => setProductData(result));
     }, []);
