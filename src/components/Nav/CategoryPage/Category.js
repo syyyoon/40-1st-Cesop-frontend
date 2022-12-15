@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Category.scss';
 
 const IMAGES = Array(3)
@@ -50,7 +51,15 @@ const Category = ({ list }) => {
                                                             className="subcategoryList"
                                                             key={subCategory.id}
                                                         >
-                                                            {subCategory.text}
+                                                            <Link
+                                                                to={
+                                                                    subCategory.path
+                                                                }
+                                                            >
+                                                                {
+                                                                    subCategory.text
+                                                                }
+                                                            </Link>
                                                         </li>
                                                     );
                                                 }

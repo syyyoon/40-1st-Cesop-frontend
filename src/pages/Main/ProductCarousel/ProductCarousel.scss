@@ -1,0 +1,103 @@
+@import '/src/styles/mixin';
+@import '/src/styles/variables';
+
+.productCarousel {
+    position: relative;
+    padding: 50px 0;
+    overflow: hidden;
+    background-color: $ColorWhite1;
+    color: #333;
+
+    .showBox {
+        display: flex;
+        overflow: hidden;
+
+        .carouselBox {
+            display: flex;
+            margin: 40px 0 30px 80px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .productCell {
+                @include flex(column, center, center);
+                width: calc(100vw / 4);
+                height: 432px;
+
+                .allProductImage {
+                    width: auto;
+                    height: 80%;
+                }
+
+                .productName {
+                    margin-bottom: 7px;
+                }
+                .productInfo {
+                    color: #666;
+                }
+            }
+        }
+
+        .carousleMove {
+            display: none;
+
+            &--show {
+                display: block;
+                width: 80px;
+                height: 80px;
+                overflow: hidden;
+                background-color: #333;
+                color: white;
+            }
+
+            .arrowInButton {
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+
+        .movePrev {
+            @include position(50%);
+            transform: translate(0, -50%);
+            animation: prevAnimation 0.5s;
+
+            @keyframes prevAnimation {
+                from {
+                    transform: translate(-100%, -50%);
+                }
+                to {
+                    transform: translate(0, -50%);
+                }
+            }
+        }
+
+        .moveNext {
+            @include position(50%, null, 100%);
+            transform: translate(-100%, -50%);
+            animation: nextAnimation 0.5s;
+
+            @keyframes nextAnimation {
+                from {
+                    transform: translate(0, -50%);
+                }
+                to {
+                    transform: translate(-100%, -50%);
+                }
+            }
+        }
+    }
+    .totalIndicator {
+        display: flex;
+        position: relative;
+        height: 1px;
+        margin: 0 80px 40px 80px;
+        background-color: rgba(0, 0, 0, 0.2);
+
+        .selectedIndicator {
+            @include position(-50%);
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    }
+}

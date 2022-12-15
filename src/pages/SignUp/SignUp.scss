@@ -1,14 +1,6 @@
 @import '/src/styles/variables';
 @import '/src/styles/mixin';
 
-@mixin position($top: null, $bottom: null, $left: null, $right: null) {
-    position: absolute;
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
-}
-
 .signup {
     @include flex(null, center, center);
     @include position(5%, null, 30%, null);
@@ -89,9 +81,6 @@
                     font-size: 14px;
                 }
             }
-            .showHiddenPassword {
-                @include position(380px, 0, 0, 0);
-            }
         }
 
         .buttonWrapper {
@@ -141,11 +130,16 @@
                 cursor: not-allowed;
             }
 
-            .checkUserAccount {
-                display: block;
-                padding-top: 20px;
-                font-size: 14px;
-                text-align: center;
+            .buttonWrapper {
+                display: flex;
+                justify-content: center;
+
+                .checkUserAccount {
+                    display: block;
+                    padding-top: 20px;
+                    font-size: 14px;
+                    text-align: center;
+                }
             }
         }
     }

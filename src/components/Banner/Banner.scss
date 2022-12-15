@@ -28,7 +28,7 @@
         background-color: $ColorBlack;
 
         .shippingContent {
-            @include flex(center, center, row);
+            @include flex(row, center, center);
 
             .shippingButton {
                 @include flex(null, center, null);

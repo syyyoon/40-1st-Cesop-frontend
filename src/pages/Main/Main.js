@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ContentCard from './ContentCard';
 import MainCarousel from './Carousel/MainCarousel';
+import ProductCarousel from './ProductCarousel/ProductCarousel';
 import { CARD_DATA, CARD_DATA_SERVICE } from './cardData';
 import './Main.scss';
 import '../../styles/mixin.scss';
 
 const Main = () => {
+    const [productData, setProductData] = useState([]);
+
+    useEffect(() => {
+        fetch('/data/product.json')
+            .then(response => response.json())
+            .then(result => {
+                setProductData(result);
+            });
+    }, []);
+
     return (
         <div className="main">
             <section className="mainSection">
@@ -56,7 +67,9 @@ const Main = () => {
                         />
                     );
                 })}
-                {/* TODO : 캐러셀 컴포넌트 추가 예정 */}
+                {/* TODO : 각질 제거 product 받기 */}
+                <p className="productModalTitle">마찰로 만드는 아름다움</p>
+                <ProductCarousel productData={productData} />
                 {CARD_DATA_SERVICE.map(cards => {
                     return (
                         <ContentCard
@@ -67,7 +80,9 @@ const Main = () => {
                         />
                     );
                 })}
-
+                {/* TODO : 샴푸 or 컨디셔너 product 받기 */}
+                <p className="productModalTitle">모발을 매끄럽고 부드럽게</p>
+                <ProductCarousel productData={productData} />
                 <div className="storeWrapper">
                     <div className="storeContent">
                         <div className="storeTitle">

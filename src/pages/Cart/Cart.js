@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import CartProductList from './CartProductList';
 import './Cart.scss';
 import '../../styles/mixin.scss';
-import CartProductList from './CartProductList';
 
-const Cart = () => {
+const Cart = ({ switchCartModal }) => {
     const [carts, setCarts] = useState([]);
 
     useEffect(() => {
-        fetch('/data/product.json', {
+        fetch('/data/cartProduct.json', {
             method: 'GET',
         })
             .then(response => response.json())
@@ -52,35 +52,38 @@ const Cart = () => {
 
     return (
         <div className="cart">
-            <div className="cartInner">
-                <div className="cartOrganize">
-                    <CartProductList
-                        carts={carts}
-                        onRemove={onRemove}
-                        onChangeAmount={onChangeAmount}
-                    />
-                    <div className="cartOrganizeWrapper">
-                        <div className="cartOrganizeInner">
-                            <div className="cartOrganizeNoticeTop">
-                                <p className="cartOfferMessage">
-                                    전 제품 무료 배송 혜택을 즐겨보세요.
-                                </p>
-                            </div>
-                            <div className="totalComment">
-                                <div className="totalLabel">
-                                    소계(세금 포함)
+            <div className="cartBox">
+                <div className="cartInner">
+                    <div className="cartOrganize">
+                        <CartProductList
+                            carts={carts}
+                            onRemove={onRemove}
+                            onChangeAmount={onChangeAmount}
+                            switchCartModal={switchCartModal}
+                        />
+                        <div className="cartOrganizeWrapper">
+                            <div className="cartOrganizeInner">
+                                <div className="cartOrganizeNoticeTop">
+                                    <p className="cartOfferMessage">
+                                        전 제품 무료 배송 혜택을 즐겨보세요.
+                                    </p>
                                 </div>
-                                <div className="OrganizeTotalAmount">
-                                    {total}
+                                <div className="totalComment">
+                                    <div className="totalLabel">
+                                        소계(세금 포함)
+                                    </div>
+                                    <div className="OrganizeTotalAmount">
+                                        {total}
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="cartOrganizeButtonBottom">
-                                <button
-                                    className="cartPayButton"
-                                    onClick={payButtonClick}
-                                >
-                                    결제하기
-                                </button>
+                                <div className="cartOrganizeButtonBottom">
+                                    <button
+                                        className="cartPayButton"
+                                        onClick={payButtonClick}
+                                    >
+                                        결제하기
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

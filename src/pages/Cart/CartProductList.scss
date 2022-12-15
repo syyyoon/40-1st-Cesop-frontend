@@ -1,7 +1,7 @@
 @import '../../styles/mixin';
 
 .cartList {
-    padding: 50px 50px 0px;
+    padding: 30px 50px 0px;
     text-align: left;
 
     .orderHeader {
@@ -14,7 +14,7 @@
             width: 42%;
             color: #bcbbb4;
             font-family: 'Suisse' Medium, sans-serif;
-            font-size: 1.2rem;
+            font-size: 15px;
             line-height: 1.2;
         }
 
@@ -23,7 +23,7 @@
             width: 23%;
             color: #bcbbb4;
             font-family: 'Suisse' Medium, sans-serif;
-            font-size: 1.2rem;
+            font-size: 15px;
             line-height: 1.7;
         }
 
@@ -31,7 +31,7 @@
             width: 7%;
             color: #bcbbb4;
             font-family: 'Suisse' Medium, sans-serif;
-            font-size: 1.2rem;
+            font-size: 15px;
             line-height: 1.4;
         }
 
