@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Category from './CategoryPage/Category';
 import {
@@ -9,8 +9,18 @@ import {
 } from './CategoryPage/categoryList';
 import '../../styles/mixin.scss';
 import './Modal.scss';
+import Cart from '../../pages/Cart/Cart';
 
 const Modal = ({ closeModal, listCheck, listId }) => {
+    const [iscartModal, setIsCartModal] = useState(false);
+
+    const openCartModal = () => {
+        setIsCartModal(true);
+    };
+
+    const closeCartModal = () => {
+        setIsCartModal(false);
+    };
     return (
         <div className="modal">
             <div className="modalWrapper">
@@ -41,7 +51,12 @@ const Modal = ({ closeModal, listCheck, listId }) => {
                     <ul>
                         <li>
                             <button className="navButton">로그인</button>
-                            <button className="navButton">카트</button>
+                            <button
+                                className="navButton"
+                                onClick={openCartModal}
+                            >
+                                카트
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -53,6 +68,7 @@ const Modal = ({ closeModal, listCheck, listId }) => {
                     <h4 className="loadingMessage">준비 중입니다.</h4>
                 )}
             </div>
+            {iscartModal && <Cart closeCartModal={closeCartModal} />}
         </div>
     );
 };
