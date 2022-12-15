@@ -22,10 +22,18 @@ function Router() {
                 <Route path="/" element={<Main />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
-                <Route path="/sub" element={<SubCategoryMenu />} />
-                <Route path="/all-products" element={<AllProducts />} />
-                <Route path="/product-list" element={<ProductList />} />
-                <Route path="/detail-products" element={<DetailProducts />} />
+                <Route
+                    path="/products/main_categories/:id"
+                    element={<AllProducts />}
+                />
+                <Route
+                    path="/products/sub_categories/:id"
+                    element={<ProductList />}
+                />
+                <Route
+                    path="/products/:id/:id/:id"
+                    element={<DetailProducts />}
+                />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/payment" element={<Payment />} />
             </Routes>
