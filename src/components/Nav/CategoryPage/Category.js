@@ -9,7 +9,7 @@ const IMAGES = Array(3)
         alt: 'skin',
     }));
 
-const Category = ({ list }) => {
+const Category = ({ list, closeModal }) => {
     const imagePosition = () => {
         const currentImage = IMAGES[list[0].id - 1];
 
@@ -18,6 +18,7 @@ const Category = ({ list }) => {
                 className="skinImage"
                 src={currentImage.src}
                 alt={currentImage.alt}
+                onClick={closeModal}
             />
         );
     };
@@ -50,6 +51,7 @@ const Category = ({ list }) => {
                                                         <li
                                                             className="subcategoryList"
                                                             key={subCategory.id}
+                                                            onClick={closeModal}
                                                         >
                                                             <Link
                                                                 to={
