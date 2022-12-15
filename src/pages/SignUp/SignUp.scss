@@ -1,0 +1,152 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixin';
+
+@mixin position($top: null, $bottom: null, $left: null, $right: null) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+.signup {
+    @include flex(null, center, center);
+    @include position(5%, null, 30%, null);
+    z-index: 1;
+    width: 600px;
+    padding: 45px;
+    border: 1px solid #ccc;
+    background-color: #fffef2;
+    color: #333;
+    font-family: 'Suisse Regular', sans-serif;
+    .signUpContainer {
+        .inputForm {
+            @include flex(null, center, null);
+            flex-wrap: wrap;
+            .flex {
+                position: relative;
+                width: 50%;
+                &:first-child {
+                    padding-right: 20px;
+                }
+
+                .inputBox {
+                    flex: 1;
+                    width: 100%;
+                    margin-top: 40px;
+                    border-bottom: 1px solid #666;
+                    font-size: 30px;
+                    font-weight: 400;
+                }
+                .label {
+                    position: absolute;
+                    top: 50px;
+                    left: 0;
+                    transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+                    color: #666;
+                    font-size: 20px;
+                }
+                .floatLabel {
+                    transform: translateY(-30px);
+                    font-size: 14px;
+                }
+                .errorMessage {
+                    position: absolute;
+                    top: 80px;
+                    left: 0px;
+                    color: #ea6956;
+                    font-size: 14px;
+                }
+            }
+            .noFlex {
+                position: relative;
+                width: 100%;
+                .inputBox {
+                    flex: 1;
+                    width: 100%;
+                    margin-top: 40px;
+                    border-bottom: 1px solid #666;
+                    font-size: 30px;
+                }
+                .label {
+                    position: absolute;
+                    z-index: -1;
+                    top: 50px;
+                    left: 0;
+                    transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+                    color: #666;
+                    font-size: 20px;
+                }
+                .floatLabel {
+                    transform: translateY(-30px);
+                    font-size: 14px;
+                }
+                .errorMessage {
+                    position: absolute;
+                    top: 80px;
+                    left: 0px;
+                    color: #ea6956;
+                    font-size: 14px;
+                }
+            }
+            .showHiddenPassword {
+                @include position(380px, 0, 0, 0);
+            }
+        }
+
+        .buttonWrapper {
+            @include flex(null, null, space-between);
+            width: 100%;
+            margin-bottom: 30px;
+
+            .arrowLeft {
+                width: 20px;
+                height: 20px;
+                background: url('../../assets/images/arrow_left.png') no-repeat;
+                background-size: cover;
+            }
+            .closeButton {
+                @extend .arrowLeft;
+                background: url('../../assets/images/close.png') no-repeat;
+                background-size: contain;
+            }
+        }
+        .signupTitle {
+            .title {
+                margin-bottom: 20px;
+                font-weight: 400;
+            }
+        }
+        .userCheckBox {
+            padding: 40px 0 30px 0;
+            .checkList {
+                .checkBox {
+                    margin-bottom: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .signUpWrapper {
+            .signUpButton {
+                width: 100%;
+                height: 50px;
+
+                background-color: #333;
+                color: white;
+            }
+
+            .signUpButton:disabled {
+                opacity: 0.8;
+                background-color: #333;
+                cursor: not-allowed;
+            }
+
+            .checkUserAccount {
+                display: block;
+                padding-top: 20px;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+}

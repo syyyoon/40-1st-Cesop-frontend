@@ -1,0 +1,158 @@
+[
+    {
+        "id": 1,
+        "subcategory": "클렌저",
+        "content": "피부의 남은 각질, 불필요한 유분 그리고 기타 잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는 것은 인텔리전트 스킨케어의 기초입니다.",
+        "products": [
+            {
+                "id": 1,
+                "subCategories": "클렌저",
+                "productName": "클렌저1",
+                "productImage": "/images/bottleSecond100mL.png",
+                "size": "ONE",
+                "price": 20000
+            },
+            {
+                "id": 2,
+                "subCategories": "클렌저",
+                "productName": "클렌저2",
+                "productImage": "/images/bottle200mL.png",
+                "size": "ONE",
+                "price": 20000
+            },
+            {
+                "id": 3,
+                "subCategories": "클렌저",
+                "productName": "클렌저3",
+                "productImage": "/images/tube100mL.png",
+                "size": "ONE",
+                "price": 20000
+            },
+            {
+                "id": 4,
+                "subCategories": "클렌저",
+                "productName": "클렌저4",
+                "productImage": "/images/bottle100mL.png",
+                "size": "ONE",
+                "price": 20000
+            },
+            {
+                "id": 5,
+                "subCategories": "클렌저",
+                "productName": "클렌저5",
+                "productImage": "/images/bottle100mL.png",
+                "size": "ONE",
+                "price": 20000
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "subcategory": "각질 제거",
+        "content": "효과적인 각질 관리는 피부의 잔여물과 불필요한 유분을 깨끗하게 세정해주는 동시에 피부를 부드럽고 생기 있게 가꿔줍니다.",
+        "products": [
+            {
+                "id": 1,
+                "subCategories": "클렌저",
+                "productName": "클렌저1",
+                "productImage": "/images/bottleSecond100mL.png",
+                "size": "ONE",
+                "price": 20000
+            },
+            {
+                "id": 2,
+                "subCategories": "클렌저",
+                "productName": "클렌저2",
+                "productImage": "/images/bottle200mL.png",
+                "size": "ONE",
+                "price": 20000
+            },
+            {
+                "id": 3,
+                "subCategories": "클렌저",
+                "productName": "클렌저3",
+                "productImage": "/images/tube100mL.png",
+                "size": "ONE",
+                "price": 20000
+            },
+            {
+                "id": 4,
+                "subCategories": "클렌저",
+                "productName": "클렌저4",
+                "productImage": "/images/bottle100mL.png",
+                "size": "ONE",
+                "price": 20000
+            },
+            {
+                "id": 5,
+                "subCategories": "클렌저",
+                "productName": "클렌저5",
+                "productImage": "/images/bottle100mL.png",
+                "size": "ONE",
+                "price": 20000
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "subcategory": "트리트먼트",
+        "content": "딥 클렌징 마스크에서 너리싱 페이셜 오일에 이르기까지 모든 스킨 케어 루틴을 보완하는 제품 ",
+        "products": [
+            {
+                "id": 6,
+                "subCategories": "각질 제거",
+                "productName": "각질제거1",
+                "productImage": "/images/tube100mL.png",
+                "size": "ONE",
+                "price": 20000
+            },
+            {
+                "id": 7,
+                "subCategories": "각질 제거",
+                "productName": "각질제거2",
+                "productImage": "/images/bottle30g.png",
+                "size": "ONE",
+                "price": 20000
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "subcategory": "토너",
+        "content": "토너는 클렌징과 수분 공급 사이에서 중요한 과정입니다. 피부의 밸런스를 잡아 주어 수분 공급 시 우수한 효과를 볼 수 있게 합니다.",
+        "products": [
+            {
+                "id": 8,
+                "subCategories": "트리트먼트",
+                "productName": "트리트먼트1",
+                "productImage": "/images/tube75mL.png",
+                "size": "ONE",
+                "price": 20000
+            },
+            {
+                "id": 9,
+                "subCategories": "트리트먼트",
+                "productName": "트리트먼트2",
+                "productImage": "/images/treatment75mL.png",
+                "size": "ONE",
+                "price": 20000
+            },
+            {
+                "id": 10,
+                "subCategories": "트리트먼트",
+                "productName": "트리트먼트3",
+                "productImage": "/images/treatment75mL.png",
+                "size": "ONE",
+                "price": 20000
+            },
+            {
+                "id": 11,
+                "subCategories": "토너",
+                "productName": "토너1",
+                "productImage": "/images/tube75mL.png",
+                "size": "ONE",
+                "price": 20000
+            }
+        ]
+    }
+]

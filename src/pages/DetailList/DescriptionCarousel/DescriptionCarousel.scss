@@ -1,0 +1,19 @@
+@import '/src/styles/mixin';
+@import '/src/styles/variables';
+
+.descriptionCarousel {
+    width: calc(100vw / 4);
+
+    .productCategory {
+        margin-bottom: 20px;
+    }
+    .descriptionCategory {
+        margin-bottom: 30px;
+    }
+
+    .anchorToList {
+        .arrowToList {
+            margin-left: 20px;
+        }
+    }
+}
