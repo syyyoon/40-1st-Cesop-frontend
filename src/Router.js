@@ -25,7 +25,10 @@ function Router() {
                 <Route path="/sub" element={<SubCategoryMenu />} />
                 <Route path="/all-products" element={<AllProducts />} />
                 <Route path="/product-list" element={<ProductList />} />
-                <Route path="/detail-products" element={<DetailProducts />} />
+                <Route
+                    path="/products/product/:id"
+                    element={<DetailProducts />}
+                />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/payment" element={<Payment />} />
             </Routes>

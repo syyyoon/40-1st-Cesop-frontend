@@ -2,20 +2,23 @@ import React, { useState } from 'react';
 import { API } from '../../../src/config';
 import './Login.scss';
 import Input from './Input/Input';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Login = ({ setModalOpen }) => {
+const Login = ({ closeLoginModal, openSignupModal }) => {
+    const navigate = useNavigate();
+
     const [userInfo, setUserInfo] = useState({
         email: '',
         password: '',
     });
 
+    const signupModal = () => {
+        openSignupModal();
+        closeLoginModal();
+    };
     const getUserInfo = e => {
         const { name, value } = e.target;
         setUserInfo({ ...userInfo, [name]: value });
-    };
-
-    const closeModal = () => {
-        setModalOpen(false);
     };
 
     const isValid =
@@ -28,8 +31,14 @@ const Login = ({ setModalOpen }) => {
             body: JSON.stringify(userInfo),
         })
             .then(response => response.json())
-            .then(result => {
-                console.log(result);
+            .then(data => {
+                if (data.accessToken) {
+                    localStorage.setItem('token', data.accessToken);
+                    closeLoginModal();
+                    navigate('/');
+                } else {
+                    alert('이메일, 비밀번호가 일치하지 않습니다');
+                }
             });
     };
 
@@ -37,7 +46,10 @@ const Login = ({ setModalOpen }) => {
         <div className="login">
             <main className="loginContainer">
                 <div className="buttonWrapper">
-                    <button className="closeButton" onClick={closeModal} />
+                    <button
+                        onClick={closeLoginModal}
+                        className="closeButton"
+                    ></button>
                 </div>
 
                 <h1 className="title">로그인</h1>
@@ -65,9 +77,12 @@ const Login = ({ setModalOpen }) => {
                 >
                     로그인
                 </button>
+
                 <div className="joinUs">
                     <span className="checkAccount">회원이 아니신가요?</span>
-                    <button className="buttonSignUp">회원가입</button>
+                    <button onClick={signupModal} className="buttonSignUp">
+                        회원가입
+                    </button>
                 </div>
             </main>
         </div>

@@ -1,43 +1,50 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import MainDescription from './Description/MainDescription';
 import SubDescription from './Description/SubDescription';
 import './DetailProducts.scss';
+import { API } from '../../config';
 
 const DetailProducts = () => {
     const [itemData, setItemData] = useState({});
+    const productParams = useParams();
 
     useEffect(() => {
-        fetch('/data/detailProducts.json')
+        fetch(`${API.detail}/${productParams.id}`, { method: 'GET' })
             .then(response => response.json())
             .then(result => {
-                setItemData(result);
+                setItemData(result[0]);
             });
     }, []);
+    console.log(itemData);
 
     return (
         <div className="detailProducts">
             <div className="productDetailHeader">
-                <img
-                    className="cesopLogo"
-                    src="./images/cesop-logo.png"
-                    alt="cesop_logo"
-                />
+                <Link to="/">
+                    <img
+                        className="cesopLogo"
+                        src="/images/cesop-logo.png"
+                        alt="cesop_logo"
+                    />
+                </Link>
+
                 <div className="imageWrapper">
                     <img
                         className="productImage"
-                        src={itemData.productImage}
-                        alt={itemData.productName}
+                        src={itemData.product_image}
+                        alt={itemData.product_name}
                     />
                 </div>
 
                 <div className="productContent">
                     <nav className="productCategory">
-                        {itemData.subCategories}
+                        {itemData.sub_category_id}
                     </nav>
                     <div className="productInfo">
-                        <h1 className="productName">{itemData.productName}</h1>
+                        <h1 className="productName">{itemData.product_name}</h1>
                         <p className="productDescription">
-                            {itemData.productDescription}
+                            {itemData.product_description}
                         </p>
                     </div>
                     <div className="productDetailBody">
@@ -72,14 +79,14 @@ const DetailProducts = () => {
                 <div class="imageWrapper">
                     <img
                         className="textureImage"
-                        src={itemData.textureImage}
-                        alt={itemData.howToUse}
+                        src={itemData.texture_image}
+                        alt={itemData.howtouse}
                     />
                 </div>
 
                 <div className="howToUseContent">
                     <p className="usageTitle">사용법</p>
-                    <h2 className="usage">{itemData.howToUse}</h2>
+                    <h2 className="usage">{itemData.howtouse}</h2>
                     <SubDescription itemData={itemData} />
                 </div>
             </section>

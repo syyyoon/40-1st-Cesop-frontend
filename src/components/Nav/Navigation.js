@@ -1,13 +1,29 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from './Modal';
+import Login from '../../pages/Login/Login';
 import { CATEGORY_LIST } from './CategoryPage/categoryList';
 import '../../styles/mixin.scss';
 import './Nav.scss';
+import Signup from '../../pages/SignUp/SignUp';
 
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [listId, setListId] = useState(1);
+    const [isSignupModal, setIsSignupModal] = useState(false);
+
+    // 로그인 모달로 오픈
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
+    const closeLoginModal = () => {
+        setIsLoginOpen(!isLoginOpen);
+    };
+    const closeSignupModal = () => {
+        setIsSignupModal(false);
+    };
+
+    const openSignupModal = () => {
+        setIsSignupModal(true);
+    };
 
     const openModal = () => {
         setIsOpen(true);
@@ -42,11 +58,18 @@ const Navigation = () => {
                 <div className="navUser">
                     <ul>
                         <li>
-                            <button className="navButton">로그인</button>
+                            <button
+                                onClick={closeLoginModal}
+                                className="navButton"
+                            >
+                                로그인
+                            </button>
+
                             <button className="navButton">카트</button>
                         </li>
                     </ul>
                 </div>
+
                 {isOpen && (
                     <Modal
                         isOpen={isOpen}
@@ -56,6 +79,14 @@ const Navigation = () => {
                     />
                 )}
             </div>
+
+            {isLoginOpen && (
+                <Login
+                    closeLoginModal={closeLoginModal}
+                    openSignupModal={openSignupModal}
+                />
+            )}
+            {isSignupModal && <Signup signupCloseModal={closeSignupModal} />}
         </div>
     );
 };

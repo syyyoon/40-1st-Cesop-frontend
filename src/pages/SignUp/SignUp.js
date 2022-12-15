@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SignUp.scss';
 
-const SignUp = () => {
+const SignUp = ({ signupCloseModal }) => {
     const [userInfo, setUserInfo] = useState({
         lastName: '',
         firstName: '',
@@ -78,22 +78,23 @@ const SignUp = () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json;charset=utf-8' },
             body: JSON.stringify(userInfo),
-        })
-            .then(response => {
-                if (response.ok === false) {
-                    alert('회원정보를 다시 입력 해 주세요');
-                } else {
-                    response.json();
-                }
-            })
-            .then(result => console.log('result', result));
+        }).then(response => {
+            if (response.ok === false) {
+                alert('회원정보를 다시 입력 해 주세요');
+            } else {
+                response.json();
+                signupCloseModal();
+            }
+        });
     };
     return (
         <div className="signup">
             <form className="signUpContainer" onSubmit={signupClick}>
                 <div className="buttonWrapper">
-                    <button className="arrowLeft" />
-                    <button className="closeButton" />
+                    <button
+                        className="closeButton"
+                        onClick={signupCloseModal}
+                    />
                 </div>
 
                 <div className="signupTitle">
@@ -105,7 +106,7 @@ const SignUp = () => {
                 </div>
                 <div className="inputForm">
                     {SIGN_UP_FORM.map(input => {
-                        console.log(input.type);
+                        // console.log(input.type);
                         return (
                             <div
                                 className={`${input.className}`}
@@ -136,7 +137,13 @@ const SignUp = () => {
                                     {input.label}
                                 </span>
 
-                                <span className="errorMessage"></span>
+                                <span className="errorMessage ">
+                                    {validCheck[input.name]
+                                        ? ''
+                                        : userInfo[input.name].length !== 0
+                                        ? errorMessage[input.name]
+                                        : ''}
+                                </span>
                             </div>
                         );
                     })}
@@ -179,9 +186,11 @@ const SignUp = () => {
                     >
                         회원가입
                     </button>
-                    <button className="checkUserAccount" href="#">
-                        이미 이솝 계정을 가지고 계십니까?
-                    </button>
+                    <div className="buttonWrapper">
+                        <button className="checkUserAccount" href="#">
+                            이미 이솝 계정을 가지고 계십니까?
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>

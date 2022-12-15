@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ContentCard from './ContentCard';
 import MainCarousel from './Carousel/MainCarousel';
 import { CARD_DATA, CARD_DATA_SERVICE } from './cardData';
 import './Main.scss';
 import '../../styles/mixin.scss';
+import SignUp from '../SignUp/SignUp';
 
 const Main = () => {
     return (
