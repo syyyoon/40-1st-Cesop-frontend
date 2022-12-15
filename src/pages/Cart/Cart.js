@@ -15,9 +15,7 @@ const Cart = () => {
     }, []);
     const total = carts
         .reduce((a, b) => a + b.productPrice * b.amount, 0)
-        // 숫자 3자리 단위 마다 ,를 찍는 정규표현식 코드입니다.
-        .toString()
-        .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+        .toLocaleString('ko-KR', { style: 'currency', currency: 'KRW' });
 
     const onRemove = id => {
         setCarts(carts.filter(list => list.id !== id));
@@ -73,7 +71,7 @@ const Cart = () => {
                                     소계(세금 포함)
                                 </div>
                                 <div className="OrganizeTotalAmount">
-                                    ₩{total}
+                                    {total}
                                 </div>
                             </div>
                             <div className="cartOrganizeButtonBottom">

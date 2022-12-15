@@ -30,10 +30,10 @@ const CartProductRow = ({ cart, onRemove, onChangeAmount }) => {
                 삭제
             </button>
             <div className="totalPrice">
-                ₩
-                {(cart.productPrice * cart.amount)
-                    .toString()
-                    .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}
+                {(cart.productPrice * cart.amount).toLocaleString('ko-KR', {
+                    style: 'currency',
+                    currency: 'KRW',
+                })}
             </div>
         </li>
     );
