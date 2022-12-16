@@ -47,9 +47,9 @@ const Preview = ({ product }) => {
             <div className="productDetails">
                 <ul className="listOfDetails">
                     <li className="detailsInfo">
-                        <div className="productInfoTitle">피부 타입</div>
+                        <div className="productInfoTitle">질감</div>
                         <div className="productInfoContent">
-                            {product.texture_image}
+                            {product.texture}
                         </div>
                     </li>
                     <li className="detailsInfo">

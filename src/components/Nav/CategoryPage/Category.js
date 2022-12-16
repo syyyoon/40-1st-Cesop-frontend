@@ -18,7 +18,6 @@ const Category = ({ list, closeModal }) => {
                 className="skinImage"
                 src={currentImage.src}
                 alt={currentImage.alt}
-                onClick={closeModal}
             />
         );
     };
@@ -26,11 +25,14 @@ const Category = ({ list, closeModal }) => {
     return (
         <div className="category">
             <div className="bodyWrapper">
-                <img
-                    className="logoImage"
-                    src="../../images/cesop-logo.png"
-                    alt="logo"
-                />
+                <Link to="/">
+                    <img
+                        className="logoImage"
+                        src="../../images/cesop-logo.png"
+                        alt="logo"
+                        onClick={closeModal}
+                    />
+                </Link>
 
                 <div className="categoryWrapper">
                     {list.map(menu => {
