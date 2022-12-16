@@ -30,7 +30,7 @@ const CartProductRow = ({ cart, onRemove, onChangeAmount }) => {
                 삭제
             </button>
             <div className="totalPrice">
-                {(cart.productPrice * cart.amount).toLocaleString('ko-KR', {
+                {(cart.price * cart.quantity).toLocaleString('ko-KR', {
                     style: 'currency',
                     currency: 'KRW',
                 })}

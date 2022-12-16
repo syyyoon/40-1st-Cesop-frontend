@@ -2,52 +2,44 @@ import React, { useState, useEffect } from 'react';
 import CartProductList from './CartProductList';
 import './Cart.scss';
 import '../../styles/mixin.scss';
+import { Link } from 'react-router-dom';
 
 const Cart = ({ switchCartModal }) => {
     const [carts, setCarts] = useState([]);
 
     useEffect(() => {
-        fetch('/data/cartProduct.json', {
+        fetch('http://10.58.52.204:8000/cart/', {
             method: 'GET',
         })
             .then(response => response.json())
             .then(data => setCarts(data));
     }, []);
-    const total = carts
-        .reduce((a, b) => a + b.productPrice * b.amount, 0)
-        .toLocaleString('ko-KR', { style: 'currency', currency: 'KRW' });
+
+    const total = carts.reduce((a, b) => a + b.price * b.quantity, 0);
 
     const onRemove = id => {
         setCarts(carts.filter(list => list.id !== id));
+        fetch('http://10.58.52.204:8000/cart/' + id, {
+            method: 'DELETE',
+        });
     };
 
-    const onChangeAmount = (id, amount) => {
+    const onChangeAmount = (id, quantity) => {
         setCarts(
             carts.map(cart => {
                 if (cart.id === id) {
-                    cart.amount = amount;
+                    cart.quantity = quantity;
                 }
                 return cart;
             })
         );
-    };
-
-    const payButtonClick = () => {
-        fetch('http://10.58.52.204:8000/cart', {
-            method: 'POST',
-
+        fetch('http://10.58.52.204:8000/cart/' + id, {
+            method: 'Put',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
             },
-            body: JSON.stringify({
-                product_name: '레저렉션 아로마틱 핸드 워시',
-                quantity: '1',
-                price: '1000',
-                total_price: { total },
-            }),
-        })
-            .then(response => response.json())
-            .then(data => setCarts(data));
+            body: JSON.stringify({ quantity }),
+        }).then(response => response.json());
     };
 
     return (
@@ -73,16 +65,21 @@ const Cart = ({ switchCartModal }) => {
                                         소계(세금 포함)
                                     </div>
                                     <div className="OrganizeTotalAmount">
-                                        {total}
+                                        {total.toLocaleString('ko-KR', {
+                                            style: 'currency',
+                                            currency: 'KRW',
+                                        })}
                                     </div>
                                 </div>
                                 <div className="cartOrganizeButtonBottom">
-                                    <button
-                                        className="cartPayButton"
-                                        onClick={payButtonClick}
-                                    >
-                                        결제하기
-                                    </button>
+                                    <Link to="/payment">
+                                        <button
+                                            className="cartPayButton"
+                                            onClick={switchCartModal}
+                                        >
+                                            결제하기
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

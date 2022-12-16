@@ -4,6 +4,7 @@ import OrderInput from './orderInput';
 import './Payment.scss';
 
 const Payment = () => {
+    const [userInfo, setUserInfo] = useState([]);
     const [carts, setCarts] = useState([]);
     const [orderSum, setOrderSum] = useState({
         productSumAmount: 0,
@@ -12,17 +13,17 @@ const Payment = () => {
     });
 
     useEffect(() => {
-        fetch('/data/orderTable.json', {
+        fetch('http://10.58.52.204:8000/users/info', {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(data => setUserInfo(data));
+
+        fetch('http://10.58.52.204:8000/cart/', {
             method: 'GET',
         })
             .then(response => response.json())
             .then(data => setCarts(data));
-
-        fetch('/data/orderTableSum.json', {
-            method: 'GET',
-        })
-            .then(response => response.json())
-            .then(data => setOrderSum(data[0]));
     }, []);
 
     return (
@@ -181,10 +182,10 @@ const Payment = () => {
                                                     {rowEntry.productSize}
                                                 </span>
                                                 <span className="productQuantity">
-                                                    {rowEntry.productQuantity}
+                                                    {rowEntry.quantity}
                                                 </span>
                                                 <span className="productNameAmount">
-                                                    {rowEntry.productNameAmount}
+                                                    {rowEntry.price}
                                                 </span>
                                             </li>
                                         );
