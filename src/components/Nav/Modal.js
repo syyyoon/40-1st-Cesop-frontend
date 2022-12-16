@@ -76,7 +76,11 @@ const Modal = ({ closeModal, listCheck, listId }) => {
             </div>
             <div className="modalBody">
                 {MENU[listId] ? (
-                    <Category list={MENU[listId]} key={listId} />
+                    <Category
+                        list={MENU[listId]}
+                        key={listId}
+                        closeModal={closeModal}
+                    />
                 ) : (
                     <h4 className="loadingMessage">준비 중입니다.</h4>
                 )}

@@ -8,15 +8,25 @@ import '../../styles/mixin.scss';
 
 const Main = () => {
     const [productData, setProductData] = useState([]);
+    const [hairProductData, setHairProductData] = useState([]);
 
     useEffect(() => {
-        fetch('/data/product.json')
+        fetch('http://10.58.52.76:8000/products/sub_categories_id/1', {
+            method: 'GET',
+        })
             .then(response => response.json())
             .then(result => {
                 setProductData(result);
             });
-    }, []);
 
+        fetch('http://10.58.52.76:8000/products/sub_categories_id/5', {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(result => {
+                setHairProductData(result);
+            });
+    }, []);
     return (
         <div className="main">
             <section className="mainSection">
@@ -82,7 +92,7 @@ const Main = () => {
                 })}
                 {/* TODO : 샴푸 or 컨디셔너 product 받기 */}
                 <p className="productModalTitle">모발을 매끄럽고 부드럽게</p>
-                <ProductCarousel productData={productData} />
+                <ProductCarousel productData={hairProductData} />
                 <div className="storeWrapper">
                     <div className="storeContent">
                         <div className="storeTitle">

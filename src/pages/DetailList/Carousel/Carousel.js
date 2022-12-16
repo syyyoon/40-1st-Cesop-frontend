@@ -70,10 +70,10 @@ const Carousel = ({ list }) => {
                                 <img
                                     className="allProductImage"
                                     alt="product"
-                                    src={product.productImage}
+                                    src={product.product_image}
                                 />
                                 <h5 className="productName">
-                                    {product.productName}
+                                    {product.product_name}
                                 </h5>
                                 <span className="productInfo">
                                     {product.size}

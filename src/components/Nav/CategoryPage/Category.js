@@ -9,7 +9,7 @@ const IMAGES = Array(3)
         alt: 'skin',
     }));
 
-const Category = ({ list }) => {
+const Category = ({ list, closeModal }) => {
     const imagePosition = () => {
         const currentImage = IMAGES[list[0].id - 1];
 
@@ -25,11 +25,14 @@ const Category = ({ list }) => {
     return (
         <div className="category">
             <div className="bodyWrapper">
-                <img
-                    className="logoImage"
-                    src="../../images/cesop-logo.png"
-                    alt="logo"
-                />
+                <Link to="/">
+                    <img
+                        className="logoImage"
+                        src="../../images/cesop-logo.png"
+                        alt="logo"
+                        onClick={closeModal}
+                    />
+                </Link>
 
                 <div className="categoryWrapper">
                     {list.map(menu => {
@@ -50,6 +53,7 @@ const Category = ({ list }) => {
                                                         <li
                                                             className="subcategoryList"
                                                             key={subCategory.id}
+                                                            onClick={closeModal}
                                                         >
                                                             <Link
                                                                 to={
