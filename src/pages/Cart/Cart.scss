@@ -1,0 +1,75 @@
+@import '../../styles/mixin';
+
+.cart {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.8);
+
+    .cartBox {
+        position: fixed;
+        top: 0;
+        max-height: 100vh;
+        overflow-y: scroll;
+        opacity: 1;
+        background-color: #252525;
+        color: #fffef2;
+    }
+
+    .cartInner {
+        width: 100vw;
+
+        .cartOrganize {
+            display: block;
+
+            .cartOrganizeWrapper {
+                padding: 10px 40px 40px;
+
+                .cartOrganizeInner {
+                    flex-basis: auto;
+                    margin-left: 65%;
+
+                    .cartOrganizeNoticeTop {
+                        padding-top: 28px;
+
+                        .cartOfferMessage {
+                            margin-bottom: 10px;
+                            color: #bcbbb4;
+                            font-size: 15px;
+                        }
+                    }
+
+                    .totalComment {
+                        @include flex(null, center, space-between);
+                        width: 100%;
+                        margin-bottom: 10px;
+
+                        .totalLabel {
+                            padding-top: 25px;
+                            padding-bottom: 25px;
+                            color: #bcbbb4;
+                            font-size: 15px;
+                        }
+
+                        .OrganizeTotalAmount {
+                            font-size: 1.2rem;
+                        }
+                    }
+
+                    .cartPayButton {
+                        width: 100%;
+                        height: 60px;
+                        background: transparent;
+                        background-color: #eaeae0;
+                        font-size: 15px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

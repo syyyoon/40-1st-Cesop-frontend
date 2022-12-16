@@ -54,11 +54,17 @@
                 position: relative;
                 width: 100%;
                 .inputBox {
+                    position: relative;
                     flex: 1;
                     width: 100%;
                     margin-top: 40px;
                     border-bottom: 1px solid #666;
                     font-size: 30px;
+                    .showHiddenPassword {
+                        position: absolute;
+                        top: 50px;
+                        right: 10px;
+                    }
                 }
                 .label {
                     position: absolute;
@@ -80,9 +86,6 @@
                     color: #ea6956;
                     font-size: 14px;
                 }
-                // .showHiddenPassword {
-                //     @include position(170px, 0, 0, 0);
-                // }
             }
         }
 
@@ -132,9 +135,11 @@
                 background-color: #333;
                 cursor: not-allowed;
             }
+
             .buttonWrapper {
                 display: flex;
                 justify-content: center;
+
                 .checkUserAccount {
                     display: block;
                     padding-top: 20px;

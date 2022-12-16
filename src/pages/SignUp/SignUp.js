@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SignUp.scss';
 
-const SignUp = ({ signupCloseModal }) => {
+const SignUp = ({ switchSignupModal }) => {
     const [userInfo, setUserInfo] = useState({
         lastName: '',
         firstName: '',
@@ -83,7 +83,7 @@ const SignUp = ({ signupCloseModal }) => {
                 alert('회원정보를 다시 입력 해 주세요');
             } else {
                 response.json();
-                signupCloseModal();
+                switchSignupModal();
             }
         });
     };
@@ -93,7 +93,7 @@ const SignUp = ({ signupCloseModal }) => {
                 <div className="buttonWrapper">
                     <button
                         className="closeButton"
-                        onClick={signupCloseModal}
+                        onClick={switchSignupModal}
                     />
                 </div>
 
@@ -106,7 +106,6 @@ const SignUp = ({ signupCloseModal }) => {
                 </div>
                 <div className="inputForm">
                     {SIGN_UP_FORM.map(input => {
-                        // console.log(input.type);
                         return (
                             <div
                                 className={`${input.className}`}
@@ -147,14 +146,14 @@ const SignUp = ({ signupCloseModal }) => {
                             </div>
                         );
                     })}
-                    <button
-                        className="showHiddenPassword"
-                        onClick={isPasswordView}
-                        type="button"
-                    >
-                        {isPasswordVisible ? '숨기기' : '보기'}
-                    </button>
                 </div>
+                <button
+                    className="showHiddenPassword "
+                    onClick={isPasswordView}
+                    type="button"
+                >
+                    {isPasswordVisible ? '숨기기' : '보기'}
+                </button>
 
                 <div className="userCheckBox">
                     <div className="checkList">

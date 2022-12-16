@@ -1,6 +1,9 @@
-import { React } from 'react';
+import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Category from './CategoryPage/Category';
+import Login from '../../pages/Login/Login';
+import Signup from '../../pages/SignUp/SignUp';
+import Cart from '../../pages/Cart/Cart';
 import {
     BODY_AND_HAND,
     CATEGORY_LIST,
@@ -11,6 +14,21 @@ import '../../styles/mixin.scss';
 import './Modal.scss';
 
 const Modal = ({ closeModal, listCheck, listId }) => {
+    const [isLoginModal, setIsLoginModal] = useState(false);
+    const [isSignupModal, setIsSignupModal] = useState(false);
+    const [isCartModal, setIsCartModal] = useState(false);
+
+    const switchLoginModal = () => {
+        setIsLoginModal(prev => !prev);
+    };
+
+    const switchSignupModal = () => {
+        setIsSignupModal(prev => !prev);
+    };
+
+    const switchCartModal = () => {
+        setIsCartModal(prev => !prev);
+    };
     return (
         <div className="modal">
             <div className="modalWrapper">
@@ -40,8 +58,18 @@ const Modal = ({ closeModal, listCheck, listId }) => {
                 <div className="navUser">
                     <ul>
                         <li>
-                            <button className="navButton">로그인</button>
-                            <button className="navButton">카트</button>
+                            <button
+                                className="navButton"
+                                onClick={switchLoginModal}
+                            >
+                                로그인
+                            </button>
+                            <button
+                                className="navButton"
+                                onClick={switchCartModal}
+                            >
+                                카트
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -53,6 +81,14 @@ const Modal = ({ closeModal, listCheck, listId }) => {
                     <h4 className="loadingMessage">준비 중입니다.</h4>
                 )}
             </div>
+            {isLoginModal && (
+                <Login
+                    switchLoginModal={switchLoginModal}
+                    switchSignupModal={switchSignupModal}
+                />
+            )}
+            {isSignupModal && <Signup switchSignupModal={switchSignupModal} />}
+            {isCartModal && <Cart switchCartModal={switchCartModal} />}
         </div>
     );
 };

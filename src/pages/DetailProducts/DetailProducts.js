@@ -18,6 +18,31 @@ const DetailProducts = () => {
     }, []);
     console.log(itemData);
 
+    let token = localStorage.getItem('token');
+
+    const addToCart = () => {
+        console.log(token);
+        fetch('http://10.58.52.204:8000/cart/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8',
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+                productName: itemData.product_name,
+                quantity: 1,
+                price: itemData.price,
+                totalPrice: 1000,
+                productId: 2,
+            }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            });
+    };
+    console.log(typeof itemData.price);
+
     return (
         <div className="detailProducts">
             <div className="productDetailHeader">
@@ -44,13 +69,14 @@ const DetailProducts = () => {
                     <div className="productInfo">
                         <h1 className="productName">{itemData.product_name}</h1>
                         <p className="productDescription">
+                            {itemData.productId}
                             {itemData.product_description}
                         </p>
                     </div>
                     <div className="productDetailBody">
                         <MainDescription itemData={itemData} />
                     </div>
-                    <button className="buttonAddToCart">
+                    <button onClick={addToCart} className="buttonAddToCart">
                         카트에 추가하기 - ₩{itemData.price}원
                     </button>
                 </div>

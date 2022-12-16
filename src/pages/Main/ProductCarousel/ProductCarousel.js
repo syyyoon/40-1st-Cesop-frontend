@@ -1,16 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
-import DescriptionCarousel from '../DescriptionCarousel/DescriptionCarousel';
-import './Carousel.scss';
+import './ProductCarousel.scss';
 
-const Carousel = ({ list }) => {
-    const { title, content, products } = list;
+const ProductCarousel = props => {
+    const { productData } = props;
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isShowButton, setIsShowButton] = useState('');
     const productRef = useRef(null);
     const scrollRef = useRef(null);
 
-    const productNumInFirstView = 2;
-    const numberOfDescription = 1;
+    const PRODUCT_NUM_IN_FIRST_VIEW = 2;
+    const NUMBER_OF_DESCRIPTION = 1;
 
     const prevSlide = () => {
         if (currentSlide === 0) {
@@ -21,15 +20,15 @@ const Carousel = ({ list }) => {
     };
 
     const nextSlide = () => {
-        if (currentSlide >= products.length - productNumInFirstView) {
-            setCurrentSlide(products.length - productNumInFirstView);
+        if (currentSlide >= productData.length - PRODUCT_NUM_IN_FIRST_VIEW) {
+            setCurrentSlide(productData.length - PRODUCT_NUM_IN_FIRST_VIEW);
         } else {
             setCurrentSlide(currentSlide + 1);
         }
     };
 
     const onMouseEventHandler = () => {
-        products.length > productNumInFirstView
+        productData.length > PRODUCT_NUM_IN_FIRST_VIEW
             ? setIsShowButton('--show')
             : setIsShowButton('');
     };
@@ -40,10 +39,10 @@ const Carousel = ({ list }) => {
     useEffect(() => {
         productRef.current.style.transition = 'all 0.5s ease-in-out';
         productRef.current.style.transform = `translateX(-${
-            (100 / (products.length + numberOfDescription)) * currentSlide
+            (100 / (productData.length + NUMBER_OF_DESCRIPTION)) * currentSlide
         }%)`;
         scrollRef.current.style.width = `${
-            100 / (products.length - (productNumInFirstView - 1))
+            100 / (productData.length - (PRODUCT_NUM_IN_FIRST_VIEW - 1))
         }%`;
         scrollRef.current.style.transition = 'all 0.5s ease-in-out';
         scrollRef.current.style.transform = `translateX(${
@@ -52,19 +51,14 @@ const Carousel = ({ list }) => {
     }, [currentSlide]);
 
     return (
-        <section className="carousel">
+        <section className="productCarousel">
             <div
                 className="showBox"
                 onMouseEnter={onMouseEventHandler}
                 onMouseLeave={leaveMouseEventHandler}
             >
                 <div className="carouselBox" ref={productRef}>
-                    <DescriptionCarousel
-                        title={title}
-                        content={content}
-                        products={products}
-                    />
-                    {products.map(product => {
+                    {productData.map(product => {
                         return (
                             <div key={product.id} className="productCell">
                                 <img
@@ -76,8 +70,7 @@ const Carousel = ({ list }) => {
                                     {product.productName}
                                 </h5>
                                 <span className="productInfo">
-                                    {product.size}
-                                    {' / '}
+                                    {product.size}/
                                     {product.price.toLocaleString('ko-KR', {
                                         style: 'currency',
                                         currency: 'KRW',
@@ -97,7 +90,8 @@ const Carousel = ({ list }) => {
                 </button>
                 <button
                     className={`carousleMove${
-                        currentSlide !== products.length - productNumInFirstView
+                        currentSlide !==
+                        productData.length - PRODUCT_NUM_IN_FIRST_VIEW
                             ? isShowButton
                             : ''
                     } moveNext`}
@@ -106,7 +100,7 @@ const Carousel = ({ list }) => {
                     <span className="arrowInButton">〉</span>
                 </button>
             </div>
-            {products.length >= 3 ? (
+            {productData.length >= 3 ? (
                 <div className="totalIndicator">
                     <div className="selectedIndicator" ref={scrollRef} />
                 </div>
@@ -117,4 +111,4 @@ const Carousel = ({ list }) => {
     );
 };
 
-export default Carousel;
+export default ProductCarousel;
