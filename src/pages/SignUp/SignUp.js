@@ -146,14 +146,14 @@ const SignUp = ({ switchSignupModal }) => {
                             </div>
                         );
                     })}
-                    <button
-                        className="showHiddenPassword"
-                        onClick={isPasswordView}
-                        type="button"
-                    >
-                        {isPasswordVisible ? '숨기기' : '보기'}
-                    </button>
                 </div>
+                <button
+                    className="showHiddenPassword "
+                    onClick={isPasswordView}
+                    type="button"
+                >
+                    {isPasswordVisible ? '숨기기' : '보기'}
+                </button>
 
                 <div className="userCheckBox">
                     <div className="checkList">

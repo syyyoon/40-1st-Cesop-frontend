@@ -5,6 +5,7 @@ import ProductCarousel from './ProductCarousel/ProductCarousel';
 import { CARD_DATA, CARD_DATA_SERVICE } from './cardData';
 import './Main.scss';
 import '../../styles/mixin.scss';
+import SignUp from '../SignUp/SignUp';
 
 const Main = () => {
     const [productData, setProductData] = useState([]);

@@ -76,6 +76,7 @@ const Navigation = () => {
                         </li>
                     </ul>
                 </div>
+
                 {isOpen && (
                     <Modal
                         isOpen={isOpen}

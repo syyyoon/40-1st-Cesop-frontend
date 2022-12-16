@@ -25,6 +25,6 @@ const SubDescription = ({ itemData }) => {
 export default SubDescription;
 
 const ITEM_SUB_TITLE_LIST = [
-    { id: 1, title: '사용량', name: 'amountUsed' },
+    { id: 1, title: '사용량', name: 'amount_used' },
     { id: 2, title: '텍스처', name: 'texture' },
 ];

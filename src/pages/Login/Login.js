@@ -77,6 +77,7 @@ const Login = ({ switchLoginModal, switchSignupModal }) => {
                 >
                     로그인
                 </button>
+
                 <div className="joinUs">
                     <span className="checkAccount">회원이 아니신가요?</span>
                     <button onClick={signupModal} className="buttonSignUp">
