@@ -16,13 +16,13 @@
 ### **Front-end Developers**
 
 | Front-End | Front-End | Front-End | Front-End |
-| --- | --- | --- | --- |
+| :---: | :---: | :---: | :---: |
 | 임우진(PM) | 박나정(PM) | 윤선영 | 허재원 |
 
 ### Back-end Developers
 
 | Back-End | Back-End |
-| --- | --- |
+| :---: | :---: |
 | 황정수 | 이가은 |
 
 ## 💡적용 기술
